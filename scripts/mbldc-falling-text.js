@@ -1,6 +1,6 @@
 console.log("falling-text is connected!")
 
-// >>> chiData : data
+// >>> chiData 
 let chiData = {
     "centerName": [
         "Hostway Boeing Data Center",
@@ -31,11 +31,11 @@ let chiData = {
 let chiDataName = "";
 let chiDataComp = "";
 
-// set function to run every 1200 milliseconds
-setInterval(chiDataReturn, 2400);
+// set fallingText() to run every 1200 milliseconds
+setInterval(fallingText, 2400);
 
-// >>> chiData : function
-function chiDataReturn() {
+// >>> fallingText function
+function fallingText() {
 
     // store a random center name from chiData to a variable
     for (let index = 0; index < chiData.centerName.length; index++) {
@@ -45,7 +45,6 @@ function chiDataReturn() {
     // store a random company name from chiData to a variable
         chiDataComp = chiData.companyName[Math.floor(Math.random() * 8)];
         console.log(chiDataComp);
-
     };
 
     // returns variable contents to browser window as text
