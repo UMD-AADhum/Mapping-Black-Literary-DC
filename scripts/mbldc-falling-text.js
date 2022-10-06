@@ -1,34 +1,55 @@
 console.log("falling-text is connected!")
 
-    /* chiData JSON */
-    let chiData = {
-        "centerNames": [
-            "Hostway Boeing Data Center",
-            "Lumen Chicago",
-            "XO Chicago",
-            "CBOT Data Center",
-            "FDCservers.net Chicago",
-            "CoreSite Chicago (CH2)",
-            "Lumen Chicago 3",
-            "ANET Chicago",
-            "Cogent Chicago 2",
-            "QTS Chicago"
-        ]  
+// >>> chiData : data
+let chiData = {
+    "centerName": [
+        "Hostway Boeing Data Center",
+        "Lumen Chicago",
+        "XO Chicago",
+        "CBOT Data Center",
+        "FDCservers.net Chicago",
+        "CoreSite Chicago (CH2)",
+        "Lumen Chicago 3",
+        "ANET Chicago",
+        "Cogent Chicago 2",
+        "QTS Chicago"
+    ],
+    "companyName" : [
+        "Hostway Services, Inc",
+        "Lumen",
+        "XO Communications",
+        "Data Stream LLC",
+        "FDCservers.net LLC",
+        "CoreSite",
+        "ANET Internet Solutions",
+        "Cogent Communications, Inc.",
+        "QTS Data Centers"
+    ]
+};
+
+// create variables   
+let chiDataName = "";
+let chiDataComp = "";
+
+// set function to run every 1200 milliseconds
+setInterval(chiDataReturn, 2400);
+
+// >>> chiData : function
+function chiDataReturn() {
+    
+    // store a random center name from chiData to a variable
+    for (let index = 0; index < chiData.centerName.length; index++) {
+        chiDataName = chiData.centerName[Math.floor(Math.random() * 8)];
+        console.log(chiDataName);
+
+    // store a random company name from chiData to a variable
+        chiDataComp = chiData.companyName[Math.floor(Math.random() * 8)];
+        console.log(chiDataComp);
+
     };
 
-/* >>> Variables: stores returns from the JSON object. */    
-    let chiDataNames = "";
+    // returns variable contents to browser window as text
+    document.getElementById("chiDataNametxt").innerText = chiDataName;
+    document.getElementById("chiDataComptxt").innerText = chiDataComp;
 
-/* >>> Interval: sets the function to run every 1200 milliseconds. */
-setInterval(chiDataNamesRet, 2400);
-
-/* >>> chiData function: returns a random phrase from the chiData JSON object and store it to a variable. */
-    function chiDataNamesRet() {
-    for (let index = 0; index < chiData.centerNames.length; index++) {
-        chiDataNames = chiData.centerNames[Math.floor(Math.random() * 8)];
-        console.log(chiDataNames);
-    };
-
-/* // Browser Returns: returns variables to browser window as text. */
-    document.getElementById("chiDataNamestxt").innerText = chiDataNames;
 }
