@@ -36,7 +36,7 @@ setInterval(chiDataReturn, 2400);
 
 // >>> chiData : function
 function chiDataReturn() {
-    
+
     // store a random center name from chiData to a variable
     for (let index = 0; index < chiData.centerName.length; index++) {
         chiDataName = chiData.centerName[Math.floor(Math.random() * 8)];
@@ -49,7 +49,7 @@ function chiDataReturn() {
     };
 
     // returns variable contents to browser window as text
-    document.getElementById("chiDataNametxt").innerText = chiDataName;
-    document.getElementById("chiDataComptxt").innerText = chiDataComp;
+    document.getElementById("txtChiDataName").innerText = chiDataName;
+    document.getElementById("txtChiDataComp").innerText = chiDataComp;
 
 }
