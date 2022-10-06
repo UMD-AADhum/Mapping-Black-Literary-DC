@@ -6,26 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBLDC.experiments</title>
 
-    <style>
-        body {
-            background-color: black;
-        }
-        .page-text {
-            color: cornflowerblue;
-        }
-        #divTextPlay {
-            position: relative;
-        }
-        .falling-text {
-            color: cornflowerblue;
-        }
-        #txtChiDataName {
-            position: absolute;
-        }
-        #txtChiDataComp {
-            position: absolute;
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/index.css">
+
 </head>
 <body>
     
@@ -33,11 +16,16 @@
     <h1 class="page-text display-2 text-center">MBLDC.experiments</h1>
     <h2 class="page-text display-2 text-center">tASP x chiData</h2>
 
+    <!-- function button panel -->
+    <button onclick="fallingText()">run falling-text</button>
+    <button>dragging-text</button>
+    <button>hover-text</button>
+
     <!-- experiments (textPlay) div -->
     <div id="divTextPlay">
 
     <!-- falling-text -->
-        <!-- chiDataReturn() data will go here --> 
+        <!-- fallingText() data will go here --> 
         <p class="page-text display-6 text-center" id="txtChiDataName"></p>
         <p class="page-text display-6 text-center" id="txtChiDataComp"></p>        
 
