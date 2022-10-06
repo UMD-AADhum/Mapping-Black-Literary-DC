@@ -1,0 +1,18 @@
+body {
+    background-color: black;
+}
+.page-text {
+    color: cornflowerblue;
+}
+#divTextPlay {
+    position: relative;
+}
+.falling-text {
+    color: cornflowerblue;
+}
+#txtChiDataName {
+    position: absolute;
+}
+#txtChiDataComp {
+    position: absolute;
+}
