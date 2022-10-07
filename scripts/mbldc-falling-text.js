@@ -32,10 +32,10 @@ let chiDataName = "";
 let chiDataComp = "";
 
 // set fallingText() to run every 1200 milliseconds
-setInterval(fallingText, 2400);
+setInterval(getText, 2400);
 
-// >>> fallingText function
-function fallingText() {
+// >>> getText function
+function getText() {
 
     // store a random center name from chiData to a variable
     for (let index = 0; index < chiData.centerName.length; index++) {
@@ -48,7 +48,34 @@ function fallingText() {
     };
 
     // returns variable contents to browser window as text
-    document.getElementById("txtChiDataName").innerText = chiDataName;
-    document.getElementById("txtChiDataComp").innerText = chiDataComp;
+    // document.getElementById("txtChiDataName").innerText = chiDataName;
+    // document.getElementById("txtChiDataComp").innerText = chiDataComp;
+}
 
+let fallTime = null;
+
+// >>> fallingText function
+
+function fallingText() {
+// grab HTML elements to be moved
+    let fallName = document.getElementById("txtChiDataName");
+    let fallComp = document.getElementById("txtChiDataComp");
+
+// set starting element position
+    let position = 0;
+
+// set timing for element movement
+    timing = setInterval(fall, 10);
+
+// move elements according to timing
+    function fall() {
+        if (position == 500) {
+            clearInterval(fallTime);
+        }   
+        else {
+            position++;
+            fallName.style.top = position + 'px'; 
+            fallComp.style.left = position + 'px';
+        }
+    }
 }
