@@ -30,3 +30,5 @@ function fallingText() {
         }
     }
 };
+
+// button click event

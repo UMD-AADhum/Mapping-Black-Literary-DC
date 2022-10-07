@@ -51,3 +51,5 @@ function getText() {
 
 // set getText() to run every 1200 milliseconds
     setInterval(getText, 2400);
+
+// button click event

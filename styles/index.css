@@ -1,13 +1,19 @@
 body {
     background-color: black;
 }
+.header-text {
+    font-size: 24px;
+    color: forestgreen;
+}
 .page-text {
     color: cornflowerblue;
+    font-size: 16px;
 }
 #divTextPlay {
     width: 500px;
     height: 500px;
     position: relative;
+    clear: left;
 }
 #divChiDataName {
     position: absolute;
@@ -18,4 +24,31 @@ body {
     position: absolute;
     width: 200px;
     height: 50px;
+}
+.btn-panel {
+    background-color: darkorchid;
+    width: 25%;
+    float: left;
+    border: 1px solid gold;
+    padding: 10px 24px;
+    font-size: 20px;
+    text-align: center;
+}
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: gray;
+    color: black;
+}
+#btnGetText {
+
+}
+#btnFallingText {
+
+}
+#btnDraggingText {
+
+}
+#btnHoverText {
+
 }

@@ -11,15 +11,19 @@
 
 <body>
     <!-- header text -->
-    <h1 class="page-text display-2 text-center">MBLDC.experiments</h1>
-    <h2 class="page-text display-2 text-center">tASP x chiData</h2>
-
+    <div>
+        <h1 class="header-text display-2 text-center">MBLDC.experiments</h1>
+        <h2 class="header-text display-2 text-center">tASP x chiData</h2>
+    </div>
+<br>
     <!-- function button panel -->
-    <button onclick="getText()">return data</button>
-    <button onclick="fallingText()">run falling-text</button>
-    <button>dragging-text</button>
-    <button>hover-text</button>
-
+    <div>
+        <button class="btn-panel" id="btnGetText">return text</button>
+        <button class="btn-panel" id="btnFallingText" onclick="fallingText()">run falling-text</button>
+        <button class="btn-panel disabled" id="btnDraggingText">dragging-text</button>
+        <button class="btn-panel disabled" id="btnHoverText">hover-text</button>
+    </div>
+<br>
     <!-- experiments (textPlay) div -->
     <div id="divTextPlay">
 
