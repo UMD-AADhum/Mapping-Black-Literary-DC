@@ -5,16 +5,17 @@ body {
     color: cornflowerblue;
 }
 #divTextPlay {
-    position: relative;
     width: 500px;
     height: 500px;
+    position: relative;
 }
-.falling-text {
-    color: cornflowerblue;
-}
-#txtChiDataDiv {
+#divChiDataName {
     position: absolute;
+    width: 200px;
+    height: 50px;
 }
-#txtChiDataComp {
+#divChiDataComp {
     position: absolute;
+    width: 200px;
+    height: 50px;
 }
