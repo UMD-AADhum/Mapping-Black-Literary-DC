@@ -5,18 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBLDC.experiments</title>
-
     <!-- CSS -->
     <link rel="stylesheet" href="./styles/index.css">
-
 </head>
+
 <body>
-    
     <!-- header text -->
     <h1 class="page-text display-2 text-center">MBLDC.experiments</h1>
     <h2 class="page-text display-2 text-center">tASP x chiData</h2>
 
     <!-- function button panel -->
+    <button onclick="getText()">return data</button>
     <button onclick="fallingText()">run falling-text</button>
     <button>dragging-text</button>
     <button>hover-text</button>
@@ -24,23 +23,18 @@
     <!-- experiments (textPlay) div -->
     <div id="divTextPlay">
 
-    <!-- falling-text -->
-        <!-- fallingText() data will go here -->
-        <div id="txtChiDataDiv">
+        <div id="divChiDataName">
             <p class="page-text display-6 text-center" id="txtChiDataName"></p>
         </div>
-        <p class="page-text display-6 text-center" id="txtChiDataComp"></p>        
 
-    <!-- draggable-text -->
-
-    <!-- hover-text -->
+        <div id="divChiDataComp">
+            <p class="page-text display-6 text-center" id="txtChiDataComp"></p>
+        </div>
 
     </div> <!-- end divTextPlay -->
 
-
-
-
     <!-- mbldc.experiments scripts -->
+    <script src="./scripts/return-chi-data.js"></script>
     <script src="./scripts/mbldc-falling-text.js"></script>
     <script src="./scripts/mbldc-draggable-text.js"></script>
     <script src="./scripts/mbldc-hover-text.js"></script>
