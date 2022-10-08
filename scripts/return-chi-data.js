@@ -47,8 +47,8 @@ function getText() {
         document.getElementById("txt-chi-data-comp").innerText = chiDataComp;
 };
 
-// button click event
-// document.getElementById("btn-get-text").onclick = function() {getText( )};
-
 // set getText() to run every 1200 milliseconds (after button is clicked)
 setInterval(getText, 2400);
+
+// button click event
+// document.getElementById("btn-get-text").onclick = function() {getText( )};
