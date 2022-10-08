@@ -2,12 +2,12 @@ body {
     background-color: black;
 }
 .header-text {
-    font-size: 24px;
+    font-size: 28px;
     color: forestgreen;
 }
 .page-text {
     color: cornflowerblue;
-    font-size: 16px;
+    font-size: 20px;
 }
 #div-text-play {
     width: 500px;
@@ -31,7 +31,7 @@ body {
     float: left;
     border: 1px solid gold;
     padding: 10px 24px;
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
 }
 .disabled {
