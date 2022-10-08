@@ -35,22 +35,20 @@ let chiDataComp = "";
 function getText() {
 
     // store a random center name from chiData to a variable
-    for (let index = 0; index < chiData.centerName.length; index++) {
         chiDataName = chiData.centerName[Math.floor(Math.random() * 8)];
         console.log(chiDataName);
 
     // store a random company name from chiData to a variable
         chiDataComp = chiData.companyName[Math.floor(Math.random() * 8)];
-    };
+        console.log(chiDataComp);
 
     // returns variable contents to browser window as text
         document.getElementById("txt-chi-data-name").innerText = chiDataName;
         document.getElementById("txt-chi-data-comp").innerText = chiDataComp;
-
 };
 
-// set getText() to run every 1200 milliseconds
-setInterval(getText, 2400);
-
 // button click event
-document.getElementById("btn-get-text")
+// document.getElementById("btn-get-text").onclick = function() {getText( )};
+
+// set getText() to run every 1200 milliseconds (after button is clicked)
+setInterval(getText, 2400);
