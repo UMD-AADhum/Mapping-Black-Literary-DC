@@ -9,18 +9,18 @@ body {
     color: cornflowerblue;
     font-size: 16px;
 }
-#divTextPlay {
+#div-text-play {
     width: 500px;
     height: 500px;
     position: relative;
     clear: left;
 }
-#divChiDataName {
+#div-chi-data-name {
     position: absolute;
     width: 200px;
     height: 50px;
 }
-#divChiDataComp {
+#div-chi-data-comp {
     position: absolute;
     width: 200px;
     height: 50px;
@@ -40,15 +40,8 @@ body {
     background-color: gray;
     color: black;
 }
-#btnGetText {
 
-}
-#btnFallingText {
-
-}
-#btnDraggingText {
-
-}
-#btnHoverText {
-
-}
+/* #btn-get-text {} */
+/* #btn-falling-text {} */
+/* #btn-dragging-text {} */
+/* #btn-hover-text {} */

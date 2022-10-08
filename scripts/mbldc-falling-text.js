@@ -6,8 +6,8 @@ let fallTime = null;
 
 function fallingText() {
 // grab HTML elements to be moved
-    let fallName = document.getElementById("divChiDataName");
-    let fallComp = document.getElementById("divChiDataComp");
+    let fallName = document.getElementById("div-chi-data-name");
+    let fallComp = document.getElementById("div-chi-data-comp");
 
 // set starting element position
     let position = 0;

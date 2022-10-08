@@ -44,12 +44,13 @@ function getText() {
     };
 
     // returns variable contents to browser window as text
-        document.getElementById("txtChiDataName").innerText = chiDataName;
-        document.getElementById("txtChiDataComp").innerText = chiDataComp;
+        document.getElementById("txt-chi-data-name").innerText = chiDataName;
+        document.getElementById("txt-chi-data-comp").innerText = chiDataComp;
 
 };
 
 // set getText() to run every 1200 milliseconds
-    setInterval(getText, 2400);
+setInterval(getText, 2400);
 
 // button click event
+document.getElementById("btn-get-text")
