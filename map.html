@@ -4,9 +4,222 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> MBLDC map </title>
+
+    <!-- bootstrap css : responsive page styling library -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- bootstrap js : responsive page script library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- leaflet js : map scripts library -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- leaflet css : map styling library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- map.css : page styling -->
+    <link rel="stylesheet" href="./styles/map.css">
+
+    <title> MBLDC x tASP - Map </title>
+
 </head>
+
+
 <body>
-    
+    <!-- header -->
+    <div class="row">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Mapping Black Literary DC</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <a class="nav-link" href="./map.html">Map</a>
+                      <a class="nav-link" href="./project-team.html">Project Team</a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-10">
+                <!-- map div -->
+                <div id="map"></div>
+            </div>
+        </div>
+
+        <br>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-5">
+                <div class="row d-flex justify-content-center">
+                    <h1 id="map-head">Map Listings</h1>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col">
+                        <table class="table-dark" id="map-address-listing">
+                            <thead>
+                              <tr class="table-dark">
+                                <th scope="col">ID</th>
+                                <th scope="col">Archive Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Website</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="table-dark">
+                                <th scope="row">1</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">2</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">3</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">4</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">5</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">6</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">7</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">8</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">9</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">10</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">11</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">12</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">13</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">14</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">15</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">16</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">17</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">18</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">19</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              <tr class="table-dark">
+                                <th scope="row">20</th>
+                                <td>An Archive</td>
+                                <td>Address</td>
+                                <td>site</td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <script>
+        // initialize Leaflet
+        // Howard University coordinates: 38.9227° N, -77.0194° W
+         let map = L.map('map').setView({lon: -77.0194, lat: 38.9227}, 12);
+  
+        // add the OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+        }).addTo(map); 
+  
+        // show the scale bar on the lower left corner
+        L.control.scale({imperial: true, metric: true}).addTo(map);
+  
+        // show a marker on the map
+        L.marker({lon: 0, lat: 0}).bindPopup('The center of the world').addTo(map);
+      </script>
+
 </body>
 </html>
