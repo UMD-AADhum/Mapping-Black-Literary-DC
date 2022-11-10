@@ -1,3 +1,7 @@
-.grid-item {
-  width: 33%;
+body {
+    background-color: black;
 }
+
+.card-design {
+    background-color: black;
+  }
