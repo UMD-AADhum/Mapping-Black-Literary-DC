@@ -1,6 +1,6 @@
-console.log("return-chi-data is connected!")
+console.log(" index.js is connected!")
 
-// >>> chiData 
+// >>> random data 
 let chiData = {
     "centerName": [
         "Hostway Boeing Data Center",

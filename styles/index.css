@@ -5,3 +5,24 @@ body {
 .card-design {
     background-color: black;
   }
+
+  .page-text {
+    color: gold;
+    font-size: 36px;
+}
+#div-text-play {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    clear: left;
+}
+#div-chi-data-name {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+}
+#div-chi-data-comp {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+}
