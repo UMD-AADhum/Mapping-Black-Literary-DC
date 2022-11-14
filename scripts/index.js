@@ -1,4 +1,4 @@
-console.log(" index.js is connected!")
+ console.log(" index.js is connected!")
 
 // >>> random data 
 let chiData = {
