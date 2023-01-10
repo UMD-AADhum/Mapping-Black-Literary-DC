@@ -5,6 +5,7 @@ pageMap = document.getElementById("map");
 // ***** mbldc markers array: 0-venue, 1-address, 2-lat, 3-long,
  let mapPoints = [
     ["Harambee House Hotel", "2225 Georgia Ave, NW, Washington DC 20059", 38.9200080201834, -77.0216320019951]
+    
     ]; 
 
 
