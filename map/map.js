@@ -1,8 +1,7 @@
 console.log("and it is I, the javascript behind the leaflet map")
 
-pageMap = document.getElementById("map");
-
-// ***** mbldc markers array: 0-venue, 1-address, 2-lat, 3-long,
+// >>>>> MBLDC DATA ARRAY
+// ^ index positions: 0-venue name, 1-address, 2-latitude, 3-longitude,
  let mapPoints = [
 
     ["Harambee House Hotel", "2225 Georgia Ave, NW, Washington DC 20059", 38.9200080201834, -77.0216320019951],
@@ -99,78 +98,76 @@ pageMap = document.getElementById("map");
     
 ]; 
 
+// >>>>> LEAFLET.JS MAP 
 
-// ***** initialize Leaflet map
+// *1 - grab map div from DOM
+pageMap = document.getElementById("map");
 
-// Howard University coordinates: 38.9227° N, 77.0194° W -- map center
+// *2 - set map center coordinates (Howard University)
+// ^ latitude = 38.9227, longitude -77.0194
 map = L.map(pageMap).setView({lon: -77.0194, lat: 38.9227}, 12);
 
-// add the OpenStreetMap tile
+// *3 - add OpenStreetMap tile
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
 }).addTo(map);
 
-// show the scale bar on the lower left corner
+// *4 - show scale bar on the lower left corner
 L.control.scale({imperial: true, metric: true}).addTo(map);
 
-// console.log(map);
-// console.log(pageMap);
-
-// ***** add points to leaflet map from mapPoints array
-
+// *5 - add map points: loop through mapPoints array to add map points to leaflet map
  for (let index = 0; index < mapPoints.length; index++) {
+    // a. store mapPoints data in variable
     let lat = mapPoints[index][2];
-   // console.log(lat);
-    
     let lon = mapPoints[index][3];
-  //  console.log(lon);
-
-    let popup = mapPoints[index][0]+ "<br>" +"Address: "+mapPoints[index][1];
-  //  console.log(popup);
-
+    let popup = mapPoints[index][0] + "<br>" + "Address: " + mapPoints[index][1];
+    
+    // b. create map marker from var data
     let pointLoc = new L.LatLng(lat, lon);
- //   console.log(pointLoc);
-
     let pointMarker = new L.Marker(pointLoc);
- //   console.log(pointMarker);
-
+    
+    // c. add marker to DOM map
     map.addLayer(pointMarker);
     pointMarker.bindPopup(popup);
-    
 }
 
-
-// ***** add card for each listing
-
+// >>>>> MAP LISTING CARDS
+// *1 - grab mapCards div from DOM
 let mapCards = document.getElementById("map-cards");
 
+// *2 - loop through mapPoints to create and add listing card for each
 for (let index = 0; index < mapPoints.length; index++) {
+    // a. create card column to go in DOM map-cards row
     let cardCol = document.createElement("div");
     cardCol.className = "col";
 
+    // b. create card element
     let card = document.createElement("div");
     card.className = "card";
 
+    // c. create card body
     let cardBody = document.createElement("div");
     cardBody.className = "card-body";
 
+    // d. create card title & store mapPoints data
     let cardTitle = document.createElement("h5");
     cardTitle.className = "card-title"
     cardTitle.innerText = mapPoints[index][0];
 
+    // e. create card text & store mapPoints data
     let cardText = document.createElement("p");
     cardText.className = "card-text"
     cardText.innerText = mapPoints[index][1];
 
+    // f. append card elements to card; append card to card column
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
     card.appendChild(cardBody);
     cardCol.appendChild(card);
     
-    console.log(card);
-
+    // g. append card column to DOM card row div
     mapCards.appendChild(cardCol);
 
-}
+};
     
