@@ -141,5 +141,36 @@ L.control.scale({imperial: true, metric: true}).addTo(map);
 }
 
 
+// ***** add card for each listing
+
+let mapCards = document.getElementById("map-cards");
+
+for (let index = 0; index < mapPoints.length; index++) {
+    let cardCol = document.createElement("div");
+    cardCol.className = "col";
+
+    let card = document.createElement("div");
+    card.className = "card";
+
+    let cardBody = document.createElement("div");
+    cardBody.className = "card-body";
+
+    let cardTitle = document.createElement("h5");
+    cardTitle.className = "card-title"
+    cardTitle.innerText = mapPoints[index][0];
+
+    let cardText = document.createElement("p");
+    cardText.className = "card-text"
+    cardText.innerText = mapPoints[index][1];
+
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardText);
+    card.appendChild(cardBody);
+    cardCol.appendChild(card);
     
+    console.log(card);
+
+    mapCards.appendChild(cardCol);
+
+}
     
