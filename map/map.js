@@ -105,8 +105,8 @@ console.log("and it is I, the javascript behind the leaflet map")
 pageMap = document.getElementById("map");
 
 // *2 - create map & set main view center 
-// ^ current center: Howard University | latitude = 38.9227, longitude -77.0194
-map = L.map(pageMap).setView({lon: -77.0194, lat: 38.9227}, 14);
+// ^ current center: Logan Circle | latitude = 38.909142, longitude -77.029793
+map = L.map(pageMap).setView({lon: -77.029793, lat: 38.909142}, 14);
 
 // *3 - add OpenStreetMap tile
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
