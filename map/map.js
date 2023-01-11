@@ -177,9 +177,18 @@ for (let index = 0; index < mapPoints.length; index++) {
     cardExtUrl.setAttribute("target", "blank")
     cardExtUrl.innerText = "Read More"
 
+    // create modal button
+    let cardModalBtn = document.createElement("button");
+    cardModalBtn.className = "btn btn-primary";
+    cardModalBtn.setAttribute("type","button")
+    cardModalBtn.setAttribute("data-bs-toggle","modal");
+    cardModalBtn.setAttribute("data-bs-target", "#exampleModal");
+    cardModalBtn.innerText = "modal btn";
+
     // f. append card elements to card; append card to card column
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
+    cardBody.appendChild(cardModalBtn);
     cardBody.appendChild(cardExtUrl);
     card.appendChild(cardImg);
     card.appendChild(cardBody);
@@ -190,4 +199,6 @@ for (let index = 0; index < mapPoints.length; index++) {
 
 };
     
+
+
 
