@@ -2,11 +2,11 @@ console.log("and it is I, the javascript behind the leaflet map")
 
 // >>>>> MBLDC DATA ARRAY
 // !!! add IDs for each listing & return to map point and listing card
-// ^ index positions: 0-venue name, 1-address, 2-latitude, 3-longitude,
+// ^ index positions: 0-venue name, 1-address, 2-latitude, 3-longitude, 4-img tag, 5-audio tag, 6-external weblink
  let mapPoints = [
 
-    ["Harambee House Hotel", "2225 Georgia Ave, NW, Washington DC 20059", 38.9200080201834, -77.0216320019951],
-    ["Lammas" ,"321 7th St SE, Washington, DC 20003",38.88568993,-76.9963528],
+    ["Harambee House Hotel", "2225 Georgia Ave, NW, Washington DC 20059", 38.9200080201834, -77.0216320019951, "./../media/imgs/harambee-house-flickr.jpg", false, "https://www.flickr.com/photos/streetsofdc/50146812063/in/photostream/"],
+    ["Lammas" ,"321 7th St SE, Washington, DC 20003",38.88568993,-76.9963528, "./../media/imgs/ToniAsanteLightfoot.png", "./../media/audio/ToniAsanteLightfootIntro_IYM_MillenniumStage2014_YT.m4a", false],
     ["Howard University","2441 6th St NW, Washington, DC, 20059",38.92362955,-77.01939635],
     ["P Street Beach","23rd and P Streets NW, Washington, DC 20037",38.90984334,-77.04931314],
     ["La Zambra","1406 14th St NW, Washington, DC 20005",38.90933825,-77.0322407],
@@ -97,7 +97,11 @@ console.log("and it is I, the javascript behind the leaflet map")
     ["Lamond-Riggs Library","5401 South Dakota Avenue NE, Washington, DC 20011",38.95536196,-76.99950942],  
     ["Joy of Motion Friendship Heights","5207 Wisconsin Ave NW, Washington, DC 20015",38.95772432,-77.08379479],   
     
-]; 
+];
+
+console.log(mapPoints[1][4]);
+console.log(mapPoints[1][5]);
+console.log(mapPoints[1][6]);
 
 // >>>>> LEAFLET.JS MAP 
 
@@ -161,9 +165,23 @@ for (let index = 0; index < mapPoints.length; index++) {
     cardText.className = "card-text"
     cardText.innerText = mapPoints[index][1];
 
+    // create card img & store mapPoints img tag
+    let cardImg = document.createElement("img");
+    cardImg.className = "card-img-top";
+    cardImg.setAttribute("src", mapPoints[index][4]);
+
+    // create card link & store mapPoints external links
+    let cardExtUrl = document.createElement("a");
+    cardExtUrl.className = "btn btn-primary";
+    cardExtUrl.setAttribute("href", mapPoints[index][6]);
+    cardExtUrl.setAttribute("target", "blank")
+    cardExtUrl.innerText = "Read More"
+
     // f. append card elements to card; append card to card column
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
+    cardBody.appendChild(cardExtUrl);
+    card.appendChild(cardImg);
     card.appendChild(cardBody);
     cardCol.appendChild(card);
     
@@ -172,3 +190,4 @@ for (let index = 0; index < mapPoints.length; index++) {
 
 };
     
+
