@@ -1,6 +1,7 @@
 console.log("and it is I, the javascript behind the leaflet map")
 
 // >>>>> MBLDC DATA ARRAY
+// !!! add IDs for each listing & return to map point and listing card
 // ^ index positions: 0-venue name, 1-address, 2-latitude, 3-longitude,
  let mapPoints = [
 
