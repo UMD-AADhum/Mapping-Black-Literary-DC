@@ -106,7 +106,7 @@ pageMap = document.getElementById("map");
 
 // *2 - create map & set main view center 
 // ^ current center: Logan Circle | latitude = 38.909142, longitude -77.029793
-map = L.map(pageMap).setView({lon: -77.029793, lat: 38.909142}, 14);
+map = L.map(pageMap).setView({lon: -77.029793, lat: 38.909142}, 14.5);
 
 // *3 - add OpenStreetMap tile
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
