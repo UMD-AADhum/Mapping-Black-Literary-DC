@@ -220,3 +220,15 @@ function playAudio() {
 }
 
 
+
+let wmataOverImg = "./../media/imgs/wmata-scaled_495.png"
+let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
+// wmataCorner1 39.028492, -77.233734 | wmataCorner2 38.775205, -76.845436
+let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.775205, -76.845436]])
+
+
+let imageOverlay = L.imageOverlay(wmataOverImg , wmataOverBounds, {
+    errorOverlayUrl: errorOverlayImg,
+    opacity: .8,
+    interactive: true
+}).addTo(map);
