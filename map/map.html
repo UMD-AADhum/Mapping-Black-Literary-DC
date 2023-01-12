@@ -34,9 +34,37 @@
 
         <br>
 
-    <!-- map listings -->
         <h2 id="header-text">a list of every map point</h2>
-        <div class="row row-cols-1 row-cols-md-4 g-4" id="map-cards"></div>
+
+        <br>
+
+    <!-- map listing filter buttons -->
+    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+        <input type="checkbox" class="btn-check" id="btn-bookstore" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btn-bookstore">Bookstores</label>
+      
+        <input type="checkbox" class="btn-check" id="btn-library" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btn-library">Libraries</label>
+      
+        <input type="checkbox" class="btn-check" id="btn-museum" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btn-museum">Museums</label>
+
+        <input type="checkbox" class="btn-check" id="btn-cafe" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btn-cafe">Cafes</label>
+
+        <input type="checkbox" class="btn-check" id="btn-bar" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btn-bar">Bars</label>
+
+        <input type="checkbox" class="btn-check" id="btn-theater" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btn-theater">Theaters</label>
+
+        <input type="checkbox" class="btn-check" id="btn-artspace" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btn-artspace">Artspaces</label>
+      </div>
+
+    <!-- map listings -->
+        <div class="row row-cols-1 row-cols-md-4 g-4 grid"  ></div>
+        <div id="map-cards" class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 300 }'></div>
   
     </div>
 
@@ -61,6 +89,8 @@
     </div>
   </div>
 
+
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="./map.js"></script>
 </body>
 </html>
