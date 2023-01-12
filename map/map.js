@@ -211,7 +211,7 @@ for (let index = 0; index < mapPoints.length; index++) {
     
     // g. append card column to DOM card row div
   //  mapCards.appendChild(cardCol);
-    mapCards.appendChild(card);
+    mapCards.append(card);
 };
     
 let listAudio = document.getElementsByTagName("audio");
