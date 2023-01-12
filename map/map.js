@@ -206,6 +206,7 @@ for (let index = 0; index < mapPoints.length; index++) {
     cardBody.appendChild(cardAudio);
     card.appendChild(cardImg);
     card.appendChild(cardBody);
+    
    // cardCol.appendChild(card);
     
     // g. append card column to DOM card row div
