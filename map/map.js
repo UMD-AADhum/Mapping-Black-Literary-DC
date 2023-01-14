@@ -112,10 +112,16 @@ pageMap = document.getElementById("map");
 // ^ current center: Logan Circle | latitude = 38.909142, longitude -77.029793
 map = L.map(pageMap).setView({lon: -77.029793, lat: 38.909142}, 14.5);
 
-// *3 - add OpenStreetMap tile
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+// OpenStreetMap tile
+/* L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+}).addTo(map); */
+
+// *3 - add stamen toner map tile
+L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
 }).addTo(map);
 
 // *4 - show scale bar on the lower left corner
@@ -224,11 +230,11 @@ function playAudio() {
 let wmataOverImg = "./../media/imgs/wmata-scaled_495.png"
 let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
 // wmataCorner1 39.028492, -77.233734 | wmataCorner2 38.775205, -76.845436
-let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.775205, -76.845436]])
+let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
 
 
 let imageOverlay = L.imageOverlay(wmataOverImg , wmataOverBounds, {
     errorOverlayUrl: errorOverlayImg,
-    opacity: .8,
+    opacity: .5,
     interactive: true
 }).addTo(map);
