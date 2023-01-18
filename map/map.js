@@ -227,7 +227,7 @@ function playAudio() {
 
 
 
-let wmataOverImg = "./../media/imgs/wmata-scaled_495.png"
+let wmataOverImg = "./../media/imgs/wmata-map-495 (2).png"
 let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
 // wmataCorner1 39.028492, -77.233734 | wmataCorner2 38.775205, -76.845436
 let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
