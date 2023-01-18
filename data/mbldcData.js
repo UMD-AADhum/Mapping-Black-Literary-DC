@@ -1,3 +1,4 @@
+console.log("mbldcData.js connected")
 // >>>>> MBLDC DATA ARRAY
 // !!! add IDs for each listing & return to map point and listing card
 // ^ index positions: 0-venue name, 1-address, 2-latitude, 3-longitude, 4-category tag, 5-img tag, 6-audio tag, 7-external weblink
