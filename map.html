@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mbldc demo map page</title>
+
+    <!-- bootstrap css : responsive page styling library -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- bootstrap js : responsive page script library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- leaflet js : map scripts library -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- leaflet css : map styling library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- map.css : page styling -->
+    <link rel="stylesheet" href="./styles/map.css">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 id="header-text">hello there, good world</h1>
+    <hr>
+
+    <div class="container">
+
+    <!-- leaflet.js map div -->
+    <div class="row">
+        <h2 id="header-text">a leaflet.js map</h2>
+    </div>
+    <div class="row">
+        <div id="map"></div>
+    </div>
+    <div class="row">
+        <h2 id="header-text">a list of every map point</h2>
+    </div>
+    <div class="row">
+        <!-- map listing filter buttons -->
+        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+            <input type="checkbox" class="btn-check" id="btn-bookstore" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btn-bookstore">Bookstores</label>
+          
+            <input type="checkbox" class="btn-check" id="btn-library" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btn-library">Libraries</label>
+          
+            <input type="checkbox" class="btn-check" id="btn-museum" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btn-museum">Museums</label>
+    
+            <input type="checkbox" class="btn-check" id="btn-cafe" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btn-cafe">Cafes</label>
+    
+            <input type="checkbox" class="btn-check" id="btn-bar" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btn-bar">Bars</label>
+    
+            <input type="checkbox" class="btn-check" id="btn-theater" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btn-theater">Theaters</label>
+    
+            <input type="checkbox" class="btn-check" id="btn-artspace" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btn-artspace">Artspaces</label>
+          </div>
+    </div>
+
+    <!-- map listings -->
+       <!--  <div class="row row-cols-1 row-cols-md-4 g-4"  ></div> -->
+        <div class="row">
+            <div id="map-cards" class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 400, "gutter" : 25 }'></div>
+        </div>
+        
+    </div>
+    
+  
+    </div>
+
+    <!-- test Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">test modal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./media/imgs/1.png" class="d-block w-100 carousel-img" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>First slide label</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./media/imgs/2.png" class="d-block w-100 carousel-img" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Second slide label</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./media/imgs/3.png" class="d-block w-100 carousel-img" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Third slide label</h5>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <hr>
+          <h3>a header</h3>
+          <h6>a subtitle</h6>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ultrices massa. Phasellus sollicitudin nulla purus, id pellentesque ex aliquam eu. Donec at nulla nec lectus ullamcorper elementum. Praesent porta, metus non viverra aliquet, turpis ex pretium odio, a iaculis felis nunc id nulla. Nam accumsan, mi a convallis lobortis, leo tellus luctus turpis, et auctor tortor sapien eu nisl. Curabitur venenatis ipsum sit amet varius posuere. Curabitur ornare leo lectus, a molestie nisi suscipit pharetra. Quisque sagittis libero sit amet mattis egestas.</p>
+          <img src="./media/imgs/ToniAsanteLightfoot.png" alt="">
+          <br>
+          <a href="www.google.com">ext link link</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="./data/mbldcData.js"></script>
+  <script src="./scripts/map.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    
+ 
+</body>
+</html>
