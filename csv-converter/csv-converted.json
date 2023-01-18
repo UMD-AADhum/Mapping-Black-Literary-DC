@@ -1,0 +1,551 @@
+[
+    {
+        "Venue": "Harambee House Hotel",
+        "Address": "\"2225 Georgia Ave",
+        "Latitude": "NW",
+        "Longitude": "Washington DC 20059\""
+    },
+    {
+        "Venue": "Lammas",
+        "Address": "\"321 7th St SE",
+        "Latitude": "Washington",
+        "Longitude": "DC 20003\""
+    },
+    {
+        "Venue": "Howard University",
+        "Address": "\"2441 6th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC"
+    },
+    {
+        "Venue": "P Street Beach",
+        "Address": "\"23rd and P Streets NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20037\""
+    },
+    {
+        "Venue": "La Zambra",
+        "Address": "\"1406 14th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20005\""
+    },
+    {
+        "Venue": "Lambda Rising",
+        "Address": "\"2012 S St.",
+        "Latitude": "NW",
+        "Longitude": "Washington"
+    },
+    {
+        "Venue": "Market 5 Gallery",
+        "Address": "\"7th and C Street Southeast\nNorth Carolina Avenue\nWashington",
+        "Latitude": "DC 20002\"",
+        "Longitude": "38.886188"
+    },
+    {
+        "Venue": "Politics and Prose",
+        "Address": "\"5015 Connecticut Ave NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20008\""
+    },
+    {
+        "Venue": "Vertigo",
+        "Address": "\"1337 Connecticut Ave NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20036\""
+    },
+    {
+        "Venue": "\"Smithsonian",
+        "Address": "S. Dillion Ripley Center\"",
+        "Latitude": "\"1100 Jefferson Dr SW",
+        "Longitude": "Washington"
+    },
+    {
+        "Venue": "\"Smithsonian",
+        "Address": "Ring Auditorium Hirshorn Museum and Scuplture Garden \"",
+        "Latitude": "\"Independence Ave and 7th St Washington",
+        "Longitude": "DC 20560\""
+    },
+    {
+        "Venue": "Gala Hispanic Theatre",
+        "Address": "\"1625 Park Rd NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20010\""
+    },
+    {
+        "Venue": "Republic Gardens",
+        "Address": "\"1355 U St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "University of District of Columbia",
+        "Address": "\"4200 Connecticut Ave NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20008\""
+    },
+    {
+        "Venue": "Olsson's Books and Records",
+        "Address": "\"1200 F St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20004\""
+    },
+    {
+        "Venue": "Sister's Space and Books",
+        "Address": "\"1354 U St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Martin Luther King Memorial Library",
+        "Address": "\"901 G St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20001\""
+    },
+    {
+        "Venue": "Kennedy Center",
+        "Address": "\"2700 F St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20566\""
+    },
+    {
+        "Venue": "District of Columbia Arts Center",
+        "Address": "\"2418 18th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "The Barns of Wolf Trap",
+        "Address": "\"1635 Trap Rd",
+        "Latitude": "Vienna",
+        "Longitude": "VA 22182\""
+    },
+    {
+        "Venue": "WPA",
+        "Address": "\"400 7th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20004\""
+    },
+    {
+        "Venue": "Luna Books",
+        "Address": "\"1633 P St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20036\""
+    },
+    {
+        "Venue": "It's Your Mug",
+        "Address": "\"2601 P St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20007\""
+    },
+    {
+        "Venue": "\"Howard University Campus",
+        "Address": "Blackburn Center\"",
+        "Latitude": "\"2397 6th St NW",
+        "Longitude": "Washington"
+    },
+    {
+        "Venue": "Atticus Books & Music",
+        "Address": "\"1508 U St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Reprint Book Shop",
+        "Address": "\"455 L'Enfant Plaza SW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20024\""
+    },
+    {
+        "Venue": "Mango's Cafe",
+        "Address": "\"2014 14th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Women in the Life Office Lobby",
+        "Address": "\"1436 U St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Smithsonian National Museum of American History",
+        "Address": "\"1300 Constitution Ave. NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20560\""
+    },
+    {
+        "Venue": "\"Borders Books",
+        "Address": "White Flint Mall \"",
+        "Latitude": "\"11301 Rockville Pike",
+        "Longitude": "Kensington"
+    },
+    {
+        "Venue": "Morgan's Cyber Cafe",
+        "Address": "\"1352 U St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Cafe Bloom",
+        "Address": "\"3102 Mt Pleasant St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20010\""
+    },
+    {
+        "Venue": "Kaffa House",
+        "Address": "\"1212 U St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Central Armature Warehouse",
+        "Address": "\"625 D St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20004\""
+    },
+    {
+        "Venue": "State of the Union",
+        "Address": "\"1357 U St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Towson State University",
+        "Address": "\"8000 York Rd",
+        "Latitude": "Towson",
+        "Longitude": "MD 21252\""
+    },
+    {
+        "Venue": "Spauldings Library",
+        "Address": "\"5811 Old Silver Hill Rd",
+        "Latitude": "District Heights",
+        "Longitude": "MD 20747\""
+    },
+    {
+        "Venue": "HR-57 Jazz and Blues Club Center",
+        "Address": "\"1426 9th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20001\""
+    },
+    {
+        "Venue": "Bar Nun",
+        "Address": "\"1326 U St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Dupont Plaza Hotel",
+        "Address": "\"1500 New Hampshire Ave NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20036\""
+    },
+    {
+        "Venue": "Summer School",
+        "Address": "\"1201 17th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20036\""
+    },
+    {
+        "Venue": "Black Cat",
+        "Address": "\"1831 14th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Anacostia Museum",
+        "Address": "\"1901 Fort Pl SE",
+        "Latitude": "Washington",
+        "Longitude": "DC 20020\""
+    },
+    {
+        "Venue": "First Congregational Church",
+        "Address": "\"945 G St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20001\""
+    },
+    {
+        "Venue": "Writerâs Center of Bethesda",
+        "Address": "\"4508 Walsh St",
+        "Latitude": "Chevy Chase",
+        "Longitude": "MD 20815\""
+    },
+    {
+        "Venue": "15 Minutes?",
+        "Address": "\"1030 15th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20005\""
+    },
+    {
+        "Venue": "Habana Village",
+        "Address": "\"2467 18th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "The National Museum of Women in the Arts",
+        "Address": "\"1250 New York Ave NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20005\""
+    },
+    {
+        "Venue": "Koffa House",
+        "Address": "\"1212 U St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Hand Chapel Mt. Vernon College",
+        "Address": "\"2100 Foxhall Rd NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20007\""
+    },
+    {
+        "Venue": "Hine Junior High School",
+        "Address": "\"310 7th St SE",
+        "Latitude": "Washington",
+        "Longitude": "DC 20003\""
+    },
+    {
+        "Venue": "Transafricaâs Arthur Ashe Library & W.E.B. Dubois Room",
+        "Address": "\"1744 R St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Sylvan Theater on the Mall",
+        "Address": "\"Independence Ave SW & 15th Street NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20024\""
+    },
+    {
+        "Venue": "Central Armature Building",
+        "Address": "\"625 D St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20004\""
+    },
+    {
+        "Venue": "\"Joe's Movement Emporium/ World Arts Focus",
+        "Address": "Inc.\"",
+        "Latitude": "\"3802 34th St",
+        "Longitude": "Mt Rainier"
+    },
+    {
+        "Venue": "Smithsonian Institution Arts and Industries Building",
+        "Address": "\"900 Jefferson Dr SW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20560\""
+    },
+    {
+        "Venue": "Mary McLeod Bethune Council House",
+        "Address": "\"1318 Vermont Ave NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20005\""
+    },
+    {
+        "Venue": "Karibu",
+        "Address": "\"3500 East-West Hwy",
+        "Latitude": "Hyattsville",
+        "Longitude": "MD 20782\""
+    },
+    {
+        "Venue": "Cafe De Pare",
+        "Address": "\"2305 18th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Trade",
+        "Address": "\"1732 P St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20036\""
+    },
+    {
+        "Venue": "Hyattsville Library",
+        "Address": "\"6530 Adelphi Rd",
+        "Latitude": "Hyattsville",
+        "Longitude": "MD 20782\""
+    },
+    {
+        "Venue": "Barnes & Nobles",
+        "Address": "\"3040 M St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20007\""
+    },
+    {
+        "Venue": "University of the District of Columbia Performing Arts Center",
+        "Address": "\"4200 Connecticut Ave NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20008\""
+    },
+    {
+        "Venue": "Folger Shakespeare Library",
+        "Address": "\"201 E Capitol St SE",
+        "Latitude": "Washington",
+        "Longitude": "DC 20003\""
+    },
+    {
+        "Venue": "Duke Ellington School of Performing Arts",
+        "Address": "\"3500 R St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20007\""
+    },
+    {
+        "Venue": "Radisson Barcelo Hotel",
+        "Address": "\"2121 P St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20037\""
+    },
+    {
+        "Venue": "Southwest Public Library",
+        "Address": "\"900 Wesley Pl SW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20024\""
+    },
+    {
+        "Venue": "Union Institute Metropolitan Community Church",
+        "Address": "\"474 Ridge St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20001\""
+    },
+    {
+        "Venue": "The Edge",
+        "Address": "\"56 L St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20002\""
+    },
+    {
+        "Venue": "Arts Club of Washington",
+        "Address": "\"2017 I St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20006\""
+    },
+    {
+        "Venue": "Sankofa Video and Bookstore",
+        "Address": "\"2714 Georgia Ave NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20001\""
+    },
+    {
+        "Venue": "Washington Plaza Hotel",
+        "Address": "\"10 Thomas Cir NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20005\""
+    },
+    {
+        "Venue": "Union Instituteâs Center for Women",
+        "Address": "\"1710 Rhode Island Ave NE",
+        "Latitude": "Washington",
+        "Longitude": "DC 20018\""
+    },
+    {
+        "Venue": "Jewish Community Center",
+        "Address": "\"1529 16th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20036\""
+    },
+    {
+        "Venue": "Women in the Life",
+        "Address": "1611 Connecticut Ave. NW DC 20009",
+        "Latitude": "38.91182605",
+        "Longitude": "-77.04412821"
+    },
+    {
+        "Venue": "Sisterspace and Books",
+        "Address": "\"1515 U St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Library of Congress",
+        "Address": "\"101 Independence Ave SE",
+        "Latitude": "Washington",
+        "Longitude": "DC 20540\""
+    },
+    {
+        "Venue": "Nob Hill",
+        "Address": "\"1101 Kenyon St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20010\""
+    },
+    {
+        "Venue": "Women in the Life office",
+        "Address": "\"1623 Connecticut Ave NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Renaissance Hotel",
+        "Address": "\"999 9th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20001\""
+    },
+    {
+        "Venue": "It's Your Mug",
+        "Address": "\"2601 P St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20007\""
+    },
+    {
+        "Venue": "Vertigo Books",
+        "Address": "\"1337 Connecticut Ave NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20036\""
+    },
+    {
+        "Venue": "Cafe de Pare",
+        "Address": "\"2305 18th Street NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "D.C. Arts Center (DCAC)",
+        "Address": "\"2438 18th St NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Fort Totten Metro Station",
+        "Address": "\"550 Galloway St NE",
+        "Latitude": "Washington",
+        "Longitude": "DC 20011\""
+    },
+    {
+        "Venue": "House of Ruth",
+        "Address": "\"651 10th St NE",
+        "Latitude": "Washington",
+        "Longitude": "DC 20002\""
+    },
+    {
+        "Venue": "MoBlack",
+        "Address": "\"29 Kings Ct SE",
+        "Latitude": "Washington",
+        "Longitude": "DC 20003\""
+    },
+    {
+        "Venue": "She Company Inc",
+        "Address": "\"2022 Columbia Rd NW Ste 105",
+        "Latitude": "Washington",
+        "Longitude": "DC 20009\""
+    },
+    {
+        "Venue": "Warehouse Theater",
+        "Address": "1017 Seventh St NW 20001",
+        "Latitude": "38.90378681",
+        "Longitude": "-77.02160686"
+    },
+    {
+        "Venue": "Lamond-Riggs Library",
+        "Address": "\"5401 South Dakota Avenue NE",
+        "Latitude": "Washington",
+        "Longitude": "DC 20011\""
+    },
+    {
+        "Venue": "Joy of Motion Friendship Heights",
+        "Address": "\"5207 Wisconsin Ave NW",
+        "Latitude": "Washington",
+        "Longitude": "DC 20015\""
+    },
+    {
+        "Venue": ""
+    }
+]
