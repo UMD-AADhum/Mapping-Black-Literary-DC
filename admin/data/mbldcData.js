@@ -1,16 +1,16 @@
 console.log("mbldcData.js connected")
 // >>>>> MBLDC DATA ARRAY
 // !!! add IDs for each listing & return to map point and listing card
-// ^ index positions: 0-venue name, 1-address, 2-latitude, 3-longitude, 4-category tag, 5-img tag, 6-audio tag, 7-external weblink
+// ^ index positions: 0-venue name, 1-address, 2-latitude, 3-longitude, 4-category tag, 5-img tag, 6-audio tag, 7-external weblink, 8 - ids
 
 
 const mapPoints = [
 
-    ["Harambee House Hotel", "2225 Georgia Ave, NW, Washington DC 20059", 38.9200080201834, -77.0216320019951, "hotel" , "./media/imgs/harambee-house-flickr.jpg", false, "https://www.flickr.com/photos/streetsofdc/50146812063/in/photostream/"],
-    ["Lammas" ,"321 7th St SE, Washington, DC 20003",38.88568993,-76.9963528, "category", "./media/imgs/ToniAsanteLightfoot.png", "./media/audio/ToniAsanteLightfootIntro_IYM_MillenniumStage2014_YT.m4a", false],
-    ["Howard University","2441 6th St NW, Washington, DC, 20059",38.92362955,-77.01939635, "university" , "./media/imgs/mbldc-ph_rect.png" , ],
-    ["P Street Beach","23rd and P Streets NW, Washington, DC 20037",38.90984334,-77.04931314, "category", "./media/imgs/mbldc-ph_sq.png"],
-    ["La Zambra","1406 14th St NW, Washington, DC 20005",38.90933825,-77.0322407, "category", "./media/imgs/mbldc-ph_rect.png" ,],
+    ["Harambee House Hotel", "2225 Georgia Ave, NW, Washington DC 20059", 38.9200080201834, -77.0216320019951, "hotel" , "./media/imgs/harambee-house-flickr.jpg", false, "https://www.flickr.com/photos/streetsofdc/50146812063/in/photostream/", 001],
+    ["Lammas" ,"321 7th St SE, Washington, DC 20003",38.88568993,-76.9963528, "category", "./media/imgs/ToniAsanteLightfoot.png", "./media/audio/ToniAsanteLightfootIntro_IYM_MillenniumStage2014_YT.m4a", false, 002],
+    ["Howard University","2441 6th St NW, Washington, DC, 20059",38.92362955,-77.01939635, "university" , "./media/imgs/mbldc-ph_rect.png" , 003],
+    ["P Street Beach","23rd and P Streets NW, Washington, DC 20037",38.90984334,-77.04931314, "category", "./media/imgs/mbldc-ph_sq.png" , 004],
+    ["La Zambra","1406 14th St NW, Washington, DC 20005",38.90933825,-77.0322407, "category", "./media/imgs/mbldc-ph_rect.png" , 005],
     ["Lambda Rising","2012 S St., NW, Washington, DC, 20009",38.91487814,-77.04561905, "category", "./media/imgs/mbldc-ph_sq.png"],
     ["Market 5 Gallery","7th and C Street Southeast, North Carolina Avenue, Washington, DC 20002",38.886188,-76.99610583, "artspace", "./media/imgs/mbldc-ph_rect.png" ,],
     ["Politics and Prose","5015 Connecticut Ave NW, Washington, DC 20008",38.95566953,-77.06925906, "bookstore", "./media/imgs/mbldc-ph_sq.png"],

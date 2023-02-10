@@ -12,6 +12,9 @@
     <!-- bootstrap js : responsive page script library -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+    <!-- papa parse js : CSV to JSON parsing library -->
+    <script src="scripts/lib/papaparse.min.js"></script>
+
     <!-- leaflet js : map scripts library -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
@@ -105,63 +108,76 @@
 
   </div>
     
-  
+
+<div class="modalActive" id="active-modal-view"></div>
 
 
 <!-- test Modal (moving to mapModal.js) -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="mainModal" tabindex="-1" aria-labelledby="mainModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">test modal</h5>
+          <!-- populate -->
+          <h5 class="modal-title" id="mainModalLabel">modal header</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselMainCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselMainCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselMainCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselMainCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="./media/imgs/1.png" class="d-block w-100 carousel-img" alt="...">
+                <!-- populate image-->
+                <img src="" class="d-block w-100 carousel-img" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
+                  <!-- populate image -->
+                  <h5>photo slide header</h5>
+                  <p>photo slide caption</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="./media/imgs/2.png" class="d-block w-100 carousel-img" alt="...">
+                <!-- populate -->
+                <img src="" class="d-block w-100 carousel-img" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
+                  <!-- populate -->
+                  <h5>photo slide header</h5>
+                  <p>photo slide caption</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="./media/imgs/3.png" class="d-block w-100 carousel-img" alt="...">
+                <!-- populate -->
+                <img src="" class="d-block w-100 carousel-img" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
+                  <!-- populate -->
+                  <h5>photo slide header</h5>
+                  <p>photo slide caption</p>
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselmainCaptions" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselmainCaptions" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
           </div>
           <hr>
+          <!-- populate -->
           <h3>a header</h3>
+          <!-- populate -->
           <h6>a subtitle</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ultrices massa. Phasellus sollicitudin nulla purus, id pellentesque ex aliquam eu. Donec at nulla nec lectus ullamcorper elementum. Praesent porta, metus non viverra aliquet, turpis ex pretium odio, a iaculis felis nunc id nulla. Nam accumsan, mi a convallis lobortis, leo tellus luctus turpis, et auctor tortor sapien eu nisl. Curabitur venenatis ipsum sit amet varius posuere. Curabitur ornare leo lectus, a molestie nisi suscipit pharetra. Quisque sagittis libero sit amet mattis egestas.</p>
-          <img src="./media/imgs/ToniAsanteLightfoot.png" alt="">
+          <!-- populate -->
+          <p>modal text</p>
+          <!-- populate -->
+          <img src="" alt="">
           <br>
-          <a href="www.google.com">ext link link</a>
+          <!-- populate -->
+          <a href="www.google.com" target="_blank">external link</a>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -171,9 +187,10 @@
     </div>
   </div>
 
-  <script src="./data/mbldcData.js"></script>
+  <script src="./admin/data/mbldcData.js"></script>
   <script src="./scripts/map.js"></script>
   <script src="./scripts/mapCards.js"></script>
+  <script src="./scripts/mapModals.js"></script>
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     
  

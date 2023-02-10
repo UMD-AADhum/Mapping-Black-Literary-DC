@@ -14,6 +14,10 @@ for (let index = 0; index < mapPoints.length; index++) {
     let card = document.createElement("div");
     card.className = "card grid-item";
 
+    // set card ID
+    card.setAttribute("id", mapPoints[index][8]);
+    console.log(card.id);
+
     // c. create card body
     let cardBody = document.createElement("div");
     cardBody.className = "card-body";
@@ -57,7 +61,7 @@ for (let index = 0; index < mapPoints.length; index++) {
     cardModalBtn.className = "btn btn-primary";
     cardModalBtn.setAttribute("type","button")
     cardModalBtn.setAttribute("data-bs-toggle","modal");
-    cardModalBtn.setAttribute("data-bs-target", "#exampleModal");
+    cardModalBtn.setAttribute("data-bs-target", "#mainModal");
     cardModalBtn.innerText = "modal btn";
 
     // f. append card elements to card; append card to card column
