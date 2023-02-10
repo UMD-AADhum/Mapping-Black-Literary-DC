@@ -21,7 +21,7 @@ Papa.parse(mbldcGSheetURL, {
     complete: showData,
 });
 
-function showData() {
+function showData(result) {
     console.log(result.data);
     let showMeData = data[2].venue;
     console.log(showData);
