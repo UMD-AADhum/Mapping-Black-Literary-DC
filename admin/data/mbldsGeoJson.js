@@ -23,7 +23,8 @@ Papa.parse(mbldcGSheetURL, {
 
 function showData(result) {
     console.log(result.data);
-    let showMeData = result[2].venue;
+    let mbldcData = result.data;
+    let showMeData = mbldcData[2].venue;
     console.log(showData);
     document.getElementById('data-view').innerText = showMeData;
 };
