@@ -29,9 +29,9 @@ function showData(result) {
     console.log(mbldcData[2].Venue);
     console.log(JSON.parse(mbldcData[2].Venue));
 
-    let showMeData = JSON.parse(result.data);
+    // let showMeData = JSON.parse(result.data);
 
-   // let showMeData = JSON.parse(mbldcData[2].venue);
+   let showMeData = JSON.parse(mbldcData[2].Venue);
     console.log(showMeData);
 
     document.getElementById('data-view').innerText = showMeData;
