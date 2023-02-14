@@ -26,12 +26,13 @@ function showData(result) {
 
     let mbldcData = result.data;
     console.log(mbldcData);
-    console.log(mbldcData[2].Venue);
-    console.log(JSON.parse(mbldcData[2].Venue));
 
-    // let showMeData = JSON.parse(result.data);
 
-   let showMeData = JSON.parse(mbldcData[2].Venue);
+    let showData = JSON.parse(result.data);
+    console.log(showData);
+    console.log(showData[2].Venue);
+
+    let showMeData = JSON.parse(showData[2].Venue);
     console.log(showMeData);
 
     document.getElementById('data-view').innerText = showMeData;
