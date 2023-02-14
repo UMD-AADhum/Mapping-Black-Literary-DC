@@ -26,8 +26,8 @@ function showData(result) {
 
     let mbldcData = result.data;
     console.log(mbldcData);
-    console.log(mbldcData[2].venue);
-    console.log(JSON.parse(mbldcData[2].venue));
+    console.log(mbldcData[2].Venue);
+    console.log(JSON.parse(mbldcData[2].Venue));
 
     let showMeData = JSON.parse(result.data);
 
