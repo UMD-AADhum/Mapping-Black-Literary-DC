@@ -24,16 +24,15 @@ Papa.parse(mbldcGSheetURL, {
 function showData(result) {
     console.log(result.data);
 
-    let mbldcData = result.data;
-    console.log(mbldcData);
+    let rawData = result.data;
+    console.log(rawData);
 
+    let parsedData = JSON.parse(rawData);
+    console.log(parsedData);
+    console.log(parsedData[2].Venue);
 
-   // let showData = JSON.parse(result.data);
-    console.log(showData);
-    console.log(showData[2].Venue);
-
-    let showMeData = JSON.parse(showData[2].Venue);
-    console.log(showMeData);
+    let pageDataTest = parsedData[2].Venue;
+    console.log(pageDataTest);
 
     document.getElementById('data-view').innerText = showMeData;
 };
