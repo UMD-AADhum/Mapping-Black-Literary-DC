@@ -36,7 +36,7 @@ function showData(result) {
     //console.log(rawData);
     console.log(rawData[2].Venue);
 
-    let pageDataTest = rawData;
+    let pageDataTest = rawData[2].Venue;
 
     console.log(pageDataTest);
 
