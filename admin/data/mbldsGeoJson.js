@@ -27,16 +27,18 @@ function showData(result) {
     let rawData = result.data;
     console.log(rawData);
 
-  //  let parsedData = JSON.parse(rawData);
-    let parsedData = rawData;
+  //  let parsedData = rawData;
 
-    console.log(parsedData);
-    console.log(parsedData[2].Venue);
+    //console.log(parsedData);
+    //console.log(parsedData[2].Venue);
+    //let pageDataTest = parsedData[2].Venue;
 
-    let pageDataTest = parsedData[2].Venue;
+    //console.log(rawData);
+    console.log(rawData[2].Venue);
+
+    let pageDataTest = rawData;
+
     console.log(pageDataTest);
-
- //   pageDataTest = document.getElementById('data-view').innerText;
 
     document.getElementById('data-view').innerText = pageDataTest;
 };
