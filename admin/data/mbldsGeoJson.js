@@ -36,5 +36,7 @@ function showData(result) {
     let pageDataTest = parsedData[2].Venue;
     console.log(pageDataTest);
 
-    document.getElementById('data-view').innerText = pageDataTest;
+    pageDataTest = document.getElementById('data-view').innerText;
+
+   // document.getElementById('data-view').innerText = pageDataTest;
 };
