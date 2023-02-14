@@ -27,7 +27,9 @@ function showData(result) {
     let rawData = result.data;
     console.log(rawData);
 
-    let parsedData = JSON.parse(rawData);
+  //  let parsedData = JSON.parse(rawData);
+    let parsedData = rawData;
+
     console.log(parsedData);
     console.log(parsedData[2].Venue);
 
