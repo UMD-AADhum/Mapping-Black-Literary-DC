@@ -38,36 +38,38 @@ function showData(result) {
     let geoJSON = {
         type: "FeatureCollection",
         features: [],
-      };
+    };
+
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        
+    }
       
-      for (i = 0; i < rawData.length; i++) {
-        if (window.CP.shouldStopExecution(1)) {
-          break;
-        }
+    for (let i = 0; i < rawData.length; i++) {
         geoJSON.features.push({
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [rawData[i].Longitude, rawData[i].Latitude]
-          },
-          "properties": {
-            "id": rawData[i].UID,
-            "Venue": rawData[i].Venue,
-            "venueType": rawData[i].venueType,
-            "Address": rawData[i].Address,
-            "popupContent": rawData[i].Address
-          }
+            "type": "Feature",
+            
+            "geometry": {
+                "type": "Point",
+                "coordinates": [rawData[i].Longitude, rawData[i].Latitude]
+                },
+            
+            "properties": {
+                "id": rawData[i].UID,
+                "Venue": rawData[i].Venue,
+                "venueType": rawData[i].venueType,
+                "Address": rawData[i].Address,
+                "popupContent": rawData[i].Address
+                }
         });
-      };
+    };
     
-      console.log(geoJSON);
-      
-      window.CP.exitedLoop(1);
-      
-      document.getElementById('json').innerHTML = JSON.stringify(rawData, null, 2);
-      document.getElementById('geo-json').innerHTML = JSON.stringify(geoJSON, null, 2);
+    console.log(geoJSON);
+
+    document.getElementById('json').innerHTML = JSON.stringify(rawData, null, 2);
+    document.getElementById('geo-json').innerHTML = JSON.stringify(geoJSON, null, 2);
     
 };
  
 console.log(rawData);
-
+console.log(geoJSON);
