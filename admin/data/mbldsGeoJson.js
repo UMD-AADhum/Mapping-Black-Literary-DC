@@ -46,15 +46,15 @@ function showData(result) {
             
             "geometry": {
                 "type": "Point",
-                "coordinates": [rawData[i].Longitude, rawData[i].Latitude]
+                "coordinates": [rawData[i].long, rawData[i].lat]
                 },
             
             "properties": {
-                "id": rawData[i].UID,
-                "Venue": rawData[i].Venue,
+                "id": rawData[i].uid,
+                "Venue": rawData[i].venue,
                 "venueType": rawData[i].venueType,
-                "Address": rawData[i].Address,
-                "popupContent": rawData[i].Address
+                "Address": rawData[i].address,
+                "popupContent": rawData[i].venue + "<br>" + rawData[i].address
                 }
         });
     };
