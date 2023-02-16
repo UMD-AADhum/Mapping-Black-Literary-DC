@@ -43,7 +43,7 @@ function showData(result) {
         features: [],
     };
       
-    for (let index = 0; i < rawData.length; index++) {
+    for (let index = 0; index < rawData.length; index++) {
         geoJSON.features.push({
             "type": "Feature",
             
