@@ -56,7 +56,7 @@ function showData(result) {
     console.log(geoJSON);
 
     document.getElementById('json').innerHTML = JSON.stringify(rawData, null, 2);
-    document.getElementById('geo-json').innerHTML = JSON.stringify(geoJSON, ["type", "geometry", "properties"], 4);
+    document.getElementById('geo-json').innerHTML = JSON.stringify(geoJSON, null, 4);
     
 };
  
