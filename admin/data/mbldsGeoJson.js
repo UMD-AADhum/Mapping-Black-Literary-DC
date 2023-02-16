@@ -27,18 +27,43 @@ function showData(result) {
     let rawData = result.data;
     console.log(rawData);
 
-  //  let parsedData = rawData;
-
-    //console.log(parsedData);
-    //console.log(parsedData[2].Venue);
-    //let pageDataTest = parsedData[2].Venue;
-
-    //console.log(rawData);
     console.log(rawData[2].Venue);
 
     let pageDataTest = rawData[2].Venue;
 
     console.log(pageDataTest);
 
-    document.getElementById('data-view').innerText = pageDataTest;
+    document.getElementById('papa-parse-connected').innerText = pageDataTest;
 };
+
+let geoJSON = {
+    type: "FeatureCollection",
+    features: [],
+  };
+  
+  for (i = 0; i < rawData.length; i++) {
+    if (window.CP.shouldStopExecution(1)) {
+      break;
+    }
+    geoJSON.features.push({
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [rawData[i].Longitude, rawData[i].Latitude]
+      },
+      "properties": {
+        "id": rawData[i].UID,
+        "Venue": rawData[i].Venue,
+        "venueType": rawData[i].venueType,
+        "Address": rawData[i].Address,
+        "popupContent": rawData[i].Address
+      }
+    });
+  };
+
+  console.log(geoJSON);
+  
+  window.CP.exitedLoop(1);
+  
+  document.getElementById('json').innerHTML = JSON.stringify(rawData, null, 2);
+  document.getElementById('geo-json').innerHTML = JSON.stringify(geoJSON, null, 2);
