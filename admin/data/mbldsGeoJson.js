@@ -13,6 +13,9 @@ console.log("mbldsGeoJson is connected")
 // 2. click 'File' > 'Share' > 'Publish to the web'
 // 3. under 'link' tab, click 'webpage' dropdown and select CSV file from the menu
 // 4. copy & paste link below
+
+
+
 let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRxFiZnGjdcfvbRu2SaYPWrGaXe4OY9_oaWCItPVET6ZhlFpYBB8rUTJ0SIwaO37l5z5PLfza2n5K7w/pub?output=csv";
 
 Papa.parse(mbldcGSheetURL, {
@@ -27,9 +30,9 @@ function showData(result) {
     let rawData = result.data;
     console.log(rawData);
 
-    console.log(rawData[2].Venue);
+    console.log(rawData[2].venue);
 
-    let pageDataTest = rawData[2].Venue;
+    let pageDataTest = rawData[2].venue;
 
     console.log(pageDataTest);
 
@@ -40,21 +43,21 @@ function showData(result) {
         features: [],
     };
       
-    for (let i = 0; i < rawData.length; i++) {
+    for (let index = 0; i < rawData.length; index++) {
         geoJSON.features.push({
             "type": "Feature",
             
             "geometry": {
                 "type": "Point",
-                "coordinates": [rawData[i].long, rawData[i].lat]
+                "coordinates": [rawData[index].long, rawData[index].lat]
                 },
             
             "properties": {
-                "id": rawData[i].uid,
-                "Venue": rawData[i].venue,
-                "venueType": rawData[i].venueType,
-                "Address": rawData[i].address,
-                "popupContent": rawData[i].venue + "<br>" + rawData[i].address
+                "id": rawData[index].uid,
+                "Venue": rawData[index].venue,
+                "venueType": rawData[index].venueType,
+                "Address": rawData[index].address,
+                "popupContent": rawData[index].venue + "<br>" + rawData[index].address
                 }
         });
     };
