@@ -1,4 +1,4 @@
-console.log("mbldsGeoJson is connected")
+console.log("data-return.js is connected")
 // a. script pulls csv data from Google Sheet to json with papa parse
 //>>>>> ~# show json on test-data.html #~
 // b. adds json to mbldsGeoJson.js
