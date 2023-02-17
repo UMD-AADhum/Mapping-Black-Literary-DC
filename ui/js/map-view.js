@@ -38,7 +38,7 @@ L.control.scale({imperial: true, metric: true}).addTo(map);
 }; */
 
 // geoJSON
-L.geoJSON(geoJSON.features).addTo(map);
+L.geoJSON(geoJSON).addTo(map);
 
 // >>>>> LEAFLET MAP OVERLAY
 
