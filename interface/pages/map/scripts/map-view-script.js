@@ -1,5 +1,5 @@
-console.log("map.js connected")
-console.log(mapPoints[1][4]);
+console.log("map-view-script.js connected")
+console.log(geoJSON);
 
 // >>>>> LEAFLET.JS MAP 
 
@@ -21,7 +21,7 @@ L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
 L.control.scale({imperial: true, metric: true}).addTo(map);
 
 // *5 - add map points: loop through mapPoints array to add map points to leaflet map
- for (let index = 0; index < mapPoints.length; index++) {
+/*  for (let index = 0; index < mapPoints.length; index++) {
     // a. store mapPoints data in variable
     let lat = mapPoints[index][2];
     let lon = mapPoints[index][3];
@@ -34,7 +34,10 @@ L.control.scale({imperial: true, metric: true}).addTo(map);
     // c. add marker to DOM map
     map.addLayer(pointMarker);
     pointMarker.bindPopup(popup);
-}
+}; */
+
+// geoJSON
+L.geoJSON(geoJSON).addTo(map);
 
 // >>>>> LEAFLET MAP OVERLAY
 
