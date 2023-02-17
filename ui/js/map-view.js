@@ -1,5 +1,6 @@
-console.log("map-view-script.js connected")
+ console.log("map-view-script.js connected")
 console.log(geoJSON);
+console.log(geoJSON.features);
 
 // >>>>> LEAFLET.JS MAP 
 
