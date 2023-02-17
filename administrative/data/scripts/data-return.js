@@ -16,8 +16,10 @@ console.log("mbldsGeoJson is connected")
 
 let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRxFiZnGjdcfvbRu2SaYPWrGaXe4OY9_oaWCItPVET6ZhlFpYBB8rUTJ0SIwaO37l5z5PLfza2n5K7w/pub?output=csv";
 
-let rawData = [];
-let geoJSON = [];
+let geoJSON = {
+    type: "FeatureCollection",
+    features: [],
+};
 
 Papa.parse(mbldcGSheetURL, {
     download: true,
@@ -31,11 +33,6 @@ function showData(result) {
 
     let rawData = result.data;
     console.log(rawData);
-
-    let geoJSON = {
-        type: "FeatureCollection",
-        features: [],
-    };
       
     for (let index = 0; index < rawData.length; index++) {
         geoJSON.features.push({
@@ -63,5 +60,5 @@ function showData(result) {
     
 };
  
-console.log(rawData);
+// console.log(rawData);
 console.log(geoJSON);
