@@ -41,7 +41,7 @@ L.control.scale({imperial: true, metric: true}).addTo(map);
 // L.geoJSON(geoJSON).addTo(map);
 
 let pointsLayer = L.geoJSON().addTo(map);
-pointsLayer.addData(geoJSON);
+pointsLayer.addData(geoJSON.features[index]);
 
 // >>>>> LEAFLET MAP OVERLAY
 
