@@ -29,10 +29,7 @@ Papa.parse(mbldcGSheetURL, {
 
 function showData(result) {
 
-   // console.log(result.data);
-
     let rawData = result.data;
-  //  console.log(rawData);
       
     for (let index = 0; index < rawData.length; index++) {
         geoJSON.features.push({
@@ -52,13 +49,6 @@ function showData(result) {
                 }
         });
     };
-    
-  //  console.log(geoJSON);
-
-    document.getElementById('json').innerHTML = JSON.stringify(rawData, null, 2);
-    document.getElementById('geo-json').innerHTML = JSON.stringify(geoJSON, null, 4);
-    
 };
  
-// console.log(rawData);
 console.log(geoJSON);

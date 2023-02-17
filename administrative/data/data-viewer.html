@@ -34,26 +34,11 @@
                 <br>
                 <div class="row">
                     <div class="col">
-                        <h5>Viewing Google Sheets data:</h5>
+                        <h5>Google Sheets Data as GeoJSON</h5>
                     </div>
                 </div>
             </div>
         </div>
-
-        <br>
-        <br>
-
-        <!-- JSON -->
-        <div class="row">
-            <div class="col">
-                <div>
-                    <h6>JSON</h6>
-                    <div id="json"></div>
-                </div>
-            </div>
-        </div>
-
-        <br>
         
         <!-- GeoJSON -->
         <div class="row">
@@ -69,5 +54,9 @@
 
     <!-- data return script -->
     <script src="./scripts/data-return.js"></script>
+
+    <script>
+        document.getElementById('geo-json').innerHTML = JSON.stringify(geoJSON, null, 4);
+    </script>
 </body>
 </html>
