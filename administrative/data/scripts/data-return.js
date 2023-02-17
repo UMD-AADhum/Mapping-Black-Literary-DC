@@ -16,6 +16,9 @@ console.log("mbldsGeoJson is connected")
 
 let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRxFiZnGjdcfvbRu2SaYPWrGaXe4OY9_oaWCItPVET6ZhlFpYBB8rUTJ0SIwaO37l5z5PLfza2n5K7w/pub?output=csv";
 
+let rawData = [];
+let geoJSON = [];
+
 Papa.parse(mbldcGSheetURL, {
     download: true,
     header: true,
