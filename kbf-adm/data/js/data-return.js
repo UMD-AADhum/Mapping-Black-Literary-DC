@@ -49,7 +49,9 @@ function showData(result) {
                 }
         });
     };
+    console.log(geoJSON);
+    document.getElementById('geo-json').innerHTML = JSON.stringify(geoJSON, null, 2);
 };
  
 console.log(geoJSON);
-document.getElementById('geo-json').innerHTML = JSON.stringify(geoJSON, null, 2);
+
