@@ -59,7 +59,7 @@
     <script>
 
 console.log(geoJSON);
-document.getElementById('geo-json').innerHTML = JSON.stringify(geoJSON, null, 2);
+document.getElementById('geo-json').innerHTML = JSON.stringify(geoJSON.features, null, 2);
 
 /* function showGeoJSON() {
     for (let index = 0; index < geoJSON.features.length; index++) {
