@@ -49,11 +49,10 @@ function showData(result) {
                 }
         });
     };
-    console.log(geoJSON);
-    document.getElementById('geo-json').innerHTML = JSON.stringify(geoJSON, null, 2);
-    L.geoJSON(geoJSON).addTo(map);
+    /* console.log(geoJSON);
+    L.geoJSON(geoJSON).addTo(map); */
 
 };
  
-console.log(geoJSON);
+
 
