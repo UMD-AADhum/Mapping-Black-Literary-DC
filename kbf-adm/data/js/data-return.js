@@ -1,9 +1,8 @@
 console.log("data-return.js is connected")
 // a. script pulls csv data from Google Sheet to json with papa parse
-//>>>>> ~# show json on test-data.html #~
 // b. adds json to mbldsGeoJson.js
-//>>>>> ~# show geojson on test-data.html #~
-// = c. return geojson to map as points on map.js page
+
+// = c. return geojson to map as points on map.js page & shows geojson on geojson-view.html
 
 // A - papa parse data return
 // * this function returns MBLDC CSV data uploaded via Google Sheets share link as JSON 
