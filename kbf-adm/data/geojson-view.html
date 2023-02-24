@@ -61,11 +61,16 @@ console.log(geoJSON);
 // let geoJSONFeatures = JSON.stringify(geoJSON, null, 2);
 // let geoJSONReturn = document.getElementById('geo-json').innerHTML;
 
-for (let index = 0; index < geoJSON.features.length; index++) {
+function showGeoJSON() {
+    for (let index = 0; index < geoJSON.features.length; index++) {
     let geoJSONString = JSON.stringify(geoJSON.features[index], null, 2);
     console.log(geoJSONString);
     document.getElementById("geo-json").innerHTML = geoJSONString;
 }
+};
+showGeoJSON();
+
+
 
     </script>
 
