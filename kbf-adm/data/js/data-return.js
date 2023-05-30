@@ -31,7 +31,7 @@ L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
 L.control.scale({imperial: true, metric: true}).addTo(map);
 
 
-let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=397357141&single=true&output=csv";
+let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=397357141&single=true&output=csv ";
 
 let geoJSON = {
     type: "FeatureCollection",
@@ -58,11 +58,11 @@ function showData(result) {
                 },
             
             "properties": {
-                "id": rawData[index].uid,
-                "Venue": rawData[index].venue,
+                "id": rawData[index].venueUID,
+                "Venue": rawData[index].venueName,
                 "venueType": rawData[index].venueType,
                 "Address": rawData[index].address,
-                "popupContent": rawData[index].venue + "<br>" + rawData[index].address
+                "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType
                 }
         });
     };
