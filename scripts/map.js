@@ -1,4 +1,4 @@
-console.log("data-return.js is connected")
+console.log("map.js is connected")
 // a. script pulls csv data from Google Sheet to json with papa parse
 // b. adds json to mbldsGeoJson.js
 
@@ -106,7 +106,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
 
 // >>>>> LEAFLET MAP OVERLAY
 
-let wmataOverImg = "./ui/av/img/maps/wmata-map-495.png";
+let wmataOverImg = "./elements/img/maps/wmata-map-495.png";
 let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
 let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
 
@@ -161,7 +161,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     // create card img & store mapPoints img tag
     let cardImg = document.createElement("img");
     cardImg.className = "card-img-top";
-    cardImg.setAttribute("src", "./../av/img/arch/MBLDC Thumbnails/" + geoJSON.features.properties.imgUID[index]);
+    cardImg.setAttribute("src", "./elements/img/arch/thumbnails/" + geoJSON.features.properties.imgUID[index]);
 
     // create card audio & store mapPoints data
     /* let cardAudio = document.createElement("audio");
