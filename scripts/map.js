@@ -71,59 +71,9 @@ function showData(result) {
     console.log(geoJSON);
     L.geoJSON(geoJSON).addTo(map);
 
-};
- 
-
-// >>>>> LEAFLET.JS MAP 
 
 
-
-// *5 - add map points: loop through mapPoints array to add map points to leaflet map
-/*  for (let index = 0; index < mapPoints.length; index++) {
-    // a. store mapPoints data in variable
-    let lat = mapPoints[index][2];
-    let lon = mapPoints[index][3];
-    let popup = mapPoints[index][0] + "<br>" + "Address: " + mapPoints[index][1];
-    
-    // b. create map marker from var data
-    let pointLoc = new L.LatLng(lat, lon);
-    let pointMarker = new L.Marker(pointLoc);
-    
-    // c. add marker to DOM map
-    map.addLayer(pointMarker);
-    pointMarker.bindPopup(popup);
-}; */
-
-// geoJSON
-// L.geoJSON(geoJSON).addTo(map);
-
-/*  let pointsLayer = L.geoJSON().addTo(map);
-
-for (let index = 0; index < geoJSON.features.length; index++) {
-   // L.geoJSON(geoJSON.features[index]).addTo(map); 
-    pointsLayer.addData(geoJSON.features[index]);
-}; */
-
-// >>>>> LEAFLET MAP OVERLAY
-
-let wmataOverImg = "./elements/img/maps/wmata-map-495.png";
-let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
-let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
-
-let imageOverlay = L.imageOverlay(wmataOverImg , wmataOverBounds, {
-    errorOverlayUrl: errorOverlayImg,
-    opacity: .5,
-    interactive: true
-}).addTo(map); 
-
-
-
-
-
-
-// >>>>> MAP LISTING CARDS
-// *1 - grab mapCards div from DOM
-let mapCards = document.getElementById("map-cards");
+    let mapCards = document.getElementById("map-cards");
 
 // *2 - loop through mapPoints to create and add listing card for each
 for (let index = 0; index < geoJSON.features.length; index++) {
@@ -201,3 +151,56 @@ for (let index = 0; index < geoJSON.features.length; index++) {
   //  mapCards.appendChild(cardCol);
     mapCards.append(card);
 };
+
+};
+ 
+
+// >>>>> LEAFLET.JS MAP 
+
+
+
+// *5 - add map points: loop through mapPoints array to add map points to leaflet map
+/*  for (let index = 0; index < mapPoints.length; index++) {
+    // a. store mapPoints data in variable
+    let lat = mapPoints[index][2];
+    let lon = mapPoints[index][3];
+    let popup = mapPoints[index][0] + "<br>" + "Address: " + mapPoints[index][1];
+    
+    // b. create map marker from var data
+    let pointLoc = new L.LatLng(lat, lon);
+    let pointMarker = new L.Marker(pointLoc);
+    
+    // c. add marker to DOM map
+    map.addLayer(pointMarker);
+    pointMarker.bindPopup(popup);
+}; */
+
+// geoJSON
+// L.geoJSON(geoJSON).addTo(map);
+
+/*  let pointsLayer = L.geoJSON().addTo(map);
+
+for (let index = 0; index < geoJSON.features.length; index++) {
+   // L.geoJSON(geoJSON.features[index]).addTo(map); 
+    pointsLayer.addData(geoJSON.features[index]);
+}; */
+
+// >>>>> LEAFLET MAP OVERLAY
+
+let wmataOverImg = "./elements/img/maps/wmata-map-495.png";
+let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
+let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
+
+let imageOverlay = L.imageOverlay(wmataOverImg , wmataOverBounds, {
+    errorOverlayUrl: errorOverlayImg,
+    opacity: .3,
+    interactive: true
+}).addTo(map); 
+
+
+
+
+
+
+// >>>>> MAP LISTING CARDS
+// *1 - grab mapCards div from DOM
