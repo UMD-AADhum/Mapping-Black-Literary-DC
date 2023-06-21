@@ -71,23 +71,19 @@ function showData(result) {
         });
     };
     console.log(geoJSON);
-    console.log(geoJSON.features);
     L.geoJSON(geoJSON).addTo(map);
 
 // *2 - loop through mapPoints to create and add listing card for each
 for (let index = 0; index < geoJSON.features.length; index++) {
-    console.log(geoJSON.features);
-
+   
     // a. create card column to go in DOM map-cards row
-    let cardCol = document.createElement("div");
-    cardCol.className = "col";
+    // let cardCol = document.createElement("div");
+    // cardCol.className = "col";
 
     // b. create card element
     let card = document.createElement("div");
     // card.className = "card grid-item";
     card.className = "card";
-
-    console.log(card);
 
     // set card ID
     card.setAttribute("id", geoJSON.features[index].properties.id);
@@ -139,7 +135,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     cardModalBtn.setAttribute("data-bs-target", "#mainModal");
     cardModalBtn.innerText = "modal btn"; */
 
-    // f. append card elements to card; append card to card column
+    // f. append card elements to card; 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardCat);
     cardBody.appendChild(cardText);
@@ -149,12 +145,8 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     card.appendChild(cardImg);
     card.appendChild(cardBody);
     
-   // console.log(card);
 
-   // cardCol.appendChild(card);
-    
-    // g. append card column to DOM card row div
-  //  mapCards.appendChild(cardCol);
+    // g. append card to DOM card row div
     mapCards.append(card);
 };
 
