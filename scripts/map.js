@@ -142,7 +142,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardCat);
     cardBody.appendChild(cardText);
-    cardBody.appendChild(cardModalBtn);
+    // cardBody.appendChild(cardModalBtn);
     cardBody.appendChild(cardExtUrl);
     cardBody.appendChild(cardAudio);
     card.appendChild(cardImg);
