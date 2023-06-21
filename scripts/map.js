@@ -71,7 +71,7 @@ function showData(result) {
         });
     };
     console.log(geoJSON);
-    L.geoJSON(geoJSON).addTo(map).bindPopup(geoJSON.features[index].properties.popupContent);
+    L.geoJSON(geoJSON).addTo(map).bindPopup(geoJSON.features.properties.popupContent);
 
 // *2 - loop through mapPoints to create and add listing card for each
 for (let index = 0; index < geoJSON.features.length; index++) {
@@ -145,3 +145,16 @@ let imageOverlay = L.imageOverlay(wmataOverImg , wmataOverBounds, {
     opacity: .3,
     interactive: true
 }).addTo(map); 
+
+
+// scrollIntoView buttons
+
+function scrollIntoViewPoint() {
+    let scrollPoint = document.getElementById(geoJSON.features[index].properties.id);
+    scrollPoint.scrollIntoView()
+}
+
+function scrollIntoViewCard() {
+    let scrollCard = document.getElementById(geoJSON.features[index].properties.id);
+    scrollCard.scrollIntoView()
+}
