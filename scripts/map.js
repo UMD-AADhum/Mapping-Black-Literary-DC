@@ -64,14 +64,14 @@ function showData(result) {
                 "venueName": rawData[index].venueName,
                 "venueType": rawData[index].venueType,
                 "address": rawData[index].address,
-                "popupContent": rawData[index].venueName + rawData[index].address + rawData[index].venueType,
+                "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType + "<button>Card</button>",
                 "extURL" : rawData[index].extURL,
                 "imgUID" : rawData[index].imgUID
                 }
         });
     };
     console.log(geoJSON);
-    L.geoJSON(geoJSON).addTo(map).bindPopup("popupContent");
+    L.geoJSON(geoJSON).addTo(map).bindPopup(geoJSON.features[index].properties.popupContent);
 
 // *2 - loop through mapPoints to create and add listing card for each
 for (let index = 0; index < geoJSON.features.length; index++) {
