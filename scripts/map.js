@@ -64,14 +64,14 @@ function showData(result) {
                 "venueName": rawData[index].venueName,
                 "venueType": rawData[index].venueType,
                 "address": rawData[index].address,
-                "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType,
+                "popupContent": rawData[index].venueName + rawData[index].address + rawData[index].venueType,
                 "extURL" : rawData[index].extURL,
                 "imgUID" : rawData[index].imgUID
                 }
         });
     };
     console.log(geoJSON);
-    L.geoJSON(geoJSON).addTo(map);
+    L.geoJSON(geoJSON).addTo(map).bindPopup("popupContent");
 
 // *2 - loop through mapPoints to create and add listing card for each
 for (let index = 0; index < geoJSON.features.length; index++) {
@@ -106,18 +106,12 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     // e. create card text & store mapPoints data
     let cardText = document.createElement("p");
     cardText.className = "card-text"
-    cardText.innerText = geoJSON.features[index].properties.popupContent;
+    cardText.innerText = geoJSON.features[index].properties.address;
 
     // create card img & store mapPoints img tag
     let cardImg = document.createElement("img");
     cardImg.className = "card-img-top";
     cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSON.features[index].properties.imgUID + ".jpg");
-
-    // create card audio & store mapPoints data
-    /* let cardAudio = document.createElement("audio");
-    cardAudio.setAttribute("src", mapPoints[index][6]);
-    cardAudio.setAttribute("onmouseover", "listAudio()"); */
-
 
     // create card link & store mapPoints external links
     let cardExtUrl = document.createElement("a");
@@ -126,22 +120,11 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     cardExtUrl.setAttribute("target", "blank")
     cardExtUrl.innerText = "Visit"
 
-
-    // create modal button
-   /*  let cardModalBtn = document.createElement("button");
-    cardModalBtn.className = "btn btn-primary";
-    cardModalBtn.setAttribute("type","button")
-    cardModalBtn.setAttribute("data-bs-toggle","modal");
-    cardModalBtn.setAttribute("data-bs-target", "#mainModal");
-    cardModalBtn.innerText = "modal btn"; */
-
     // f. append card elements to card; 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardCat);
     cardBody.appendChild(cardText);
-    // cardBody.appendChild(cardModalBtn);
     cardBody.appendChild(cardExtUrl);
-   // cardBody.appendChild(cardAudio);
     card.appendChild(cardImg);
     card.appendChild(cardBody);
     
@@ -151,39 +134,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
 };
 
 };
- 
 
-// >>>>> LEAFLET.JS MAP 
-
-
-
-// *5 - add map points: loop through mapPoints array to add map points to leaflet map
-/*  for (let index = 0; index < mapPoints.length; index++) {
-    // a. store mapPoints data in variable
-    let lat = mapPoints[index][2];
-    let lon = mapPoints[index][3];
-    let popup = mapPoints[index][0] + "<br>" + "Address: " + mapPoints[index][1];
-    
-    // b. create map marker from var data
-    let pointLoc = new L.LatLng(lat, lon);
-    let pointMarker = new L.Marker(pointLoc);
-    
-    // c. add marker to DOM map
-    map.addLayer(pointMarker);
-    pointMarker.bindPopup(popup);
-}; */
-
-// geoJSON
-// L.geoJSON(geoJSON).addTo(map);
-
-/*  let pointsLayer = L.geoJSON().addTo(map);
-
-for (let index = 0; index < geoJSON.features.length; index++) {
-   // L.geoJSON(geoJSON.features[index]).addTo(map); 
-    pointsLayer.addData(geoJSON.features[index]);
-}; */
-
-// >>>>> LEAFLET MAP OVERLAY
 
 let wmataOverImg = "./elements/img/maps/wmata-map-495.png";
 let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
@@ -194,11 +145,3 @@ let imageOverlay = L.imageOverlay(wmataOverImg , wmataOverBounds, {
     opacity: .3,
     interactive: true
 }).addTo(map); 
-
-
-
-
-
-
-// >>>>> MAP LISTING CARDS
-// *1 - grab mapCards div from DOM
