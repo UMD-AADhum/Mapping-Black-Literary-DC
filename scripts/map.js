@@ -89,7 +89,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     console.log(card);
 
     // set card ID
-    card.setAttribute("id", geoJSON.features.properties.id[index]);
+    card.setAttribute("id", geoJSON.features[index].properties.id);
     console.log(card.id);
 
     // c. create card body
@@ -99,22 +99,22 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     // d. create card title & store mapPoints data
     let cardTitle = document.createElement("h5");
     cardTitle.className = "card-title"
-    cardTitle.innerText = geoJSON.features.properties.venueName[index];
+    cardTitle.innerText = geoJSON.features[index].properties.venueName;
 
     // create card category & store mapPoints data
     let cardCat = document.createElement("h6")
     cardCat.className = "card-subtitle";
-    cardCat.innerText = geoJSON.features.properties.venueType[index];
+    cardCat.innerText = geoJSON.features[index].properties.venueType;
 
     // e. create card text & store mapPoints data
     let cardText = document.createElement("p");
     cardText.className = "card-text"
-    cardText.innerText = geoJSON.features.properties.popupContent;
+    cardText.innerText = geoJSON.features[index].properties.popupContent;
 
     // create card img & store mapPoints img tag
     let cardImg = document.createElement("img");
     cardImg.className = "card-img-top";
-    cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSON.features.properties.imgUID[index]);
+    cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSON.features[index].properties.imgUID);
 
     // create card audio & store mapPoints data
     /* let cardAudio = document.createElement("audio");
