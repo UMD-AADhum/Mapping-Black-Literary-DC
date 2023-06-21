@@ -71,10 +71,13 @@ function showData(result) {
         });
     };
     console.log(geoJSON);
+    console.log(geoJSON.features);
     L.geoJSON(geoJSON).addTo(map);
 
 // *2 - loop through mapPoints to create and add listing card for each
 for (let index = 0; index < geoJSON.features.length; index++) {
+    console.log(geoJSON.features);
+
     // a. create card column to go in DOM map-cards row
     let cardCol = document.createElement("div");
     cardCol.className = "col";
@@ -82,6 +85,8 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     // b. create card element
     let card = document.createElement("div");
     card.className = "card grid-item";
+
+    console.log(card);
 
     // set card ID
     card.setAttribute("id", geoJSON.features.properties.id[index]);
@@ -143,7 +148,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     card.appendChild(cardImg);
     card.appendChild(cardBody);
     
-    console.log(card);
+   // console.log(card);
 
    // cardCol.appendChild(card);
     
