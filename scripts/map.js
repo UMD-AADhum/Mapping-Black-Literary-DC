@@ -71,7 +71,7 @@ function showData(result) {
         });
     };
     console.log(geoJSON);
-    L.geoJSON(geoJSON).addTo(map).bindPopup(geoJSON.features.properties.popupContent);
+    L.geoJSON(geoJSON).addTo(map).bindPopup(geoJSON.features.properties.popupContent.innerText);
 
 // *2 - loop through mapPoints to create and add listing card for each
 for (let index = 0; index < geoJSON.features.length; index++) {
@@ -150,7 +150,9 @@ let imageOverlay = L.imageOverlay(wmataOverImg , wmataOverBounds, {
 // scrollIntoView buttons
 
 function scrollIntoViewPoint() {
-    let scrollPoint = document.getElementById(geoJSON.features[index].properties.id);
+    let scrollPointID = this.properties.id;
+    console.log(scrollPointID);
+    let scrollPoint = document.getElementById(scrollPointID);
     scrollPoint.scrollIntoView()
 }
 
