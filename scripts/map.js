@@ -71,7 +71,7 @@ function showData(result) {
         });
     };
     console.log(geoJSON);
-    L.geoJSON(geoJSON).addTo(map).bindPopup(geoJSON.features.properties.popupContent.innerText);
+    L.geoJSON(geoJSON).addTo(map).bindPopup("content - fix");
 
 // *2 - loop through mapPoints to create and add listing card for each
 for (let index = 0; index < geoJSON.features.length; index++) {
