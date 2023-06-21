@@ -9,3 +9,62 @@ h1 {
 h6 {
     color: blueviolet;
   }
+
+a {
+    color: red;
+}
+
+/* Container holding the image and the text */
+.container {
+    position: relative;
+    text-align: left;
+    color: red;
+    font-weight: bold;
+  }
+
+  /* Top left text */
+.top-left {
+    position: absolute;
+    top: 300px;
+    left: 10px;
+    width: 25px;
+    }
+      
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 300px;
+    left: 16px;
+    width: 25px;
+
+  }
+  
+/* Centered text */
+  .centered {
+    position: absolute;
+    top: 900px;
+    left: 600px;
+    width: 500px;
+
+  }
+  
+  /* Top right text */
+  .top-right {
+    position: absolute;
+    top: 125px;
+    right: 16px;
+
+
+
+  }
+  
+  /* Bottom right text */
+  .bottom-right {
+    position: absolute;
+    bottom: 250px;
+    right: 16px;
+    width: 25px;
+
+  }
+  
+  
