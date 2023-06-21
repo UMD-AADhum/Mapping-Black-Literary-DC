@@ -114,7 +114,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     // create card img & store mapPoints img tag
     let cardImg = document.createElement("img");
     cardImg.className = "card-img-top";
-    cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSON.features[index].properties.imgUID);
+    cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSON.features[index].properties.imgUID + ".jpg");
 
     // create card audio & store mapPoints data
     /* let cardAudio = document.createElement("audio");
