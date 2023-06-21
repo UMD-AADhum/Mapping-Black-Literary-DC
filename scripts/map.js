@@ -13,6 +13,8 @@ console.log("map.js is connected")
 // 3. under 'link' tab, click 'webpage' dropdown and select CSV file from the menu
 // 4. copy & paste link below
 
+let mapCards = document.getElementById("map-cards");
+
 // *1 - grab map div from DOM
 pageMap = document.getElementById("map");
 
@@ -71,10 +73,6 @@ function showData(result) {
     console.log(geoJSON);
     L.geoJSON(geoJSON).addTo(map);
 
-
-
-    let mapCards = document.getElementById("map-cards");
-
 // *2 - loop through mapPoints to create and add listing card for each
 for (let index = 0; index < geoJSON.features.length; index++) {
     // a. create card column to go in DOM map-cards row
@@ -111,7 +109,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     // create card img & store mapPoints img tag
     let cardImg = document.createElement("img");
     cardImg.className = "card-img-top";
-    cardImg.setAttribute("src", "./elements/img/arch/thumbnails/" + geoJSON.features.properties.imgUID[index]);
+    cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSON.features.properties.imgUID[index]);
 
     // create card audio & store mapPoints data
     /* let cardAudio = document.createElement("audio");
@@ -145,6 +143,8 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     card.appendChild(cardImg);
     card.appendChild(cardBody);
     
+    console.log(card);
+
    // cardCol.appendChild(card);
     
     // g. append card column to DOM card row div
