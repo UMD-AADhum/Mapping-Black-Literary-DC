@@ -125,7 +125,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     // create card link & store mapPoints external links
     let cardExtUrl = document.createElement("a");
     cardExtUrl.className = "btn btn-primary";
-    cardExtUrl.setAttribute("href", geoJSON.features.properties.extURL);
+    cardExtUrl.setAttribute("href", geoJSON.features[index].properties.extURL);
     cardExtUrl.setAttribute("target", "blank")
     cardExtUrl.innerText = "Visit"
 
