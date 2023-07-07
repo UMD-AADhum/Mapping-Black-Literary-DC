@@ -136,6 +136,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     let cardImg = document.createElement("img");
     cardImg.className = "card-img-top";
     cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSON.features[index].properties.imgUID + ".jpg");
+    cardImg.setAttribute("alt", geoJSON.features[index].properties.altText);
 
 // >>>>> create card link & store geoJSON external links
     let cardExtUrl = document.createElement("a");
