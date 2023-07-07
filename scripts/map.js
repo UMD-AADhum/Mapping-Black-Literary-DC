@@ -79,8 +79,8 @@ function showData(result) {
 for (let index = 0; index < geoJSON.features.length; index++) {
    
     // create card column to go in DOM map-cards row
-    // let cardCol = document.createElement("div");
-    // cardCol.className = "col";
+    let cardCol = document.createElement("div");
+    cardCol.className = "col-sm-6 col-lg-4 mb-4";
 
 // >>>>> create card element
     let card = document.createElement("div");
@@ -129,10 +129,11 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     cardBody.appendChild(cardExtUrl);
     card.appendChild(cardImg);
     card.appendChild(cardBody);
+    cardCol.appendChild(card);
     
 
 // >>>>> append card to DOM card row div
-    mapCards.append(card);
+    mapCards.append(cardCol);
 };
 
 // >>> push geoJSON data to map with popup *FIX*    
