@@ -23,3 +23,7 @@ body {
   width: 400px;
   
  }
+
+ #map-card-container {
+  margin: 10px;
+ }

@@ -46,7 +46,6 @@
     <br>
 
 
-
 <!-- ********** FILTER BUTTONS -->
     <div class="row">
       <div class="col">
@@ -80,11 +79,15 @@
       > card grid: masonry [https://masonry.desandro.com/] -->
 
 <!-- >>> map cards masonry  -->
-    <div class="row">
+
+ <div class="container" id="map-card-container">
+      <div class="row">
       <div class="col">
-        <div id="map-cards" class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 300, "gutter" : 25 }'></div>
+        <div id="map-cards" class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200, "gutter" : 10 }'></div>
       </div>
     </div>
+ </div>
+
 
    
 
@@ -104,6 +107,7 @@
       > leaflet.js [https://leafletjs.com/] -->
 
 <!-- > map div -->
+<div class="container" id="map-container"></div>
   <div class="row d-flex justify-content-center">
     <div class="col">
       <div id="map"></div>
