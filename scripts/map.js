@@ -62,6 +62,7 @@ function showData(result) {
                 "id": rawData[index].venueUID,
                 "venueName": rawData[index].venueName,
                 "venueType": rawData[index].venueType,
+                "category": rawData[index].category,
                 "address": rawData[index].address,
                 "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType + "<button>Card</button>",
                 "extURL" : rawData[index].extURL,
@@ -88,8 +89,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
 
 // >>>>> create card element
     let card = document.createElement("div");
-    // card.className = "card grid-item";
-    card.className = "card";
+    card.className = "card " + "filterDiv " + geoJSON.features[index].properties.category;
 
 // >>>>> set card ID
     card.setAttribute("id", geoJSON.features[index].properties.id);
@@ -190,4 +190,53 @@ function scrollIntoViewPoint() {
 function scrollIntoViewCard() {
     let scrollCard = document.getElementById(geoJSON.features[index].properties.id);
     scrollCard.scrollIntoView()
+}
+
+// category filter
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
 }
