@@ -85,7 +85,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
 
 // >>>>> create card element
     let card = document.createElement("div");
-    // card.className = "card grid-item";
+    card.className = "card grid-item";
     card.className = "card";
 
 // >>>>> set card ID
