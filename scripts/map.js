@@ -65,7 +65,11 @@ function showData(result) {
                 "address": rawData[index].address,
                 "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType + "<button>Card</button>",
                 "extURL" : rawData[index].extURL,
-                "imgUID" : rawData[index].imgUID
+                "imgUID" : rawData[index].imgUID,
+                "altText" : rawData[index].altText,
+                "caption" : rawData[index].caption,
+                "captionSource": rawData[index].captionSource,
+                "captionSourceURL" : rawData[index].captionSourceURL
                 }
         });
     };
@@ -106,9 +110,27 @@ for (let index = 0; index < geoJSON.features.length; index++) {
     cardCat.innerText = geoJSON.features[index].properties.venueType;
 
 // >>>>> create card text & store geoJSON data
-    let cardText = document.createElement("p");
-    cardText.className = "card-text"
-    cardText.innerText = geoJSON.features[index].properties.address;
+// >>>>>>> address
+    let cardAddress = document.createElement("p");
+    cardAddress.className = "card-text"
+    cardAddress.innerText = geoJSON.features[index].properties.address;
+
+// >>>>>>> caption
+    let cardCaption = document.createElement("p");
+    cardCaption.className = "card-text"
+    cardCaption.innerText = geoJSON.features[index].properties.caption;
+
+// >>>>>>> caption source
+    let cardCaptionSource = document.createElement("p");
+    cardCaptionSource.className = "card-text"
+    cardCaptionSource.innerText = geoJSON.features[index].properties.captionSource;
+
+// >>>>>>> caption source URL
+    let cardCaptionSourceURL = document.createElement("a");
+    cardCaptionSourceURL.className = "btn btn-primary";
+    cardCaptionSourceURL.setAttribute("href", geoJSON.features[index].properties.captionSourceURL);
+    cardCaptionSourceURL.setAttribute("target", "blank")
+    cardCaptionSourceURL.innerText = "Learn More"
 
 // >>>>> create card img & store geoJSON img tag
     let cardImg = document.createElement("img");
@@ -125,7 +147,10 @@ for (let index = 0; index < geoJSON.features.length; index++) {
 // >>>>> append card elements to card; 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardCat);
-    cardBody.appendChild(cardText);
+    cardBody.appendChild(cardAddress);
+    cardBody.appendChild(cardCaption);
+    cardBody.appendChild(cardCaptionSource);
+    cardBody.appendChild(cardCaptionSourceURL);
     cardBody.appendChild(cardExtUrl);
     card.appendChild(cardImg);
     card.appendChild(cardBody);

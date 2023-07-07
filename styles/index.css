@@ -6,6 +6,10 @@
     font-weight: bold;
 }
 
+a {
+  color: red;
+}
+
 /* Notes */
 #note-1 {
     position: absolute;
