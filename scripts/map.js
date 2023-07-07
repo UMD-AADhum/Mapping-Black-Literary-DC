@@ -71,8 +71,7 @@ function showData(result) {
     };
     // console.log(geoJSON);
 
-// >>> push geoJSON data to map with popup *FIX*    
-    L.geoJSON(geoJSON).addTo(map).bindPopup("content - fix");
+
 
 // > create map cards
 
@@ -135,6 +134,9 @@ for (let index = 0; index < geoJSON.features.length; index++) {
 // >>>>> append card to DOM card row div
     mapCards.append(card);
 };
+
+// >>> push geoJSON data to map with popup *FIX*    
+L.geoJSON(geoJSON).addTo(map).bindPopup("content - fix");
 
 };
 
