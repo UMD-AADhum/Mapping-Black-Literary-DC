@@ -1,70 +1,44 @@
-body {
-    background-color: black;
-}
-
-h1 {
-    color: darkred;
-}
-
-h6 {
-    color: blueviolet;
-  }
-
-a {
-    color: red;
-}
-
 /* Container holding the image and the text */
 .container {
     position: relative;
     text-align: left;
     color: red;
     font-weight: bold;
-  }
+}
 
-  /* Top left text */
-.top-left {
+/* Notes */
+#note-1 {
     position: absolute;
     top: 300px;
     left: 10px;
     width: 25px;
-    }
-      
-  /* Bottom left text */
-  .bottom-left {
+}
+
+#note-2 {
     position: absolute;
     bottom: 300px;
     left: 16px;
     width: 25px;
+}
 
-  }
-  
-/* Centered text */
-  .centered {
+#note-3 {
     position: absolute;
     top: 900px;
     left: 600px;
     width: 500px;
+}
 
-  }
-  
-  /* Top right text */
-  .top-right {
+#note-4 {
     position: absolute;
     top: 125px;
     right: 16px;
+}
 
-
-
-  }
-  
-  /* Bottom right text */
-  .bottom-right {
+#note-5 {
     position: absolute;
     bottom: 250px;
     right: 16px;
     width: 25px;
-
-  }
+}
   
   

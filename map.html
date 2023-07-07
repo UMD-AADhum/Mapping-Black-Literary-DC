@@ -24,9 +24,6 @@
     <!-- global.css : global page styling -->
     <link rel="stylesheet" href="./styles/global.css">
     
-    <!-- index.css : index page styling -->
-    <link rel="stylesheet" href="./styles/index.css">
-    
     <!-- map.css : map page styling -->
     <link rel="stylesheet" href="./styles/map.css">
 
@@ -36,9 +33,9 @@
   <div class="container">
 
 <!-- ********** MAP
-      > leaflet.js [https://leafletjs.com/] -->
+  > leaflet.js [https://leafletjs.com/] -->
 
-<!-- > map div -->
+<!-- >>> map div -->
 <div class="container" id="map-container"></div>
   <div class="row d-flex justify-content-center">
     <div class="col">
@@ -46,7 +43,15 @@
     </div>
   </div>
 
-<!-- ********** FILTER BUTTONS -->
+  <br>
+
+<!-- ********** MAP CARD GRID
+  > cards : bootstrap 5
+  > card grid: masonry [https://masonry.desandro.com/] -->
+
+<div class="container" id="map-card-container">
+
+<!-- >>> filter buttons -->
     <div class="row">
       <div class="col">
         <div class="btn-group d-flex justify-content-center" role="group" aria-label="Basic checkbox toggle button group">
@@ -74,23 +79,16 @@
       </div>
     </div>
 
-<!-- ********** MAP CARDS
-      > cards : bootstrap 5
-      > card grid: masonry [https://masonry.desandro.com/] -->
-
-<!-- >>> map cards masonry  -->
- <div class="container" id="map-card-container">
+<!-- >>> masonry grid map cards -->
       <div class="row" data-masonry='{"percentPosition": true, "gutter" : 10 }' id="map-cards">
     </div>
  </div>
 
 <!-- container end -->
-  </div> 
+</div> 
 
   <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
   <script src="./scripts/map.js"></script>
-  <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
-
     
 </body>
 </html>
