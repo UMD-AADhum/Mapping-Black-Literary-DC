@@ -81,10 +81,10 @@
 <!-- >>> map cards masonry  -->
 
  <div class="container" id="map-card-container">
-      <div class="row">
-      <div class="col">
-        <div id="map-cards" class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200, "gutter" : 10 }'></div>
-      </div>
+      <div class="row" data-masonry='{"percentPosition": true }' id="map-cards">
+      <!-- <div class="col">
+        <div  class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200, "gutter" : 10 }'></div>
+      </div> -->
     </div>
  </div>
 
@@ -117,9 +117,9 @@
 <!-- container end -->
   </div> 
 
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
   <script src="./scripts/map.js"></script>
-  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-  <script src="/path/to/masonry.pkgd.min.js"></script>
+  <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
 
     
 </body>
