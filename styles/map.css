@@ -23,9 +23,6 @@
   margin: 10px;
  }
 
- .container {
-  overflow: hidden;
-}
 
 /* The "show" class is added to the filtered elements */
 .show {
