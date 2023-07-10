@@ -194,38 +194,39 @@ function scrollIntoViewCard() {
 
 // category filter
 filterSelection("all")
-function filterSelection(category) {
-  
-  let x = document.getElementsByClassName("filterDiv");
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
   console.log(x);
-  if (category == "all") category = "";
+  
+  if (c == "all") c = "";
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-  for (index = 0; index < x.length; index++) {
-    w3RemoveClass(x[index], "show");
-    if (x[index].className.indexOf(category) > -1) w3AddClass(x[index], "show");
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
 }
 
 // Show filtered elements
 function w3AddClass(element, name) {
-  
-  let arr1 = element.className.split(" ");
-  let arr2 = name.split(" ");
-  for (index = 0; index < arr2.length; index++) {
-    if (arr1.indexOf(arr2[index]) == -1) {
-      element.className += " " + arr2[index];
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
     }
   }
 }
 
 // Hide elements that are not selected
 function w3RemoveClass(element, name) {
-  
-  let arr1 = element.className.split(" ");
-  let arr2 = name.split(" ");
-  for (index = 0; index < arr2.length; index++) {
-    while (arr1.indexOf(arr2[index]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[index]), 1);
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
     }
   }
   element.className = arr1.join(" ");
