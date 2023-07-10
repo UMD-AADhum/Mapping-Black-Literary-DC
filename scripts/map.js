@@ -89,7 +89,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
 
 // >>>>> create card element
     let card = document.createElement("div");
-    card.className = "card " + "filterDiv " + geoJSON.features[index].properties.category;
+    card.className = "card " + geoJSON.features[index].properties.category;
 
 // >>>>> set card ID
     card.setAttribute("id", geoJSON.features[index].properties.id);
@@ -196,9 +196,9 @@ function scrollIntoViewCard() {
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
-  x = document.getElementsByClassName("filterDiv");
+  x = document.getElementsByClassName("card");
   console.log(x);
-  
+
   if (c == "all") c = "";
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
