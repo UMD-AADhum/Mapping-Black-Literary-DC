@@ -242,3 +242,20 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
+function showArts () {
+    let allCards = document.getElementsByClassName("card");
+    console.log(allCards);
+    
+    for (let index = 0; index < allCards.length; index++) {
+        
+        if (element.className === "card arts") {
+            allCards[index].setAttribute("class", "show")
+        } else {
+            allCards[index].setAttribute("class", "hide")
+
+        }
+        
+    }
+
+}

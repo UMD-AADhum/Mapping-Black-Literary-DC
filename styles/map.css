@@ -29,6 +29,10 @@
   display: block;
 }
 
+.hide {
+  display: none;
+}
+
 /* Style the buttons */
 .btn {
   border: none;
