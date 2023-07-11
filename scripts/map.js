@@ -89,7 +89,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
 
 // >>>>> create card element
     let card = document.createElement("div");
-    card.className = "card " + geoJSON.features[index].properties.category;
+    card.className = "card filterDiv" + geoJSON.features[index].properties.category;
 
 // >>>>> set card ID
     card.setAttribute("id", geoJSON.features[index].properties.id);
@@ -182,7 +182,7 @@ let imageOverlay = L.imageOverlay(wmataOverImg , wmataOverBounds, {
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
-  x = document.getElementsByClassName("card");
+  x = document.getElementsByClassName("card filterDiv");
   console.log(x);
 
   if (c == "all") c = "";
