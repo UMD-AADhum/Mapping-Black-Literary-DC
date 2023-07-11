@@ -89,7 +89,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
 
 // >>>>> create card element
     let card = document.createElement("div");
-    card.className = "card filterDiv" + geoJSON.features[index].properties.category;
+    card.className = "card " + geoJSON.features[index].properties.category;
 
 // >>>>> set card ID
     card.setAttribute("id", geoJSON.features[index].properties.id);
@@ -182,7 +182,7 @@ let imageOverlay = L.imageOverlay(wmataOverImg , wmataOverBounds, {
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
-  x = document.getElementsByClassName("card filterDiv");
+  x = document.getElementsByClassName("card");
   console.log(x);
 
   if (c == "all") c = "";
@@ -196,7 +196,7 @@ function filterSelection(c) {
 // Show filtered elements
 function w3AddClass(element, name) {
   var i, arr1, arr2;
-  arr1 = element.className.split("card filterDiv ");
+  arr1 = element.className.split("card ");
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
     if (arr1.indexOf(arr2[i]) == -1) {
@@ -208,7 +208,7 @@ function w3AddClass(element, name) {
 // Hide elements that are not selected
 function w3RemoveClass(element, name) {
   var i, arr1, arr2;
-  arr1 = element.className.split("card filterDiv ");
+  arr1 = element.className.split("card ");
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
     while (arr1.indexOf(arr2[i]) > -1) {
