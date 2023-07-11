@@ -178,20 +178,6 @@ let imageOverlay = L.imageOverlay(wmataOverImg , wmataOverBounds, {
     interactive: true
 }).addTo(map); 
 
-
-// scrollIntoView buttons
-function scrollIntoViewPoint() {
-    let scrollPointID = this.properties.id;
-    console.log(scrollPointID);
-    let scrollPoint = document.getElementById(scrollPointID);
-    scrollPoint.scrollIntoView()
-}
-
-function scrollIntoViewCard() {
-    let scrollCard = document.getElementById(geoJSON.features[index].properties.id);
-    scrollCard.scrollIntoView()
-}
-
 // category filter
 filterSelection("all")
 function filterSelection(c) {
@@ -243,3 +229,15 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
+// scrollIntoView buttons
+function scrollIntoViewPoint() {
+    let scrollPointID = this.properties.id;
+    console.log(scrollPointID);
+    let scrollPoint = document.getElementById(scrollPointID);
+    scrollPoint.scrollIntoView()
+}
+
+function scrollIntoViewCard() {
+    let scrollCard = document.getElementById(geoJSON.features[index].properties.id);
+    scrollCard.scrollIntoView()
+}
