@@ -193,7 +193,8 @@ function scrollIntoViewCard() {
 }
 
 // category filter
-filterSelection("all")
+/*
+ filterSelection("all")
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("card");
@@ -232,21 +233,14 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-// Add active class to the current control button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
+ */
+
+
 
 function showArts () {
     let allCards = document.getElementsByClassName("card");
     console.log(allCards);
-    
+
     for (let index = 0; index < allCards.length; index++) {
         
         if (element.className === "card arts") {
@@ -258,4 +252,17 @@ function showArts () {
         
     }
 
+}
+
+
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
 }
