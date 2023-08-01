@@ -127,7 +127,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
 
 // >>>>>>> caption source URL
     let cardCaptionSourceURL = document.createElement("a");
-    cardCaptionSourceURL.className = "btn btn-primary";
+    //cardCaptionSourceURL.className = "btn btn-primary";
     cardCaptionSourceURL.setAttribute("href", geoJSON.features[index].properties.captionSourceURL);
     cardCaptionSourceURL.setAttribute("target", "blank")
     cardCaptionSourceURL.innerText = "Learn More"
