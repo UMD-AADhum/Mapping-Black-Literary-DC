@@ -127,7 +127,7 @@ for (let index = 0; index < geoJSON.features.length; index++) {
 
 // >>>>>>> caption source URL
     let cardCaptionSourceURL = document.createElement("a");
-    cardCaptionSourceURL.className = "btn btn-primary";
+    //cardCaptionSourceURL.className = "btn btn-primary";
     cardCaptionSourceURL.setAttribute("href", geoJSON.features[index].properties.captionSourceURL);
     cardCaptionSourceURL.setAttribute("target", "blank")
     cardCaptionSourceURL.innerText = "Learn More"
@@ -168,7 +168,7 @@ L.geoJSON(geoJSON).addTo(map).bindPopup("content - fix");
 };
 
 // > map details 
-let wmataOverImg = "./elements/img/maps/wmata-map-495.png";
+let wmataOverImg = "./elements/img/graphics/wmata-map-495.png";
 let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
 let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
 
