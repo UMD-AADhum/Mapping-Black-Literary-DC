@@ -28,9 +28,9 @@ A repository of pages & elements developed for keondra bills freemyn's Mapping B
 * Each annotation links to map page -- should link to specific cards
 * Current build is a Hype 5 animation/scripted typewriter text effect with hyperlinked note text "annotation"
   * still not mobile responsive
-* ~~Previous build is an image (text document saved as .png) with hyperlinked text overlaid
-  * Image is currently not mobile responsive
-  * Annotations are currently positioned according to the container window, so they move on mobile as well~~ 
+  * ~~Previous build is an image (text document saved as .png) with hyperlinked text overlaid~~
+   * Image is currently not mobile responsive
+   * ~~Annotations are currently positioned according to the container window, so they move on mobile as well~~ 
 
 ### map.html
 * map
