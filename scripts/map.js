@@ -18,6 +18,7 @@ let geoJSON = {
     features: [],
 };
 
+
 // ********** LEAFLET.JS MAP
 // > grab map div from DOM
 pageMap = document.getElementById("map");
@@ -36,6 +37,7 @@ L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
 // > show scale bar on the lower left corner
 L.control.scale({imperial: true, metric: true}).addTo(map);
 
+
 // ********** DATA RETURN
 // > papaparse CSV to JSON pull
 Papa.parse(mbldcGSheetURL, {
@@ -52,12 +54,12 @@ function showData(result) {
     for (let index = 0; index < rawData.length; index++) {
         geoJSON.features.push({
             "type": "Feature",
-            
+
             "geometry": {
                 "type": "Point",
                 "coordinates": [rawData[index].long, rawData[index].lat]
-                },
-            
+            },
+
             "properties": {
                 "id": rawData[index].venueUID,
                 "venueName": rawData[index].venueName,
@@ -65,105 +67,104 @@ function showData(result) {
                 "category": rawData[index].category,
                 "address": rawData[index].address,
                 "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType + "<button>Card</button>",
-                "extURL" : rawData[index].extURL,
-                "imgUID" : rawData[index].imgUID,
-                "altText" : rawData[index].altText,
-                "caption" : rawData[index].caption,
+                "extURL": rawData[index].extURL,
+                "imgUID": rawData[index].imgUID,
+                "altText": rawData[index].altText,
+                "caption": rawData[index].caption,
                 "captionSource": rawData[index].captionSource,
-                "captionSourceURL" : rawData[index].captionSourceURL
-                }
+                "captionSourceURL": rawData[index].captionSourceURL
+            }
         });
-    };
-    // console.log(geoJSON);
+    }
 
+    // console.log(geoJSON);
 
 
 // > create map cards
 
 // >>> loop through geoJSON and add card for each
-for (let index = 0; index < geoJSON.features.length; index++) {
-   
-    // create card column to go in DOM map-cards row
-    let cardCol = document.createElement("div");
-    cardCol.className = "col-sm-6 col-lg-4 mb-4";
+    for (let index = 0; index < geoJSON.features.length; index++) {
+
+        // create card column to go in DOM map-cards row
+        let cardCol = document.createElement("div");
+        cardCol.className = "col-sm-6 col-lg-4 mb-4 card show " + geoJSON.features[index].properties.category;
 
 // >>>>> create card element
-    let card = document.createElement("div");
-    card.className = "card " + geoJSON.features[index].properties.category;
+        let card = document.createElement("div");
+        // card.className = "card " + geoJSON.features[index].properties.category;
 
 // >>>>> set card ID
-    card.setAttribute("id", geoJSON.features[index].properties.id);
-    console.log(card.id);
+        card.setAttribute("id", geoJSON.features[index].properties.id);
 
 // >>>>> create card body
-    let cardBody = document.createElement("div");
-    cardBody.className = "card-body";
+        let cardBody = document.createElement("div");
+        cardBody.className = "card-body";
 
 // >>>>> create card title & store geoJSON data
-    let cardTitle = document.createElement("h5");
-    cardTitle.className = "card-title"
-    cardTitle.innerText = geoJSON.features[index].properties.venueName;
+        let cardTitle = document.createElement("h5");
+        cardTitle.className = "card-title"
+        cardTitle.innerText = geoJSON.features[index].properties.venueName;
 
 // >>>>> create card category & store geoJSON data
-    let cardCat = document.createElement("h6")
-    cardCat.className = "card-subtitle";
-    cardCat.innerText = geoJSON.features[index].properties.venueType;
+        let cardCat = document.createElement("h6")
+        cardCat.className = "card-subtitle";
+        cardCat.innerText = geoJSON.features[index].properties.venueType;
 
 // >>>>> create card text & store geoJSON data
 // >>>>>>> address
-    let cardAddress = document.createElement("p");
-    cardAddress.className = "card-text"
-    cardAddress.innerText = geoJSON.features[index].properties.address;
+        let cardAddress = document.createElement("p");
+        cardAddress.className = "card-text"
+        cardAddress.innerText = geoJSON.features[index].properties.address;
 
 // >>>>>>> caption
-    let cardCaption = document.createElement("p");
-    cardCaption.className = "card-text"
-    cardCaption.innerText = geoJSON.features[index].properties.caption;
+        let cardCaption = document.createElement("p");
+        cardCaption.className = "card-text"
+        cardCaption.innerText = geoJSON.features[index].properties.caption;
 
 // >>>>>>> caption source
-    let cardCaptionSource = document.createElement("p");
-    cardCaptionSource.className = "card-text"
-    cardCaptionSource.innerText = geoJSON.features[index].properties.captionSource;
+        let cardCaptionSource = document.createElement("p");
+        cardCaptionSource.className = "card-text"
+        cardCaptionSource.innerText = geoJSON.features[index].properties.captionSource;
 
 // >>>>>>> caption source URL
-    let cardCaptionSourceURL = document.createElement("a");
-    cardCaptionSourceURL.className = "btn btn-primary";
-    cardCaptionSourceURL.setAttribute("href", geoJSON.features[index].properties.captionSourceURL);
-    cardCaptionSourceURL.setAttribute("target", "blank")
-    cardCaptionSourceURL.innerText = "Learn More"
+        let cardCaptionSourceURL = document.createElement("a");
+        cardCaptionSourceURL.className = "btn btn-primary";
+        cardCaptionSourceURL.setAttribute("href", geoJSON.features[index].properties.captionSourceURL);
+        cardCaptionSourceURL.setAttribute("target", "blank")
+        cardCaptionSourceURL.innerText = "Learn More"
 
 // >>>>> create card img & store geoJSON img tag
-    let cardImg = document.createElement("img");
-    cardImg.className = "card-img-top";
-    cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSON.features[index].properties.imgUID + ".jpg");
-    cardImg.setAttribute("alt", geoJSON.features[index].properties.altText);
+        let cardImg = document.createElement("img");
+        cardImg.className = "card-img-top";
+        cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSON.features[index].properties.imgUID + ".jpg");
+        cardImg.setAttribute("alt", geoJSON.features[index].properties.altText);
 
 // >>>>> create card link & store geoJSON external links
-    let cardExtUrl = document.createElement("a");
-    cardExtUrl.className = "btn btn-primary";
-    cardExtUrl.setAttribute("href", geoJSON.features[index].properties.extURL);
-    cardExtUrl.setAttribute("target", "blank")
-    cardExtUrl.innerText = "Visit"
+        let cardExtUrl = document.createElement("a");
+        cardExtUrl.className = "btn btn-primary";
+        cardExtUrl.setAttribute("href", geoJSON.features[index].properties.extURL);
+        cardExtUrl.setAttribute("target", "blank")
+        cardExtUrl.innerText = "Visit"
 
 // >>>>> append card elements to card; 
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardCat);
-    cardBody.appendChild(cardAddress);
-    cardBody.appendChild(cardCaption);
-    cardBody.appendChild(cardCaptionSource);
-    cardBody.appendChild(cardCaptionSourceURL);
-    cardBody.appendChild(cardExtUrl);
-    card.appendChild(cardImg);
-    card.appendChild(cardBody);
-    cardCol.appendChild(card);
-    
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardCat);
+        cardBody.appendChild(cardAddress);
+        cardBody.appendChild(cardCaption);
+        cardBody.appendChild(cardCaptionSource);
+        cardBody.appendChild(cardCaptionSourceURL);
+        cardBody.appendChild(cardExtUrl);
+        card.appendChild(cardImg);
+        card.appendChild(cardBody);
+        cardCol.appendChild(card);
+
 
 // >>>>> append card to DOM card row div
-    mapCards.append(cardCol);
-};
+        mapCards.append(cardCol);
+    }
 
 // >>> push geoJSON data to map with popup *FIX*    
-L.geoJSON(geoJSON).addTo(map).bindPopup("content - fix");
+    L.geoJSON(geoJSON).addTo(map).bindPopup("content - fix");
 
 };
 
@@ -172,61 +173,63 @@ let wmataOverImg = "./elements/img/maps/wmata-map-495.png";
 let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
 let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
 
-let imageOverlay = L.imageOverlay(wmataOverImg , wmataOverBounds, {
+let imageOverlay = L.imageOverlay(wmataOverImg, wmataOverBounds, {
     errorOverlayUrl: errorOverlayImg,
     opacity: .3,
     interactive: true
-}).addTo(map); 
+}).addTo(map);
+
 
 // category filter
-filterSelection("all")
 function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("card");
-  console.log(x);
+    console.log("filter ran")
+    let x, i;
+    x = document.getElementsByClassName("card");
 
-  if (c == "all") c = "";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
+    if (c === "all") c = "";
+    // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+    for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) {
+            w3AddClass(x[i], "show");
+        }
+    }
 }
 
 // Show filtered elements
 function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split("card ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
+    let i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) === -1) {
+            element.className += " " + arr2[i];
+        }
     }
-  }
 }
 
 // Hide elements that are not selected
 function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split("card ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    let i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
     }
-  }
-  element.className = arr1.join(" ");
+    element.className = arr1.join(" ");
 }
 
 // Add active class to the current control button (highlight it)
 var btnContainer = document.getElementById("myBtnContainer");
 var btns = btnContainer.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
+    btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    });
 }
 
 // scrollIntoView buttons
