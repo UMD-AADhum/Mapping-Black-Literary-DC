@@ -22,9 +22,26 @@
 		<link rel="stylesheet" href="./styles/global.css">
 		<!-- map.css : map page styling -->
 		<link rel="stylesheet" href="./styles/map.css">
-	
+		
+<!--		Importing material icons for the back to top button -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
 	</head>
-	<body">
+	<body>
+		<div class="headerContainer">
+			<div class="header">
+				<h1>Mapping Black Literary DC</h1>
+				<div class="menu">
+					<a href="index.html" class="menuLink">Home</a>
+					<a href="map.html" class="menuLink active">Map</a>
+					<a href="team.html" class="menuLink">About</a>
+				</div>
+			</div>
+		</div>
+		
 		<div class="container">
 			<!-- >>> map div -->
 			<div class="container" id="map-container"></div>
@@ -46,22 +63,21 @@
 				<div class="row">
 					<div class="col">
 						<div id="myBtnContainer">
-							<button class="btn active" onclick="filterSelection('all')">All</button>
-							<button class="btn" onclick="filterSelection('arts')">Arts/Cultural Institutions</button>
-							<button class="btn" onclick="filterSelection('bar')">Bar or Club</button>
-							<button class="btn" onclick="filterSelection('bookstore')">Bookstore</button>
-							<button class="btn" onclick="filterSelection('cafe')">Cafe or Restaurant</button>
-							<button class="btn" onclick="filterSelection('college')">College or University</button>
-							<button class="btn" onclick="filterSelection('library')">Library or Archive</button>
-							<button class="btn" onclick="filterSelection('residence')">Residence</button>
-							<button class="btn" onclick="filterSelection('other')">Other</button>
+							<button class="btn active" onclick="filterSelection('all'); activeMenu(this)">All</button>
+							<button class="btn" onclick="filterSelection('arts'); activeMenu(this)">Arts/Cultural Institutions</button>
+							<button class="btn" onclick="filterSelection('bar'); activeMenu(this)">Bar or Club</button>
+							<button class="btn" onclick="filterSelection('bookstore'); activeMenu(this)">Bookstore</button>
+							<button class="btn" onclick="filterSelection('cafe'); activeMenu(this)">Cafe or Restaurant</button>
+							<button class="btn" onclick="filterSelection('college'); activeMenu(this)">College or University</button>
+							<button class="btn" onclick="filterSelection('library'); activeMenu(this)">Library or Archive</button>
+							<button class="btn" onclick="filterSelection('residence'); activeMenu(this)">Residence</button>
+							<button class="btn" onclick="filterSelection('other'); activeMenu(this)">Other</button>
 						</div>
 					</div>
 				</div>
 				
 				<!-- >>> masonry grid map cards -->
-				<div class="row" data-masonry='{"percentPosition": true, "gutter" : 10 }' id="map-cards">
-				</div>
+				<div class="row" data-masonry='{"percentPosition": true, "gutter" : 10 }' id="map-cards"></div>
 			</div>
 		</div>
 
@@ -85,8 +101,11 @@
   </div>
 </nav>
 		
+		<div id="topBtn" onclick="backToTop()">
+			<i class="material-icons">keyboard_arrow_up</i>
+		</div>
+		
 		<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 		<script src="./scripts/map.js"></script>
-	
 	</body>
 </html>

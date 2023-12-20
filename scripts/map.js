@@ -46,6 +46,15 @@ Papa.parse(mbldcGSheetURL, {
     complete: showData,
 });
 
+const blackIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
 // > MBLDC data return function 
 function showData(result) {
 
@@ -57,7 +66,7 @@ function showData(result) {
 
             "geometry": {
                 "type": "Point",
-                "coordinates": [rawData[index].long, rawData[index].lat]
+                "coordinates": [rawData[index].long, rawData[index].lat],
             },
 
             "properties": {
@@ -72,7 +81,7 @@ function showData(result) {
                 "altText": rawData[index].altText,
                 "caption": rawData[index].caption,
                 "captionSource": rawData[index].captionSource,
-                "captionSourceURL": rawData[index].captionSourceURL
+                "captionSourceURL": rawData[index].captionSourceURL,
             }
         });
     }
@@ -161,12 +170,16 @@ function showData(result) {
 
 // >>>>> append card to DOM card row div
         mapCards.append(cardCol);
+
     }
 
-// >>> push geoJSON data to map with popup *FIX*    
-    L.geoJSON(geoJSON).addTo(map).bindPopup("content - fix");
+// >>> push geoJSON data to map with popup *FIX*
+    L.geoJSON(geoJSON, {pointToLayer: function(featured, latlng){
+        return L.marker(latlng,{ icon: blackIcon })
+        }}).addTo(map).bindPopup("content - fix");
 
 };
+
 
 // > map details 
 let wmataOverImg = "./elements/img/graphics/wmata-map-495.png";
@@ -182,7 +195,6 @@ let imageOverlay = L.imageOverlay(wmataOverImg, wmataOverBounds, {
 
 // category filter
 function filterSelection(c) {
-    console.log("filter ran")
     let x, i;
     x = document.getElementsByClassName("card");
 
@@ -222,15 +234,26 @@ function w3RemoveClass(element, name) {
 }
 
 // Add active class to the current control button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-    });
+function activeMenu(element) {
+    let x = document.getElementsByClassName("btn")
+
+    for (let i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "active");
+    }
+
+    element.classList.toggle("active", true)
 }
+
+// var btnContainer = document.getElementById("myBtnContainer");
+// var btns = btnContainer.getElementsByClassName("btn");
+// for (var i = 0; i < btns.length; i++) {
+//     btns[i].addEventListener("click", function () {
+//         var current = document.getElementsByClassName("active");
+//
+//         current[0].className = current[0].className.replace(" active", "");
+//         this.className += " active";
+//     });
+// }
 
 // scrollIntoView buttons
 function scrollIntoViewPoint() {
@@ -243,4 +266,11 @@ function scrollIntoViewPoint() {
 function scrollIntoViewCard() {
     let scrollCard = document.getElementById(geoJSON.features[index].properties.id);
     scrollCard.scrollIntoView()
+}
+
+
+// Back to top button
+function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
