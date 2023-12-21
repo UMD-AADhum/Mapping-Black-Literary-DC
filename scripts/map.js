@@ -24,14 +24,15 @@ let geoJSON = {
 pageMap = document.getElementById("map");
 
 // > create map & set main view center 
-// >>> current center: Logan Circle | latitude = 38.909142, longitude -77.029793
-map = L.map(pageMap).setView({lon: -77.029793, lat: 38.909142}, 14.5);
+// >>> current center: African American Civil War Museum (U St NW & Vermont Ave NW) | latitude = 38.916271, longitude -77.025391
+map = L.map(pageMap).setView({lon: -77.025391, lat: 38.916271}, 15.5);
 
 // > add map tiles
-// >>> tile: toner, stamen maps
-L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+// >>> tile: stamen toner by stadia maps
+L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png', {
     maxZoom: 19,
-    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
+    attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a> <a href="https://stamen.com/" target="_blank">&copy; Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
+    
 }).addTo(map);
 
 // > show scale bar on the lower left corner
@@ -182,7 +183,7 @@ function showData(result) {
 
 
 // > map details 
-let wmataOverImg = "./elements/img/graphics/wmata-map-495.png";
+/* let wmataOverImg = "./elements/img/graphics/wmata-map-495.png";
 let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
 let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
 
@@ -190,7 +191,7 @@ let imageOverlay = L.imageOverlay(wmataOverImg, wmataOverBounds, {
     errorOverlayUrl: errorOverlayImg,
     opacity: .3,
     interactive: true
-}).addTo(map);
+}).addTo(map); */
 
 
 // category filter
