@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "playfair-display";
+    src: url("./../mbldc-index-page.hyperesources/PlayfairDisplay-VariableFont_wght.ttf")
+  }
+
+  @font-face {
+font-family: "lexend";
+src: url("./../mbldc-index-page.hyperesources/Lexend-VariableFont_wght.ttf")
+  }
 
 body {
     background-color: white;
@@ -6,12 +15,33 @@ body {
 h1 {
     color: blueviolet;
     font-weight: bold;
+    font-family: 'lexend';
+}
+
+h2 {
+    font-family: 'lexend';
+}
+
+h3 {
+    font-family: 'lexend';
+}
+
+h4 {
+    font-family: 'lexend';
+}
+
+h5 {
+    font-family: 'lexend';
 }
 
 h6 {
     color: blueviolet;
+    font-family: 'lexend';
 }
 
+p {
+    font-family: 'playfair-display';
+}
 
 .headerContainer {
     background-color: #e7def0;
@@ -24,7 +54,7 @@ h6 {
     max-width: 1320px;
     text-align: center;
     padding: 40px 0 20px 0;
-    font-family: 'Square Peg', cursive;
+    font-family: 'Lexend';
 }
 
 .header h1 {

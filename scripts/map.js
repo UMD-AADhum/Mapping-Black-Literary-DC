@@ -7,7 +7,7 @@ console.log("map.js is connected")
 // 3. under 'Link' tab, click 'Webpage' dropdown and select CSV file from the menu
 // 4. copy & paste link below
 // 5. verify CSV by scrolling to very end of URL: ending should be '&output=csv'
-let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=397357141&single=true&output=csv ";
+let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=1259292064&single=true&output=csv ";
 
 // > map cards div
 let mapCards = document.getElementById("map-cards");
@@ -24,14 +24,15 @@ let geoJSON = {
 pageMap = document.getElementById("map");
 
 // > create map & set main view center 
-// >>> current center: Logan Circle | latitude = 38.909142, longitude -77.029793
-map = L.map(pageMap).setView({lon: -77.029793, lat: 38.909142}, 14.5);
+// >>> current center: African American Civil War Museum (U St NW & Vermont Ave NW) | latitude = 38.916271, longitude -77.025391
+map = L.map(pageMap).setView({lon: -77.025391, lat: 38.916271}, 15.5);
 
 // > add map tiles
-// >>> tile: toner, stamen maps
-L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+// >>> tile: stamen toner by stadia maps
+L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png', {
     maxZoom: 19,
-    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
+    attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a> <a href="https://stamen.com/" target="_blank">&copy; Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
+    
 }).addTo(map);
 
 // > show scale bar on the lower left corner
@@ -78,6 +79,7 @@ function showData(result) {
                 "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType + "<button>Card</button>",
                 "extURL": rawData[index].extURL,
                 "imgUID": rawData[index].imgUID,
+                "imgSource": rawData[index].imgSource,
                 "altText": rawData[index].altText,
                 "caption": rawData[index].caption,
                 "captionSource": rawData[index].captionSource,
@@ -113,6 +115,17 @@ function showData(result) {
         let cardTitle = document.createElement("h5");
         cardTitle.className = "card-title"
         cardTitle.innerText = geoJSON.features[index].properties.venueName;
+        cardTitle.setAttribute("href", geoJSON.features[index].properties.extURL);
+        cardExtUrl.setAttribute("target", "blank")
+
+
+/*         // >>>>> create card link & store geoJSON external links
+        let cardExtUrl = document.createElement("a");
+        cardExtUrl.className = "btn btn-primary";
+        cardExtUrl.setAttribute("href", geoJSON.features[index].properties.extURL);
+        cardExtUrl.setAttribute("target", "blank")
+        cardExtUrl.innerText = "Visit"
+ */
 
 // >>>>> create card category & store geoJSON data
         let cardCat = document.createElement("h6")
@@ -133,7 +146,12 @@ function showData(result) {
 // >>>>>>> caption source
         let cardCaptionSource = document.createElement("p");
         cardCaptionSource.className = "card-text"
-        cardCaptionSource.innerText = geoJSON.features[index].properties.captionSource;
+        cardCaptionSource.innerText = "Caption Source" + geoJSON.features[index].properties.captionSource;
+
+// >>>>>>> image source
+        let imgSource = document.createElement("p");
+        imgSource.className = "card-text"
+        imgSource.innerText = "Image Source" + geoJSON.features[index].properties.imgSource;
 
 // >>>>>>> caption source URL
         let cardCaptionSourceURL = document.createElement("a");
@@ -148,12 +166,7 @@ function showData(result) {
         cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSON.features[index].properties.imgUID + ".jpg");
         cardImg.setAttribute("alt", geoJSON.features[index].properties.altText);
 
-// >>>>> create card link & store geoJSON external links
-        let cardExtUrl = document.createElement("a");
-        cardExtUrl.className = "btn btn-primary";
-        cardExtUrl.setAttribute("href", geoJSON.features[index].properties.extURL);
-        cardExtUrl.setAttribute("target", "blank")
-        cardExtUrl.innerText = "Visit"
+
 
 // >>>>> append card elements to card; 
         cardBody.appendChild(cardTitle);
@@ -162,6 +175,7 @@ function showData(result) {
         cardBody.appendChild(cardCaption);
         cardBody.appendChild(cardCaptionSource);
         cardBody.appendChild(cardCaptionSourceURL);
+        cardBody.appendChild(imgSource);
         cardBody.appendChild(cardExtUrl);
         card.appendChild(cardImg);
         card.appendChild(cardBody);
@@ -182,7 +196,7 @@ function showData(result) {
 
 
 // > map details 
-let wmataOverImg = "./elements/img/graphics/wmata-map-495.png";
+/* let wmataOverImg = "./elements/img/graphics/wmata-map-495.png";
 let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
 let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
 
@@ -190,7 +204,7 @@ let imageOverlay = L.imageOverlay(wmataOverImg, wmataOverBounds, {
     errorOverlayUrl: errorOverlayImg,
     opacity: .3,
     interactive: true
-}).addTo(map);
+}).addTo(map); */
 
 
 // category filter
