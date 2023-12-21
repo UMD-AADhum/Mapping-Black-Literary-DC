@@ -16,7 +16,19 @@
     display: none;
     padding: 0;
     margin: 10px;
+    background-color: #f5f5f5;
+}
+
+.card-footer-row {
+    justify-content: center;
+}
+
+.card-btn {
     background-color: #ddd;
+}
+
+.card-btn:hover{
+    background-color: blueviolet;
 }
 
 #map-card-container {
@@ -38,7 +50,7 @@
     border: none;
     outline: none;
     padding: 12px 16px;
-    background-color: #f1f1f1;
+    background-color: #f5f5f5;
     cursor: pointer;
 }
 

@@ -18,7 +18,6 @@ let geoJSON = {
     features: [],
 };
 
-
 // ********** LEAFLET.JS MAP
 // > grab map div from DOM
 pageMap = document.getElementById("map");
@@ -153,12 +152,16 @@ function showData(result) {
         imgSource.className = "card-text"
         imgSource.innerText = "Image Source: " + geoJSON.features[index].properties.imgSource;
 
+// card footer
+        let cardFooter = document.createElement("div");
+        cardFooter.className = "card-footer-row"
+
 // >>>>>>> learn more button
-        let cardCaptionSourceURL = document.createElement("a");
-        cardCaptionSourceURL.className = "btn btn-primary";
-        cardCaptionSourceURL.setAttribute("href", geoJSON.features[index].properties.captionSourceURL);
-        cardCaptionSourceURL.setAttribute("target", "blank")
-        cardCaptionSourceURL.innerText = "Learn More"
+        let learnMoreBtn = document.createElement("a");
+        learnMoreBtn.className = "btn card-btn";
+        learnMoreBtn.setAttribute("href", geoJSON.features[index].properties.captionSourceURL);
+        learnMoreBtn.setAttribute("target", "blank")
+        learnMoreBtn.innerText = "Learn More"
 
 // >>>>> create card img & store geoJSON img tag
         let cardImg = document.createElement("img");
@@ -174,8 +177,9 @@ function showData(result) {
         cardBody.appendChild(cardAddress);
         cardBody.appendChild(cardCaption);
         cardBody.appendChild(cardCaptionSource);
-        cardBody.appendChild(imgSource);        
-        cardBody.appendChild(cardCaptionSourceURL);
+        cardBody.appendChild(imgSource); 
+        cardBody.appendChild(cardFooter)       
+        cardFooter.appendChild(learnMoreBtn);
     //    cardBody.appendChild(cardExtUrl);
         card.appendChild(cardImg);
         card.appendChild(cardBody);
