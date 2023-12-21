@@ -79,6 +79,7 @@ function showData(result) {
                 "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType + "<button>Card</button>",
                 "extURL": rawData[index].extURL,
                 "imgUID": rawData[index].imgUID,
+                "imgSource": rawData[index].imgSource,
                 "altText": rawData[index].altText,
                 "caption": rawData[index].caption,
                 "captionSource": rawData[index].captionSource,
@@ -114,6 +115,17 @@ function showData(result) {
         let cardTitle = document.createElement("h5");
         cardTitle.className = "card-title"
         cardTitle.innerText = geoJSON.features[index].properties.venueName;
+        cardTitle.setAttribute("href", geoJSON.features[index].properties.extURL);
+        cardExtUrl.setAttribute("target", "blank")
+
+
+/*         // >>>>> create card link & store geoJSON external links
+        let cardExtUrl = document.createElement("a");
+        cardExtUrl.className = "btn btn-primary";
+        cardExtUrl.setAttribute("href", geoJSON.features[index].properties.extURL);
+        cardExtUrl.setAttribute("target", "blank")
+        cardExtUrl.innerText = "Visit"
+ */
 
 // >>>>> create card category & store geoJSON data
         let cardCat = document.createElement("h6")
@@ -134,7 +146,12 @@ function showData(result) {
 // >>>>>>> caption source
         let cardCaptionSource = document.createElement("p");
         cardCaptionSource.className = "card-text"
-        cardCaptionSource.innerText = geoJSON.features[index].properties.captionSource;
+        cardCaptionSource.innerText = "Caption Source" + geoJSON.features[index].properties.captionSource;
+
+// >>>>>>> image source
+        let imgSource = document.createElement("p");
+        imgSource.className = "card-text"
+        imgSource.innerText = "Image Source" + geoJSON.features[index].properties.imgSource;
 
 // >>>>>>> caption source URL
         let cardCaptionSourceURL = document.createElement("a");
@@ -149,12 +166,7 @@ function showData(result) {
         cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSON.features[index].properties.imgUID + ".jpg");
         cardImg.setAttribute("alt", geoJSON.features[index].properties.altText);
 
-// >>>>> create card link & store geoJSON external links
-        let cardExtUrl = document.createElement("a");
-        cardExtUrl.className = "btn btn-primary";
-        cardExtUrl.setAttribute("href", geoJSON.features[index].properties.extURL);
-        cardExtUrl.setAttribute("target", "blank")
-        cardExtUrl.innerText = "Visit"
+
 
 // >>>>> append card elements to card; 
         cardBody.appendChild(cardTitle);
@@ -163,6 +175,7 @@ function showData(result) {
         cardBody.appendChild(cardCaption);
         cardBody.appendChild(cardCaptionSource);
         cardBody.appendChild(cardCaptionSourceURL);
+        cardBody.appendChild(imgSource);
         cardBody.appendChild(cardExtUrl);
         card.appendChild(cardImg);
         card.appendChild(cardBody);
