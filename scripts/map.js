@@ -7,7 +7,7 @@ console.log("map.js is connected")
 // 3. under 'Link' tab, click 'Webpage' dropdown and select CSV file from the menu
 // 4. copy & paste link below
 // 5. verify CSV by scrolling to very end of URL: ending should be '&output=csv'
-let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=1259292064&single=true&output=csv ";
+let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=1259292064&single=true&output=csv";
 
 // > map cards div
 let mapCards = document.getElementById("map-cards");
@@ -116,7 +116,7 @@ function showData(result) {
         cardTitle.className = "card-title"
         cardTitle.innerText = geoJSON.features[index].properties.venueName;
         cardTitle.setAttribute("href", geoJSON.features[index].properties.extURL);
-        cardExtUrl.setAttribute("target", "blank")
+        cardTitle.setAttribute("target", "blank")
 
 
 /*         // >>>>> create card link & store geoJSON external links
@@ -176,7 +176,7 @@ function showData(result) {
         cardBody.appendChild(cardCaptionSource);
         cardBody.appendChild(cardCaptionSourceURL);
         cardBody.appendChild(imgSource);
-        cardBody.appendChild(cardExtUrl);
+    //    cardBody.appendChild(cardExtUrl);
         card.appendChild(cardImg);
         card.appendChild(cardBody);
         cardCol.appendChild(card);
