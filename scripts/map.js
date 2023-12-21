@@ -176,7 +176,7 @@ function showData(result) {
         cardBody.appendChild(cardCaptionSource);
         cardBody.appendChild(cardCaptionSourceURL);
         cardBody.appendChild(imgSource);
-        cardBody.appendChild(cardExtUrl);
+    //    cardBody.appendChild(cardExtUrl);
         card.appendChild(cardImg);
         card.appendChild(cardBody);
         cardCol.appendChild(card);
