@@ -116,7 +116,7 @@ function showData(result) {
         cardTitle.className = "card-title"
         cardTitle.innerText = geoJSON.features[index].properties.venueName;
         cardTitle.setAttribute("href", geoJSON.features[index].properties.extURL);
-        cardExtUrl.setAttribute("target", "blank")
+        cardTitle.setAttribute("target", "blank")
 
 
 /*         // >>>>> create card link & store geoJSON external links
