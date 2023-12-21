@@ -44,46 +44,49 @@ p {
 }
 
 .headerContainer {
-    background-color: #e7def0;
-    border-bottom: 2px solid #7a6faf;
+    /*background-color: #e7def0;*/
+    /*border-bottom: 2px solid #7a6faf;*/
 }
 
 .header {
     width: 80%;
     margin: 0 auto;
-    max-width: 1320px;
+    max-width: 1540px;
     text-align: center;
     padding: 40px 0 20px 0;
     font-family: 'Lexend';
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 60px;
 }
 
 .header h1 {
-    font-size: 56px;
+    font-size: 48px;
 }
 
 .menu {
     display: flex;
-    justify-content: center;
-    grid-gap: 40px;
+    justify-content: space-between;
+    grid-gap: 20px;
     padding-top: 20px;
 }
 
 .menuLink {
-    color: #cec5eb;
+    color: #2d2231;
     font-weight: bold;
-    font-size: 32px;
-    background-color: black;
+    font-size: 26px;
+    /*background-color: black;*/
     border-radius: 10px;
     text-decoration: none;
-    padding: 2px 10px;
+    /*padding: 2px 10px;*/
 }
 
 .menuLink:hover {
-    color: yellow;
+    color: #ffd000;
 }
 
 .menuLink.active {
-    color: yellow;
+    color: blueviolet;
 }
 
 .attribution {
@@ -99,12 +102,12 @@ p {
 .footerContainer {
     min-height: 200px;
     width: 100%;
-    background-color: #e7def0;
+    background-color: #f2f2f2;
     align-items: center;
     display: flex;
     padding: 20px 0;
     margin-top: 80px;
-    border-top: 2px solid #7a6faf;
+    border-top: 2px solid #9f9f9f;
 }
 
 #footer {
