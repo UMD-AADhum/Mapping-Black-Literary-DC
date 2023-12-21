@@ -146,14 +146,14 @@ function showData(result) {
 // >>>>>>> caption source
         let cardCaptionSource = document.createElement("p");
         cardCaptionSource.className = "card-text"
-        cardCaptionSource.innerText = "Caption Source" + geoJSON.features[index].properties.captionSource;
+        cardCaptionSource.innerText = "Caption Source: " + geoJSON.features[index].properties.captionSource;
 
 // >>>>>>> image source
         let imgSource = document.createElement("p");
         imgSource.className = "card-text"
-        imgSource.innerText = "Image Source" + geoJSON.features[index].properties.imgSource;
+        imgSource.innerText = "Image Source: " + geoJSON.features[index].properties.imgSource;
 
-// >>>>>>> caption source URL
+// >>>>>>> learn more button
         let cardCaptionSourceURL = document.createElement("a");
         cardCaptionSourceURL.className = "btn btn-primary";
         cardCaptionSourceURL.setAttribute("href", geoJSON.features[index].properties.captionSourceURL);
@@ -174,8 +174,8 @@ function showData(result) {
         cardBody.appendChild(cardAddress);
         cardBody.appendChild(cardCaption);
         cardBody.appendChild(cardCaptionSource);
+        cardBody.appendChild(imgSource);        
         cardBody.appendChild(cardCaptionSourceURL);
-        cardBody.appendChild(imgSource);
     //    cardBody.appendChild(cardExtUrl);
         card.appendChild(cardImg);
         card.appendChild(cardBody);

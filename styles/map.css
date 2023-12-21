@@ -6,9 +6,6 @@
     margin-top: 50px;
 }
 
-#header-text {
-    color: cornflowerblue;
-}
 
 #map-address-listing {
     margin-bottom: 100px;
@@ -19,6 +16,7 @@
     display: none;
     padding: 0;
     margin: 10px;
+    background-color: #ddd;
 }
 
 #map-card-container {
