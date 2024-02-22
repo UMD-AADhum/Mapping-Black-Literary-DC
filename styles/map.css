@@ -1,54 +1,79 @@
 
 #map {
     /* configure the size of the map */
-    width: 75%;
+    /*width: 75%;*/
     height: 400px;
     margin-top: 50px;
-  }
-
-#header-text {
-    color:cornflowerblue;
 }
+
 
 #map-address-listing {
     margin-bottom: 100px;
 }
 
-.card { 
-  width: 400px;
-  
- }
+.card {
+    width: 400px;
+    display: none;
+    padding: 0;
+    margin: 10px;
+    background-color: #f5f5f5;
+}
 
- #map-card-container {
-  margin: 10px;
- }
+.card-footer-row {
+    display: flex;
+    justify-content: center;
+}
+
+.card-btn:hover{
+    background-color: blueviolet;
+}
+
+#map-card-container {
+    margin: 10px;
+}
 
 
 /* The "show" class is added to the filtered elements */
 .show {
-  display: block;
+    display: block;
 }
 
 .hide {
-  display: none;
+    display: none;
 }
 
 /* Style the buttons */
 .btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
 }
 
 /* Add a light grey background on mouse-over */
 .btn:hover {
-  background-color: #ddd;
+    background-color: blueviolet ;
 }
 
 /* Add a dark background to the active button */
 .btn.active {
-  background-color: #666;
-  color: white;
+    background-color: #666;
+    color: white;
+}
+
+#myBtnContainer {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    grid-gap: 10px;
+}
+
+.btn-primary {
+    color: black;
+    margin: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #2b53e7;
 }

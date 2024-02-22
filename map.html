@@ -1,83 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAPPING BLACK LITERARY DC</title>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>SMALL ANTIDOTES</title>
+		
+		<!-- bootstrap css : responsive page styling library -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		
+		<!-- bootstrap js : responsive page script library -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<!-- papa parse js : CSV to JSON parsing library -->
+		<script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+		<!-- leaflet js : map scripts library -->
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+		
+		<!-- leaflet css : map styling library -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+		<!-- global.css : global page styling -->
+		<link rel="stylesheet" href="./styles/global.css">
+		<!-- map.css : map page styling -->
+		<link rel="stylesheet" href="./styles/map.css">
+		
+<!--		Importing material icons for the back to top button -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="headerContainer">
+			<div class="header">
+				<h1>Small Antidotes</h1>
+				<div class="menu">
+					<a href="index.html" class="menuLink">Home</a>
+					<a href="main.html" class="menuLink">Main</a>
+					<a href="map.html" class="menuLink active">Map</a>
+					<a href="resources.html" class="menuLink">Resources</a>
+					<a href="team.html" class="menuLink">Team</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<!-- >>> map div 
+			<div class="container" id="map-container"></div>
+			<div class="row d-flex justify-content-center">
+				<div class="col">
+					<div id="map"></div>
+				</div>
+			</div>
+			
+			<br>
+			
+			-->
+			
+			<!-- ********** MAP CARD GRID
+			  > cards : bootstrap 5
+			  > card grid: masonry [https://masonry.desandro.com/] -->
+			
+			<div class="container" id="map-card-container">
+				
+				<!-- >>> filter buttons -->
+				<div class="row">
+					<div class="col">
+						<div id="myBtnContainer">
+							<button class="btn active" onclick="filterSelection('all'); activeMenu(this)">All</button>
+							<button class="btn" onclick="filterSelection('arts'); activeMenu(this)">Arts/Cultural Institutions</button>
+							<button class="btn" onclick="filterSelection('bar'); activeMenu(this)">Bar or Club</button>
+							<button class="btn" onclick="filterSelection('bookstore'); activeMenu(this)">Bookstore</button>
+							<button class="btn" onclick="filterSelection('cafe'); activeMenu(this)">Cafe or Restaurant</button>
+							<button class="btn" onclick="filterSelection('college'); activeMenu(this)">College or University</button>
+							<button class="btn" onclick="filterSelection('library'); activeMenu(this)">Library or Archive</button>
+							<button class="btn" onclick="filterSelection('residence'); activeMenu(this)">Residence</button>
+							<button class="btn" onclick="filterSelection('other'); activeMenu(this)">Other</button>
+						</div>
+					</div>
+				</div>
+				
+				<!-- >>> masonry grid map cards -->
+				<div class="row" data-masonry='{"percentPosition": true, "gutter" : 10 }' id="map-cards"></div>
+			</div>
+		</div>
 
-    <!-- bootstrap css : responsive page styling library -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- bootstrap js : responsive page script library -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <!-- papa parse js : CSV to JSON parsing library -->
-    <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
 
-    <!-- leaflet js : map scripts library -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-
-    <!-- leaflet css : map styling library -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    
-    <!-- global.css : global page styling -->
-    <link rel="stylesheet" href="./styles/global.css">
-    
-    <!-- map.css : map page styling -->
-    <link rel="stylesheet" href="./styles/map.css">
-
-</head>
-<body>
-
-  <div class="container">
-
-<!-- ********** MAP
-  > leaflet.js [https://leafletjs.com/] -->
-
-<!-- >>> map div -->
-<div class="container" id="map-container"></div>
-  <div class="row d-flex justify-content-center">
-    <div class="col">
-      <div id="map"></div>
-    </div>
-  </div>
-
-  <br>
-
-<!-- ********** MAP CARD GRID
-  > cards : bootstrap 5
-  > card grid: masonry [https://masonry.desandro.com/] -->
-
-<div class="container" id="map-card-container">
-
-<!-- >>> filter buttons -->
-    <div class="row">
-      <div class="col">
-        <div id="myBtnContainer">
-          <button class="btn active" onclick="filterSelection('all')">All</button>
-          <button class="btn" onclick="filterSelection('arts')">Arts/Cultural Institutions</button>
-          <button class="btn" onclick="filterSelection('bar')">Bar or Club</button>
-          <button class="btn" onclick="filterSelection('bookstore')">Bookstore</button>
-          <button class="btn" onclick="filterSelection('cafe')">Cafe or Restaurant</button>
-          <button class="btn" onclick="filterSelection('college')">College or University</button>
-          <button class="btn" onclick="filterSelection('library')">Library or Archive</button>
-          <button class="btn" onclick="filterSelection('residence')">Residence</button>
-          <button class="btn" onclick="filterSelection('other')">Other</button>
-        </div>
+<!-- navbar 
+<nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="./index.html">Mapping Black Literary DC</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="./map.html">Map</a>
+		<a class="nav-link" href="./resources.html">Resources</a>
+        <a class="nav-link" href="./team.html">Team</a>
       </div>
     </div>
-
-<!-- >>> masonry grid map cards -->
-      <div class="row" data-masonry='{"percentPosition": true, "gutter" : 10 }' id="map-cards">
-    </div>
- </div>
-
-<!-- container end -->
-</div> 
-
-  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
-  <script src="./scripts/map.js"></script>
-    
-</body>
+  </div>
+</nav>
+-->		
+		<div id="topBtn" onclick="backToTop()">
+			<i class="material-icons">keyboard_arrow_up</i>
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+		<script src="./scripts/global.js"></script>
+		<script src="./scripts/data.js"></script>
+		<script src="./scripts/map.js"></script>
+	</body>
 </html>
