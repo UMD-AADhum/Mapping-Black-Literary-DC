@@ -61,3 +61,5 @@ function showData(result) {
 
 
 };
+
+console.log(geoJSON);
