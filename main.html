@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>SMALL ANTIDOTES</title>
+		
+		<!-- bootstrap css : responsive page styling library -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		
+		<!-- bootstrap js : responsive page script library -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<!-- papa parse js : CSV to JSON parsing library -->
+		<script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+		<!-- leaflet js : map scripts library -->
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+		
+		<!-- leaflet css : map styling library -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+		<!-- global.css : global page styling -->
+		<link rel="stylesheet" href="./styles/global.css">
+		<!-- map.css : map page styling -->
+		<link rel="stylesheet" href="./styles/map.css">
+        <!-- main.css : map page styling -->
+		<link rel="stylesheet" href="./styles/main.css">
+		
+<!--		Importing material icons for the back to top button -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="headerContainer">
+			<div class="header">
+				<h1>Small Antidotes</h1>
+				<div class="menu">
+					<a href="index.html" class="menuLink">Home</a>
+                    <a href="main.html" class="menuLink active">Main</a>
+					<a href="map.html" class="menuLink">Map</a>
+					<a href="resources.html" class="menuLink">Resources</a>
+					<a href="team.html" class="menuLink">Team</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+
+            <!-- >>> project description div -->
+
+            <div class="row d-flex justify-content-center">
+				<div class="col">
+					<p class="col fs-4">
+                        <i>Small Antidotes: Mapping Memory in Black Literary DC</i> is a digital exploration of Black literary spaces from 1980 to 2010. A non-exhaustive representation, MBLDC seeks to preserve the city’s rich cultural and spatial histories by highlighting the lineage of places, people, and publications that have allowed Black literary communities to flourish. MBLDC synthesizes data from ephemera, publications, oral histories, and images available in local archival collections to highlight the legacy of DC’s Black literary communities and their contributions to the cultural richness of the city and beyond.
+                    </p>
+				</div>
+			</div>
+
+			
+            <!-- >>> map div -->
+			<div class="container" id="map-container"></div>
+			<div class="row d-flex justify-content-center">
+				<div class="col">
+					<div id="map"></div>
+				</div>
+			</div>
+
+            <br>
+
+            <!-- >>> polaroid buttons div -->
+
+            <div class="container" id="polaroid-btns-container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col">
+                        <a class="btn" role="button" href="./index.html">
+                            <img src="./elements/img/graphics/polaroids/polaroid-home.png" class="img-fluid" alt="Polaroid button - home">
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a class="btn" role="button" href="./main.html">
+                            <img src="./elements/img/graphics/polaroids/polaroid-main.png" class="img-fluid" alt="Polaroid button - main">
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a class="btn" role="button" href="./map.html">
+                            <img src="./elements/img/graphics/polaroids/polaroid-map.png" class="img-fluid" alt="Polaroid button - map">
+                        </a>
+                    </div>
+                    
+				<div class="col">
+                    <a class="btn" role="button" href="./resources.html">
+                        <img src="./elements/img/graphics/polaroids/polaroid-resources.png" class="img-fluid" alt="Polaroid button - resources">
+                    </a>
+				</div>
+
+                <div class="col">
+                    <a class="btn" role="button" href="./team.html">
+                        <img src="./elements/img/graphics/polaroids/polaroid-team.png" class="img-fluid" alt="Polaroid button - team">
+                    </a>
+				</div>
+
+
+                </div>
+
+
+            </div>
+
+
+		</div>
+
+	
+		<div id="topBtn" onclick="backToTop()">
+			<i class="material-icons">keyboard_arrow_up</i>
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+		<script src="./scripts/global.js"></script>
+		<script src="./scripts/map.js"></script>
+        <script src="./scripts/main.js"></script>
+	</body>
+</html>
