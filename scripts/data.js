@@ -62,4 +62,10 @@ function showData(result) {
 
 };
 
-console.log(geoJSON);
+
+
+async function showGeoJson() {
+    const showGJ = await showData();
+    console.log(showGJ);
+    console.log(geoJSON);
+}
