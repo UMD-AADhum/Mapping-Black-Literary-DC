@@ -69,4 +69,4 @@ async function showGeoJson() {
     console.log(showGJ);
     console.log(geoJSON);
 }
-showGeoJson;
+showGeoJson();
