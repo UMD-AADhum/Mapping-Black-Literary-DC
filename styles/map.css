@@ -77,27 +77,3 @@
 .btn-primary:hover {
     background-color: #2b53e7;
 }
-
-#topBtn {
-    position: fixed;
-    bottom: 75px;
-    right: 75px;
-    background-color: rgba(72, 72, 72, 0.8);
-    color: white;
-    padding: 6px 10px;
-    border-radius: 12px;
-    cursor: pointer;
-    z-index: 4;
-}
-
-#topBtn > i {
-    font-size: 36px;
-}
-
-#topBtn > h3 {
-    margin: 0;
-}
-
-#topBtn:hover {
-    background-color: blueviolet;
-}
