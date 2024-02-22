@@ -7,16 +7,16 @@ console.log("map.js is connected")
 // 3. under 'Link' tab, click 'Webpage' dropdown and select CSV file from the menu
 // 4. copy & paste link below
 // 5. verify CSV by scrolling to very end of URL: ending should be '&output=csv'
-let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=1259292064&single=true&output=csv";
+/* let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=1259292064&single=true&output=csv"; */
 
 // > map cards div
 let mapCards = document.getElementById("map-cards");
 
 // > geoJSON collection
-let geoJSON = {
+/* let geoJSON = {
     type: "FeatureCollection",
     features: [],
-};
+}; */
 
 /* 
 // ********** LEAFLET.JS MAP
@@ -42,12 +42,12 @@ L.control.scale({imperial: true, metric: true}).addTo(map);
 
 // ********** DATA RETURN
 // > papaparse CSV to JSON pull
-Papa.parse(mbldcGSheetURL, {
+/* Papa.parse(mbldcGSheetURL, {
     download: true,
     header: true,
     complete: showData,
 });
-
+ */
 /* 
 const blackIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
@@ -60,7 +60,7 @@ const blackIcon = new L.Icon({
 */
 
 // > MBLDC data return function 
-function showData(result) {
+/* function showData(result) {
 
     let rawData = result.data;
 // >>> push rawData to geoJSON  
@@ -95,7 +95,7 @@ function showData(result) {
 
 
 // > create map cards
-
+ */
 // >>> loop through geoJSON and add card for each
     for (let index = 0; index < geoJSON.features.length; index++) {
 
@@ -202,7 +202,8 @@ function showData(result) {
         }}).addTo(map).bindPopup("content - fix"); 
     */
 
-};
+
+// };
 
 
 // > map details 
