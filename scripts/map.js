@@ -18,6 +18,7 @@ let geoJSON = {
     features: [],
 };
 
+/* 
 // ********** LEAFLET.JS MAP
 // > grab map div from DOM
 pageMap = document.getElementById("map");
@@ -37,6 +38,7 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png'
 // > show scale bar on the lower left corner
 L.control.scale({imperial: true, metric: true}).addTo(map);
 
+ */
 
 // ********** DATA RETURN
 // > papaparse CSV to JSON pull
@@ -46,6 +48,7 @@ Papa.parse(mbldcGSheetURL, {
     complete: showData,
 });
 
+/* 
 const blackIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -53,7 +56,8 @@ const blackIcon = new L.Icon({
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
-});
+}); 
+*/
 
 // > MBLDC data return function 
 function showData(result) {
