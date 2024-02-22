@@ -196,9 +196,11 @@ function showData(result) {
     }
 
 // >>> push geoJSON data to map with popup *FIX*
+  /*   
     L.geoJSON(geoJSON, {pointToLayer: function(featured, latlng){
         return L.marker(latlng,{ icon: blackIcon })
-        }}).addTo(map).bindPopup("content - fix");
+        }}).addTo(map).bindPopup("content - fix"); 
+    */
 
 };
 

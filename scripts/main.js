@@ -26,6 +26,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // > show scale bar on the lower left corner
 L.control.scale({imperial: true, metric: true}).addTo(map);
 
+
 // - black map icons
 const blackIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
@@ -35,6 +36,12 @@ const blackIcon = new L.Icon({
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
 });
+
+// >>> push geoJSON data to map with popup *FIX*
+L.geoJSON(geoJSON, {pointToLayer: function(featured, latlng){
+    return L.marker(latlng,{ icon: blackIcon })
+    }}).addTo(map).bindPopup("content - fix");
+
 
 // - map details 
 /* let wmataOverImg = "./elements/img/graphics/wmata-map-495.png";
