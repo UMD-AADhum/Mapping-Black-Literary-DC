@@ -16,16 +16,9 @@ let geoJSON = {
 };
 
 // ********** DATA RETURN
-// > papaparse CSV to JSON pull
-/*
-Papa.parse(mbldcGSheetURL, {
-    download: true,
-    header: true,
-    complete: showData,
-});
-*/
 
-// > MBLDC data return function 
+// > MBLDC data return function
+/* 
 function showData(result) {
 
     let rawData = result.data;
@@ -62,28 +55,77 @@ function showData(result) {
 
 
 };
-
-
-/*
-async function showGeoJson() {
-    const showGJ = await showData();
-    console.log(showGJ);
-    console.log(geoJSON);
-}
-showGeoJson();
 */
 
-async function showGeoJson() {
-    await new Promise((resolve, reject) => {
-        Papa.parse(mbldcGSheetURL, {
-            download: true,
-            header: true,
-            complete: resolve,
-            error: reject
+
+function showData(rawData) {
+
+    console.log(rawData)
+
+
+   // let rawData = result.data;
+
+    
+// >>> push rawData to geoJSON  
+    for (let index = 0; index < rawData.length; index++) {
+        geoJSON.features.push({
+            "type": "Feature",
+
+            "geometry": {
+                "type": "Point",
+                "coordinates": [rawData[index].long, rawData[index].lat],
+            },
+
+            "properties": {
+                "id": rawData[index].venueUID,
+                "venueName": rawData[index].venueName,
+                "venueType": rawData[index].venueType,
+                "category": rawData[index].category,
+                "address": rawData[index].address,
+                "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType + "<button>Card</button>",
+                "extURL": rawData[index].extURL,
+                "imgUID": rawData[index].imgUID,
+                "imgSource": rawData[index].imgSource,
+                "altText": rawData[index].altText,
+                "caption": rawData[index].caption,
+                "captionSource": rawData[index].captionSource,
+                "captionSourceURL": rawData[index].captionSourceURL,
+            }
         });
-    });
-    console.log(geoJSON);
+    }
+
+     console.log(geoJSON);
+
+
+
+};
+
+function parseData(url, callBack) {
+
+Papa.parse(url, {
+    download: true,
+    header: true,
+    complete: function(results) {
+        callBack(results.data)
+    },
+});
 }
-showGeoJson().catch(error => console.error(error));
+
+parseData(mbldcGSheetURL, showData);
+
 
 console.log(geoJSON);
+
+
+
+
+// > papaparse CSV to JSON pull
+/*
+Papa.parse(mbldcGSheetURL, {
+    download: true,
+    header: true,
+    complete: showData,
+});
+*/
+
+
