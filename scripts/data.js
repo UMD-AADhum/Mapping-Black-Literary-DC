@@ -17,12 +17,13 @@ let geoJSON = {
 
 // ********** DATA RETURN
 // > papaparse CSV to JSON pull
+/*
 Papa.parse(mbldcGSheetURL, {
     download: true,
     header: true,
     complete: showData,
 });
-
+*/
 
 // > MBLDC data return function 
 function showData(result) {
@@ -63,10 +64,26 @@ function showData(result) {
 };
 
 
-
+/*
 async function showGeoJson() {
     const showGJ = await showData();
     console.log(showGJ);
     console.log(geoJSON);
 }
 showGeoJson();
+*/
+
+async function showGeoJson() {
+    await new Promise((resolve, reject) => {
+        Papa.parse(mbldcGSheetURL, {
+            download: true,
+            header: true,
+            complete: resolve,
+            error: reject
+        });
+    });
+    console.log(geoJSON);
+}
+showGeoJson().catch(error => console.error(error));
+
+console.log(geoJSON);
