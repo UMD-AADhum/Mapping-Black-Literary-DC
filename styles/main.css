@@ -1,4 +1,19 @@
-.polaroid-btns-container {
-    margin-top: 100px;
+#description-text {
+    font-size: 24px;
+}
+
+#map {
+    /* configure the size of the map */
+    /*width: 75%;*/
+    height: 500px;
+    margin: 50px;
+}
+
+
+#map-address-listing {
     margin-bottom: 100px;
+}
+
+#polaroid-btns-container {
+    margin: 100px;
 }
