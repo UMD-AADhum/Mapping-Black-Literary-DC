@@ -1,16 +1,4 @@
 
-#map {
-    /* configure the size of the map */
-    /*width: 75%;*/
-    height: 400px;
-    margin-top: 50px;
-}
-
-
-#map-address-listing {
-    margin-bottom: 100px;
-}
-
 .card {
     width: 400px;
     display: none;
