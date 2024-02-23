@@ -1,11 +1,11 @@
 @font-face {
     font-family: "playfair-display";
-    src: url("./../mbldc-index-page.hyperesources/PlayfairDisplay-VariableFont_wght.ttf")
+    src: url("./../elements/animation/mbldc-index-page.hyperesources/PlayfairDisplay-VariableFont_wght.ttf")
   }
 
   @font-face {
 font-family: "lexend";
-src: url("./../mbldc-index-page.hyperesources/Lexend-VariableFont_wght.ttf")
+src: url("./../elements/animation/mbldc-index-page.hyperesources/Lexend-VariableFont_wght.ttf")
   }
 
 body {
@@ -158,4 +158,8 @@ p {
 
 #topBtn:hover {
     background-color: blueviolet;
+}
+
+.polaroid-btn-img {
+    width: 200px;
 }

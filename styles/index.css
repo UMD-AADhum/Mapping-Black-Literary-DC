@@ -2,3 +2,8 @@
 .hypeContainer {
     height: 800px;
 }
+
+#index-title-image {
+    width: 600px;
+    margin-top: 50px;
+}
