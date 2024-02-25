@@ -12,8 +12,8 @@ console.log("map.js is connected")
 // > map cards div
 let mapCards = document.getElementById("map-cards");
 
-// > geoJSON collection
-let geoJSON = {
+// > geoJSONCards collection
+let geoJSONCards = {
     type: "FeatureCollection",
     features: [],
 }; 
@@ -63,9 +63,9 @@ const blackIcon = new L.Icon({
  function showData(result) {
 
     let rawData = result.data;
-// >>> push rawData to geoJSON  
+// >>> push rawData to geoJSONCards  
     for (let index = 0; index < rawData.length; index++) {
-        geoJSON.features.push({
+        geoJSONCards.features.push({
             "type": "Feature",
 
             "geometry": {
@@ -91,70 +91,70 @@ const blackIcon = new L.Icon({
         });
     }
 
-    // console.log(geoJSON);
+    // console.log(geoJSONCards);
 
 
 // > create map cards
 
-// >>> loop through geoJSON and add card for each
-    for (let index = 0; index < geoJSON.features.length; index++) {
+// >>> loop through geoJSONCards and add card for each
+    for (let index = 0; index < geoJSONCards.features.length; index++) {
 
         // create card column to go in DOM map-cards row
         let cardCol = document.createElement("div");
-        cardCol.className = "col-sm-6 col-lg-4 mb-4 card show " + geoJSON.features[index].properties.category;
+        cardCol.className = "col-sm-6 col-lg-4 mb-4 card show " + geoJSONCards.features[index].properties.category;
 
 // >>>>> create card element
         let card = document.createElement("div");
-        // card.className = "card " + geoJSON.features[index].properties.category;
+        // card.className = "card " + geoJSONCards.features[index].properties.category;
 
 // >>>>> set card ID
-        card.setAttribute("id", geoJSON.features[index].properties.id);
+        card.setAttribute("id", geoJSONCards.features[index].properties.id);
 
 // >>>>> create card body
         let cardBody = document.createElement("div");
         cardBody.className = "card-body";
 
-// >>>>> create card title & store geoJSON data
+// >>>>> create card title & store geoJSONCards data
         let cardTitle = document.createElement("h5");
         cardTitle.className = "card-title"
-        cardTitle.innerText = geoJSON.features[index].properties.venueName;
-        cardTitle.setAttribute("href", geoJSON.features[index].properties.extURL);
+        cardTitle.innerText = geoJSONCards.features[index].properties.venueName;
+        cardTitle.setAttribute("href", geoJSONCards.features[index].properties.extURL);
         cardTitle.setAttribute("target", "blank")
 
 
-/*         // >>>>> create card link & store geoJSON external links
+/*         // >>>>> create card link & store geoJSONCards external links
         let cardExtUrl = document.createElement("a");
         cardExtUrl.className = "btn btn-primary";
-        cardExtUrl.setAttribute("href", geoJSON.features[index].properties.extURL);
+        cardExtUrl.setAttribute("href", geoJSONCards.features[index].properties.extURL);
         cardExtUrl.setAttribute("target", "blank")
         cardExtUrl.innerText = "Visit"
  */
 
-// >>>>> create card category & store geoJSON data
+// >>>>> create card category & store geoJSONCards data
         let cardCat = document.createElement("h6")
         cardCat.className = "card-subtitle";
-        cardCat.innerText = geoJSON.features[index].properties.venueType;
+        cardCat.innerText = geoJSONCards.features[index].properties.venueType;
 
-// >>>>> create card text & store geoJSON data
+// >>>>> create card text & store geoJSONCards data
 // >>>>>>> address
         let cardAddress = document.createElement("p");
         cardAddress.className = "card-text"
-        cardAddress.innerText = geoJSON.features[index].properties.address;
+        cardAddress.innerText = geoJSONCards.features[index].properties.address;
 
 // >>>>>>> caption
         let cardCaption = document.createElement("p");
         cardCaption.className = "card-text"
-        cardCaption.innerText = geoJSON.features[index].properties.caption;
+        cardCaption.innerText = geoJSONCards.features[index].properties.caption;
 
 // >>>>>>> caption source
         let cardCaptionSource = document.createElement("p");
         cardCaptionSource.className = "card-text"
-        cardCaptionSource.innerText = "Caption Source: " + geoJSON.features[index].properties.captionSource;
+        cardCaptionSource.innerText = "Caption Source: " + geoJSONCards.features[index].properties.captionSource;
 
 // >>>>>>> image source
         let imgSource = document.createElement("p");
         imgSource.className = "card-text"
-        imgSource.innerText = "Image Source: " + geoJSON.features[index].properties.imgSource;
+        imgSource.innerText = "Image Source: " + geoJSONCards.features[index].properties.imgSource;
 
 // card footer
         let cardFooter = document.createElement("div");
@@ -163,15 +163,15 @@ const blackIcon = new L.Icon({
 // >>>>>>> learn more button
         let learnMoreBtn = document.createElement("a");
         learnMoreBtn.className = "btn card-btn";
-        learnMoreBtn.setAttribute("href", geoJSON.features[index].properties.captionSourceURL);
+        learnMoreBtn.setAttribute("href", geoJSONCards.features[index].properties.captionSourceURL);
         learnMoreBtn.setAttribute("target", "blank")
         learnMoreBtn.innerText = "Learn More"
 
-// >>>>> create card img & store geoJSON img tag
+// >>>>> create card img & store geoJSONCards img tag
         let cardImg = document.createElement("img");
         cardImg.className = "card-img-top";
-        cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSON.features[index].properties.imgUID + ".jpg");
-        cardImg.setAttribute("alt", geoJSON.features[index].properties.altText);
+        cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSONCards.features[index].properties.imgUID + ".jpg");
+        cardImg.setAttribute("alt", geoJSONCards.features[index].properties.altText);
 
 
 
@@ -268,15 +268,14 @@ function scrollIntoViewPoint() {
 }
 
 function scrollIntoViewCard() {
-    let scrollCard = document.getElementById(geoJSON.features[index].properties.id);
+    let scrollCard = document.getElementById(geoJSONCards.features[index].properties.id);
     scrollCard.scrollIntoView()
 }
 
+} // end showData
 
 // Back to top button
 function backToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-}
-
 }
