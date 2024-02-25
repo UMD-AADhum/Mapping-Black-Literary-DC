@@ -51,10 +51,11 @@ let imageOverlay = L.imageOverlay(wmataOverImg, wmataOverBounds, {
     interactive: true
 }).addTo(map); */
 
+let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=1259292064&single=true&output=csv";
 
 
 // > geoJSON collection
-let geoJSON = {
+let geoJSONMap = {
     type: "FeatureCollection",
     features: [],
 }; 
@@ -73,7 +74,7 @@ function showData(result) {
 
 // >>> push rawData to geoJSON  
     for (let index = 0; index < rawData.length; index++) {
-        geoJSON.features.push({
+        geoJSONMap.features.push({
             "type": "Feature",
 
             "geometry": {
@@ -103,7 +104,7 @@ function showData(result) {
     
     
     // >>> push geoJSON data to map with popup *FIX*
-    L.geoJSON(geoJSON, {pointToLayer: function(featured, latlng){
+    L.geoJSON(geoJSONMap, {pointToLayer: function(featured, latlng){
         return L.marker(latlng,{ icon: blackIcon })
         }}).addTo(map).bindPopup("content - fix");
 
