@@ -37,9 +37,6 @@ const blackIcon = new L.Icon({
     shadowSize: [41, 41]
 });
 
-
-
-
 // - map details 
 /* let wmataOverImg = "./elements/img/graphics/wmata-map-495.png";
 let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
@@ -72,7 +69,7 @@ function showData(result) {
 
     let rawData = result.data;
 
-// >>> push rawData to geoJSON  
+    // >>> push rawData to geoJSON  
     for (let index = 0; index < rawData.length; index++) {
         geoJSONMap.features.push({
             "type": "Feature",
@@ -104,19 +101,16 @@ function showData(result) {
     
     
     // >>> push geoJSON data to map with popup *FIX*
-    L.geoJSON(geoJSONMap, {pointToLayer: function(featured, latlng){
-        return L.marker(latlng,{ icon: blackIcon })
-        }}).addTo(map).bindPopup("content - fix");
-
-    
-// >>> loop through geoJSON and add card for each
-    for (let index = 0; index < geoJSON.features.length; index++) {
-
-    }
+    L.geoJSON(geoJSONMap, {
+        pointToLayer: function(featured, latlng) {
+            return L.marker(latlng,{ icon: blackIcon })
+        },
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup("content - fix")
+        }
+        }).addTo(map);
 
 }
-
-
 
 // Back to top button
 function backToTop() {
