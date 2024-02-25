@@ -37,10 +37,7 @@ const blackIcon = new L.Icon({
     shadowSize: [41, 41]
 });
 
-// >>> push geoJSON data to map with popup *FIX*
-L.geoJSON(geoJSON, {pointToLayer: function(featured, latlng){
-    return L.marker(latlng,{ icon: blackIcon })
-    }}).addTo(map).bindPopup("content - fix");
+
 
 
 // - map details 
@@ -53,3 +50,75 @@ let imageOverlay = L.imageOverlay(wmataOverImg, wmataOverBounds, {
     opacity: .3,
     interactive: true
 }).addTo(map); */
+
+
+
+// > geoJSON collection
+let geoJSON = {
+    type: "FeatureCollection",
+    features: [],
+}; 
+
+// ********** DATA RETURN
+// > papaparse CSV to JSON pull
+Papa.parse(mbldcGSheetURL, {
+    download: true,
+    header: true,
+    complete: showData,
+});
+
+function showData(result) {
+
+    let rawData = result.data;
+
+// >>> push rawData to geoJSON  
+    for (let index = 0; index < rawData.length; index++) {
+        geoJSON.features.push({
+            "type": "Feature",
+
+            "geometry": {
+                "type": "Point",
+                "coordinates": [rawData[index].long, rawData[index].lat],
+            },
+
+            "properties": {
+                "id": rawData[index].venueUID,
+                "venueName": rawData[index].venueName,
+                "venueType": rawData[index].venueType,
+                "category": rawData[index].category,
+                "address": rawData[index].address,
+                "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType + "<button>Card</button>",
+                "extURL": rawData[index].extURL,
+                "imgUID": rawData[index].imgUID,
+                "imgSource": rawData[index].imgSource,
+                "altText": rawData[index].altText,
+                "caption": rawData[index].caption,
+                "captionSource": rawData[index].captionSource,
+                "captionSourceURL": rawData[index].captionSourceURL,
+            }
+        });
+    }; 
+
+    // console.log(geoJSON);
+    
+    
+    // >>> push geoJSON data to map with popup *FIX*
+    L.geoJSON(geoJSON, {pointToLayer: function(featured, latlng){
+        return L.marker(latlng,{ icon: blackIcon })
+        }}).addTo(map).bindPopup("content - fix");
+
+    
+// >>> loop through geoJSON and add card for each
+    for (let index = 0; index < geoJSON.features.length; index++) {
+
+    }
+
+}
+
+
+
+// Back to top button
+function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
