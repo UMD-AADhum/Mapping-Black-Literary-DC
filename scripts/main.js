@@ -106,7 +106,8 @@ function showData(result) {
             return L.marker(latlng,{ icon: blackIcon })
         },
         onEachFeature: function (feature, layer) {
-            layer.bindPopup("content - fix")
+
+            layer.bindPopup(feature.properties.popupContent)
         }
         }).addTo(map);
 
