@@ -101,21 +101,21 @@ function showData(result) {
 
     // console.log(geoJSON);
     
-    L.geoJSON(geoJSONMap, {
-        pointToLayer: function(featured, latlng) {
-            return L.marker(latlng,{ icon: blackIcon })
-        }}).addTo(map);
-        
     // >>> push geoJSON data to map with popup *FIX*
-    function onEachFeature (feature, layer) {
-        if (feature.properties && feature.properties.popupContent) {
-            layer.bindPopup(feature.properties.popupContent);
+        function onEachFeature (feature, layer) {
+            if (feature.properties && feature.properties.popupContent) {
+                layer.bindPopup(feature.properties.popupContent);
+            }
         }
-    }
 
     L.geoJSON(geoJSONMap, {
+        pointToLayer: function(feature, latlng) {
+            return L.marker(latlng,{ icon: blackIcon })
+        },
         onEachFeature: onEachFeature
+    
     }).addTo(map);
+        
 
 }
 
