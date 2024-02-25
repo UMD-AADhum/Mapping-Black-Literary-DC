@@ -26,6 +26,19 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // > show scale bar on the lower left corner
 L.control.scale({imperial: true, metric: true}).addTo(map);
 
+// - map details 
+/* 
+let wmataOverImg = "./elements/img/graphics/wmata-map-495.png";
+let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
+let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
+
+let imageOverlay = L.imageOverlay(wmataOverImg, wmataOverBounds, {
+    errorOverlayUrl: errorOverlayImg,
+    opacity: .3,
+    interactive: true
+}).addTo(map); 
+*/
+
 
 // - black map icons
 const blackIcon = new L.Icon({
@@ -36,17 +49,6 @@ const blackIcon = new L.Icon({
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
 });
-
-// - map details 
-/* let wmataOverImg = "./elements/img/graphics/wmata-map-495.png";
-let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
-let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
-
-let imageOverlay = L.imageOverlay(wmataOverImg, wmataOverBounds, {
-    errorOverlayUrl: errorOverlayImg,
-    opacity: .3,
-    interactive: true
-}).addTo(map); */
 
 let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=1259292064&single=true&output=csv";
 
@@ -99,17 +101,21 @@ function showData(result) {
 
     // console.log(geoJSON);
     
-    
-    // >>> push geoJSON data to map with popup *FIX*
     L.geoJSON(geoJSONMap, {
         pointToLayer: function(featured, latlng) {
             return L.marker(latlng,{ icon: blackIcon })
-        },
-        onEachFeature: function (feature, layer) {
-
-            layer.bindPopup(feature.properties.popupContent)
+        }}).addTo(map);
+        
+    // >>> push geoJSON data to map with popup *FIX*
+    function onEachFeature (feature, layer) {
+        if (feature.properties && feature.properties.popupContent) {
+            layer.bindPopup(feature.properties.popupContent);
         }
-        }).addTo(map);
+    }
+
+    L.geoJSON(geoJSONMap, {
+        onEachFeature: onEachFeature
+    }).addTo(map);
 
 }
 
