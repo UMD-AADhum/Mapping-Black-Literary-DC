@@ -13,12 +13,12 @@ console.log("map.js is connected")
 let mapCards = document.getElementById("map-cards");
 
 // > geoJSON collection
-/* let geoJSON = {
+let geoJSON = {
     type: "FeatureCollection",
     features: [],
-}; */
+}; 
 
-/* 
+/*
 // ********** LEAFLET.JS MAP
 // > grab map div from DOM
 pageMap = document.getElementById("map");
@@ -37,18 +37,18 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png'
 
 // > show scale bar on the lower left corner
 L.control.scale({imperial: true, metric: true}).addTo(map);
+*/
 
- */
 
 // ********** DATA RETURN
 // > papaparse CSV to JSON pull
-/* Papa.parse(mbldcGSheetURL, {
+ Papa.parse(mbldcGSheetURL, {
     download: true,
     header: true,
     complete: showData,
 });
- */
-/* 
+
+/*
 const blackIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -60,7 +60,7 @@ const blackIcon = new L.Icon({
 */
 
 // > MBLDC data return function 
-/* function showData(result) {
+ function showData(result) {
 
     let rawData = result.data;
 // >>> push rawData to geoJSON  
@@ -95,7 +95,7 @@ const blackIcon = new L.Icon({
 
 
 // > create map cards
- */
+
 // >>> loop through geoJSON and add card for each
     for (let index = 0; index < geoJSON.features.length; index++) {
 
@@ -195,28 +195,6 @@ const blackIcon = new L.Icon({
 
     }
 
-// >>> push geoJSON data to map with popup *FIX*
-  /*   
-    L.geoJSON(geoJSON, {pointToLayer: function(featured, latlng){
-        return L.marker(latlng,{ icon: blackIcon })
-        }}).addTo(map).bindPopup("content - fix"); 
-    */
-
-
-// };
-
-
-// > map details 
-/* let wmataOverImg = "./elements/img/graphics/wmata-map-495.png";
-let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
-let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
-
-let imageOverlay = L.imageOverlay(wmataOverImg, wmataOverBounds, {
-    errorOverlayUrl: errorOverlayImg,
-    opacity: .3,
-    interactive: true
-}).addTo(map); */
-
 
 // category filter
 function filterSelection(c) {
@@ -281,6 +259,7 @@ function activeMenu(element) {
 // }
 
 // scrollIntoView buttons
+
 function scrollIntoViewPoint() {
     let scrollPointID = this.properties.id;
     console.log(scrollPointID);
@@ -298,4 +277,6 @@ function scrollIntoViewCard() {
 function backToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+}
+
 }
