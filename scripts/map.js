@@ -7,7 +7,8 @@ console.log("map.js is connected")
 // 3. under 'Link' tab, click 'Webpage' dropdown and select CSV file from the menu
 // 4. copy & paste link below
 // 5. verify CSV by scrolling to very end of URL: ending should be '&output=csv'
-/* let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=1259292064&single=true&output=csv"; */
+
+let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=1259292064&single=true&output=csv";
 
 // > map cards div
 let mapCards = document.getElementById("map-cards");
