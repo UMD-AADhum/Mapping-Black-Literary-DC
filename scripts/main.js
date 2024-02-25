@@ -104,7 +104,7 @@ function showData(result) {
     // >>> push geoJSON data to map with popup *FIX*
         function onEachFeature (feature, layer) {
           
-                layer.bindPopup(feature.properties.popupContent);
+                layer.bindPopup("popup!");
          
         }
 
