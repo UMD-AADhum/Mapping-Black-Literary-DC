@@ -91,22 +91,26 @@ function showData(result) {
     
     // >>> push geoJSON data to map with popup *FIX*
 
-    /*
+    // push data
+    L.geoJSON(geoJSONMap, {
+        pointToLayer: function(feature, latlng) {
+            return L.marker(latlng,{ icon: blackIcon })
+        }
+    }).addTo(map);
+
     // onEachFeature to create popup
-    function onEachFeaturePopups (feature, layer) {      
-        layer.bindPopup(feature.properties.popupContent);
+    function onEachFeaturePopups (feature, layer) {
+        if (feature.properties && feature.properties.popupContent) {
+            layer.bindPopup(feature.properties.popupContent);
+        }
     }
 
     // push geoJSON data to map with onEachFeature
     L.geoJSON(geoJSONMap, {
-        pointToLayer: function(feature, latlng) {
-            return L.marker(latlng,{ icon: blackIcon })
-        },
         onEachFeature: onEachFeaturePopups
-    
     }).addTo(map);
-*/
 
+/*
     let mapPoints = L.geoJSON(geoJSONMap, {
         pointToLayer: function(feature, latlng) {
             return L.marker(latlng,{ icon: blackIcon })
@@ -115,7 +119,7 @@ function showData(result) {
             layer.bindPopup(feature.properties.popupContent);
         }
     }).addTo(map);
-
+*/
 
 } // end showData
 
