@@ -20,9 +20,11 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png'
 */
 
 // > tile: open street map (basic/demo)
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+let OSM_Tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+});
+map.addLayer(OSM_Tiles);
+// .addTo(map);
 
 // ### show scale bar on the lower left corner
 L.control.scale({imperial: true, metric: true}).addTo(map);
