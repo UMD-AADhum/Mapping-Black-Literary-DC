@@ -2,11 +2,11 @@ console.log("main.js is connected")
 
 // CREATE LEAFLET.JS MAP
 // ### grab map div from DOM
-pageMap = document.getElementById("map");
+let pageMap = document.getElementById("map");
 
 // ### create map & set main view center 
 // >>> current center: African American Civil War Museum (U St NW & Vermont Ave NW) | latitude = 38.916271, longitude -77.025391
-map = L.map(pageMap).setView({lon: -77.025391, lat: 38.916271}, 15.5);
+let map = L.map(pageMap).setView({lon: -77.025391, lat: 38.916271}, 15.5);
 
 // ADD MAP ELEMENTS
 // ### add map tiles
@@ -75,7 +75,7 @@ function showData(result) {
                 "venueType": rawData[index].venueType,
                 "category": rawData[index].category,
                 "address": rawData[index].address,
-                "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType + "<button>Card</button>",
+                "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType,
                 "extURL": rawData[index].extURL,
                 "imgUID": rawData[index].imgUID,
                 "imgSource": rawData[index].imgSource,
@@ -89,6 +89,7 @@ function showData(result) {
     
     // >>> push geoJSON data to map with popup *FIX*
 
+    /*
     // onEachFeature to create popup
     function onEachFeaturePopups (feature, layer) {      
         layer.bindPopup(feature.properties.popupContent);
@@ -102,7 +103,17 @@ function showData(result) {
         onEachFeature: onEachFeaturePopups
     
     }).addTo(map);
-        
+*/
+
+    let mapPoints = L.geoJSON(geoJSONMap, {
+        pointToLayer: function(feature, latlng) {
+            return L.marker(latlng,{ icon: blackIcon })
+        },
+        onEachFeature: function(feature, layer) {
+            layer.bindPopup(feature.properties.popupContent);
+        }
+    }).addTo(map);
+
 
 } // end showData
 
