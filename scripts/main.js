@@ -91,24 +91,21 @@ function showData(result) {
     
     // >>> push geoJSON data to map with popup *FIX*
 
-    // push data
-    L.geoJSON(geoJSONMap, {
-        pointToLayer: function(feature, latlng) {
-            return L.marker(latlng,{ icon: blackIcon })
-        }
-    }).addTo(map);
-
     // onEachFeature to create popup
-    function onEachFeaturePopups (feature, layer) {
+    function onEachFeature (feature, layer) {
         if (feature.properties && feature.properties.popupContent) {
             layer.bindPopup(feature.properties.popupContent);
         }
     }
 
-    // push geoJSON data to map with onEachFeature
+    // push data
     L.geoJSON(geoJSONMap, {
-        onEachFeature: onEachFeaturePopups
+        pointToLayer: function(feature, latlng) {
+            return L.marker(latlng,{ icon: blackIcon })
+        },
+        onEachFeature: onEachFeature
     }).addTo(map);
+
 
 /*
     let mapPoints = L.geoJSON(geoJSONMap, {
