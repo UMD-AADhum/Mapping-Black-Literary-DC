@@ -112,7 +112,7 @@ const blackIcon = new L.Icon({
         card.setAttribute("id", geoJSONCards.features[index].properties.id);
 
 // >>>>> create card body
-        let cardBody = document.createElement("div");
+        let cardBody = document.createElement("span");
         cardBody.className = "card-body";
 
 // >>>>> create card title & store geoJSONCards data
@@ -183,7 +183,7 @@ const blackIcon = new L.Icon({
 
 // >>>>> create & class modal elements for each card 
         // modal
-        let cardModal = document.createElement("span");
+        let cardModal = document.createElement("div");
         cardModal.className = "modal fade";
         cardModal.setAttribute("id", "modal-" + geoJSONCards.features[index].properties.id);
         cardModal.setAttribute("tabindex", "-1");
