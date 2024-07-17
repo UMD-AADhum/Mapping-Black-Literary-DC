@@ -174,6 +174,61 @@ const blackIcon = new L.Icon({
         cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSONCards.features[index].properties.imgUID + ".jpg");
         cardImg.setAttribute("alt", geoJSONCards.features[index].properties.altText);
 
+// >>>>> create modal trigger button
+        let cardModalBtn = document.createElement("btn");
+        cardModalBtn.setAttribute("type", "button");
+        cardModalBtn.className = "btn btn-primary"
+        cardModalBtn.setAttribute("data-bs-toggle", "modal"); 
+        cardModalBtn.setAttribute("data-bs-target", "#modal-" + geoJSONCards.features[index].properties.id);
+
+// >>>>> create & class modal elements for each card 
+        // modal
+        let cardModal = document.createElement("div");
+        cardModal.className = "modal fade";
+        cardModal.setAttribute("id", "modal-" + geoJSONCards.features[index].properties.id);
+        cardModal.setAttribute("tabindex", "-1");
+        cardModal.setAttribute("aria-labelledby", "modalLabel" + geoJSONCards.features[index].properties.id);
+        cardModal.setAttribute("aria-hidden", "true");
+
+        // modal-dialog
+        let cardModalDialog = document.createElement("modal-dialog");
+        cardModalDialog.className = "modal-dialog";
+
+        // modal-content
+        let cardModalContent = document.createElement("div");
+        cardModalContent.className = "modal-content";
+
+        // modal-header
+        let cardModalHeader = document.createElement("div");
+        cardModalHeader.className = "modal-header";
+
+        // modal-header-h1 (modal header)
+        let cardModalHeaderTxt = document.createElement("h1");
+        cardModalHeaderTxt.className = "modal-title fs-5"
+        cardModalHeaderTxt.setAttribute("id", "modalLabel" + geoJSONCards.features[index].properties.id)
+
+        // modal-body
+        let cardModalBody = document.createElement("div");
+        cardModalBody.className = "modal-body";
+
+        let cardModalBodyTest = document.createElement("p");
+        cardModalBodyTest.innerText = "just testing to see if the modal works."
+
+        // modal-footer
+        let cardModalFooter = document.createElement("div");
+        cardModalFooter.className = "modal-footer";
+
+        // modal close btn (modal footer)
+        let cardModalCloseBtn = document.createElement("button");
+        cardModalCloseBtn.setAttribute("type", "button");
+        cardModalCloseBtn.className = "btn-close";
+        cardModalCloseBtn.setAttribute("data-bs-dismiss", "modal");
+        cardModalCloseBtn.setAttribute("aria-label", "close")
+
+
+// >>>>> create map with point for each modal
+
+// >>>>> append modal elements to modal
 
 
 // >>>>> append card elements to card; 
@@ -188,7 +243,10 @@ const blackIcon = new L.Icon({
     //    cardBody.appendChild(cardExtUrl);
         card.appendChild(cardImg);
         card.appendChild(cardBody);
-        cardCol.appendChild(card);
+    //  cardCol.appendChild(card);
+
+        cardModalBtn.innerHTML = card;
+        cardCol.appendChild(cardModalBtn);
 
 
 // >>>>> append card to DOM card row div
