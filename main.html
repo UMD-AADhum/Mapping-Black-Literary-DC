@@ -32,6 +32,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
 	</head>
+
 	<body>
 		<div class="headerContainer">
 			<div class="header">
@@ -48,78 +49,70 @@
 		
 		<div class="container">
 
-            <!-- >>> project description div -->
-
+        <!-- project description -->
             <div class="row d-flex justify-content-center">
 				<div class="col">
-					<p class="col fs-4">
+					<p id="description-text">
                         <i>Small Antidotes: Mapping Memory in Black Literary DC</i> is a digital exploration of Black literary spaces from 1980 to 2010. A non-exhaustive representation, MBLDC seeks to preserve the city’s rich cultural and spatial histories by highlighting the lineage of places, people, and publications that have allowed Black literary communities to flourish. MBLDC synthesizes data from ephemera, publications, oral histories, and images available in local archival collections to highlight the legacy of DC’s Black literary communities and their contributions to the cultural richness of the city and beyond.
                     </p>
 				</div>
 			</div>
 
-			
-            <!-- >>> map div -->
-			<div class="container" id="map-container"></div>
+        <!-- map -->
+			<!-- <div class="container" id="map-container"></div> -->
 			<div class="row d-flex justify-content-center">
 				<div class="col">
 					<div id="map"></div>
 				</div>
 			</div>
 
-            <br>
-
-            <!-- >>> polaroid buttons div -->
-
-            <div class="container" id="polaroid-btns-container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col">
-                        <a class="btn" role="button" href="./index.html">
-                            <img src="./elements/img/graphics/polaroids/polaroid-home.png" class="img-fluid" alt="Polaroid button - home">
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a class="btn" role="button" href="./main.html">
-                            <img src="./elements/img/graphics/polaroids/polaroid-main.png" class="img-fluid" alt="Polaroid button - main">
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a class="btn" role="button" href="./map.html">
-                            <img src="./elements/img/graphics/polaroids/polaroid-map.png" class="img-fluid" alt="Polaroid button - map">
-                        </a>
-                    </div>
-                    
-				<div class="col">
-                    <a class="btn" role="button" href="./resources.html">
-                        <img src="./elements/img/graphics/polaroids/polaroid-resources.png" class="img-fluid" alt="Polaroid button - resources">
-                    </a>
+        <!-- polaroid buttons -->
+			<div class="row d-flex justify-content-center">
+				<div class="container" id="polaroid-btns-container">
+					<div class="row">
+						<div class="col">
+							<a class="btn" role="button" href="./index.html">
+								<img src="./elements/img/graphics/polaroids/MBLDC_Polaroid_930Club_Home.png" class="img-fluid polaroid-btn-img" alt="Polaroid photograph of the 9:30 Club as a button leading to the home page.">
+								Home
+							</a>
+						</div>
+						<div class="col">
+							<a class="btn" role="button" href="./main.html">
+								<img src="./elements/img/graphics/polaroids/MBLDC_Polaroid_BensChilliBowl_Main.png" class="img-fluid polaroid-btn-img" alt="Polaroid photograph of Ben's Chili Bowl as a button leading to the main page.">
+								Main
+							</a>
+						</div>
+						<div class="col">
+							<a class="btn" role="button" href="./map.html">
+								<img src="./elements/img/graphics/polaroids/MBLDC_Polaroid_Metro_Map.png" class="img-fluid polaroid-btn-img" alt="Polaroid photograph of the DC Metro as a button leading to the map page.">
+								Map
+							</a>
+						</div>
+						<div class="col">
+							<a class="btn" role="button" href="./resources.html">
+								<img src="./elements/img/graphics/polaroids/MBLDC_Polaroid_TheMUG_Resources.png" class="img-fluid polaroid-btn-img" alt="Polaroid photograph of The MUG as a button leading to the resources page">
+								Resources
+							</a>
+						</div>
+						<div class="col">
+							<a class="btn" role="button" href="./team.html">
+								<img src="./elements/img/graphics/polaroids/MBLDC_Polaroids_USt_Team.png" class="img-fluid polaroid-btn-img" alt="Polaroid photograph of U Street as a button leading to the team page.">
+								Team
+							</a>
+						</div>
+					</div>
 				</div>
-
-                <div class="col">
-                    <a class="btn" role="button" href="./team.html">
-                        <img src="./elements/img/graphics/polaroids/polaroid-team.png" class="img-fluid" alt="Polaroid button - team">
-                    </a>
-				</div>
-
-
-                </div>
-
-
-            </div>
-
-
+			</div>
 		</div>
 
-	
+	<!-- scroll to top button -->	
 		<div id="topBtn" onclick="backToTop()">
 			<i class="material-icons">keyboard_arrow_up</i>
 		</div>
 		
 		<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 		<script src="./scripts/global.js"></script>
-		<script src="./scripts/data.js"></script>
+		
         <script src="./scripts/main.js"></script>
 	</body>
 </html>

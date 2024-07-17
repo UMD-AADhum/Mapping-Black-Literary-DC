@@ -1,4 +1,4 @@
-console.log("data.js is connected")
+console.log("data-test.js is connected")
 
 // ********** VARIABLES
 // > Google Sheets URL

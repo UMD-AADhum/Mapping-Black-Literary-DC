@@ -1,15 +1,16 @@
 console.log("main.js is connected")
 
-// ********** LEAFLET.JS MAP
-// > grab map div from DOM
-pageMap = document.getElementById("map");
+// CREATE LEAFLET.JS MAP
+// ### grab map div from DOM
+let pageMap = document.getElementById("map");
 
-// > create map & set main view center 
+// ### create map & set main view center 
 // >>> current center: African American Civil War Museum (U St NW & Vermont Ave NW) | latitude = 38.916271, longitude -77.025391
-map = L.map(pageMap).setView({lon: -77.025391, lat: 38.916271}, 15.5);
+let map = L.map(pageMap).setView({lon: -77.025391, lat: 38.916271}, 15.5);
 
-// > add map tiles
-// >>> tile: stamen toner by stadia maps
+// ADD MAP ELEMENTS
+// ### add map tiles
+// > tile: stamen toner by stadia maps
 /*
 L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png', {
     maxZoom: 19,
@@ -18,16 +19,17 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png'
 }).addTo(map);
 */
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+// > tile: open street map (basic/demo)
+let OSM_Tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+});
+map.addLayer(OSM_Tiles);
+// .addTo(map);
 
-
-// > show scale bar on the lower left corner
+// ### show scale bar on the lower left corner
 L.control.scale({imperial: true, metric: true}).addTo(map);
 
-
-// - black map icons
+// ### black map icons
 const blackIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -37,19 +39,89 @@ const blackIcon = new L.Icon({
     shadowSize: [41, 41]
 });
 
-// >>> push geoJSON data to map with popup *FIX*
-L.geoJSON(geoJSON, {pointToLayer: function(featured, latlng){
-    return L.marker(latlng,{ icon: blackIcon })
-    }}).addTo(map).bindPopup("content - fix");
+// ADD DATA TO MAP
+// ### mbldc data sheet URL
+let mbldcGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTftLVLS-R7Osjh6O60IornfVPoG2MK1TS7HluHkc6DE_uOwdKl75FsZLmPC7pWUcP_XsHiaSYajGmI/pub?gid=1259292064&single=true&output=csv";
+
+// ### create geoJSON collection
+let geoJSONMap = {
+    type: "FeatureCollection",
+    features: [],
+}; 
+
+// ### papaparse CSV to JSON pull
+Papa.parse(mbldcGSheetURL, {
+    download: true,
+    header: true,
+    complete: showData,
+});
+
+// ### showData(): JSON to geoJSON to map
+function showData(result) {
+
+    let rawData = result.data;
+
+    // >>> push rawData to geoJSON  
+    for (let index = 0; index < rawData.length; index++) {
+        geoJSONMap.features.push({
+            "type": "Feature",
+
+            "geometry": {
+                "type": "Point",
+                "coordinates": [rawData[index].long, rawData[index].lat],
+            },
+
+            "properties": {
+                "id": rawData[index].venueUID,
+                "venueName": rawData[index].venueName,
+                "venueType": rawData[index].venueType,
+                "category": rawData[index].category,
+                "address": rawData[index].address,
+                "popupContent": rawData[index].venueName + "<br>" + rawData[index].address + "<br>" + rawData[index].venueType,
+                "extURL": rawData[index].extURL,
+                "imgUID": rawData[index].imgUID,
+                "imgSource": rawData[index].imgSource,
+                "altText": rawData[index].altText,
+                "caption": rawData[index].caption,
+                "captionSource": rawData[index].captionSource,
+                "captionSourceURL": rawData[index].captionSourceURL,
+            }
+        });
+    };
+    
+    // >>> push geoJSON data to map with popup *FIX*
+
+    // onEachFeature to create popup
+    function onEachFeature (feature, layer) {
+        if (feature.properties && feature.properties.popupContent) {
+            layer.bindPopup(feature.properties.popupContent);
+        }
+    }
+
+    // push data
+    L.geoJSON(geoJSONMap, {
+        pointToLayer: function(feature, latlng) {
+            return L.marker(latlng,{ icon: blackIcon })
+        },
+        onEachFeature: onEachFeature
+    }).addTo(map);
 
 
-// - map details 
-/* let wmataOverImg = "./elements/img/graphics/wmata-map-495.png";
-let errorOverlayImg = "https://cdn-icons-png.flaticon.com/512/110/110686.png";
-let wmataOverBounds = L.latLngBounds([[39.028492, -77.233734], [38.768111, -76.844407]])
+/*
+    let mapPoints = L.geoJSON(geoJSONMap, {
+        pointToLayer: function(feature, latlng) {
+            return L.marker(latlng,{ icon: blackIcon })
+        },
+        onEachFeature: function(feature, layer) {
+            layer.bindPopup(feature.properties.popupContent);
+        }
+    }).addTo(map);
+*/
 
-let imageOverlay = L.imageOverlay(wmataOverImg, wmataOverBounds, {
-    errorOverlayUrl: errorOverlayImg,
-    opacity: .3,
-    interactive: true
-}).addTo(map); */
+} // end showData
+
+// ### Back to top button
+function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
