@@ -183,8 +183,8 @@ const blackIcon = new L.Icon({
 
 // >>>>> create & class modal elements for each card 
         // modal
-        let cardModal = document.createElement("div");
-        cardModal.className = "modal";
+        let cardModal = document.createElement("span");
+        cardModal.className = "modal fade";
         cardModal.setAttribute("id", "modal-" + geoJSONCards.features[index].properties.id);
         cardModal.setAttribute("tabindex", "-1");
         cardModal.setAttribute("aria-labelledby", "modalLabel" + geoJSONCards.features[index].properties.id);
@@ -247,6 +247,12 @@ const blackIcon = new L.Icon({
 
         cardModalBtn.appendChild = card;
         cardCol.appendChild(cardModalBtn);
+
+        cardModalHeader.innerText = cardModalHeaderTxt;
+        cardModalHeader.appendChild = cardModalCloseBtn;
+        cardModalContent.appendChild(cardModalHeader);
+        cardModalContent.appendChild(cardModalBody);
+        cardModalContent.appendChild(cardModalFooter);
 
 
 // >>>>> append card to DOM card row div
