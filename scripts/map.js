@@ -245,7 +245,7 @@ const blackIcon = new L.Icon({
         card.appendChild(cardBody);
     //  cardCol.appendChild(card);
 
-        cardModalBtn.innerHTML = card;
+        cardModalBtn.appendChild = card;
         cardCol.appendChild(cardModalBtn);
 
 
