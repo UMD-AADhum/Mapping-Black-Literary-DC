@@ -262,6 +262,21 @@ const blackIcon = new L.Icon({
 
 
 // >>>>> create map with point for each modal
+        let modalMap = document.createElement("div");
+
+        let map = L.map(modalMap).setView({lon: -77.025391, lat: 38.916271}, 15.5);
+
+        let OSM_Tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        });
+        map.addLayer(OSM_Tiles);
+
+        L.control.scale({imperial: true, metric: true}).addTo(map);
+
+        
+
+
+
 
 // >>>>> append modal elements to modal
 
@@ -291,6 +306,7 @@ const blackIcon = new L.Icon({
     cardModalBody.appendChild(modalCaption);
     cardModalBody.appendChild(modalCaptionSource);
     cardModalBody.appendChild(modalImgSource);
+    cardModalBody.appendChild(modalMap);
     cardModalBody.appendChild(learnMoreBtn);
 
 
