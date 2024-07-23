@@ -177,7 +177,7 @@ const blackIcon = new L.Icon({
 // >>>>> create & class modal elements for each card 
         // modal
         let cardModal = document.createElement("div");
-        cardModal.className = "modal fade";
+        cardModal.className = "modal";
         cardModal.setAttribute("id", "modal-" + geoJSONCards.features[index].properties.id);
         cardModal.setAttribute("tabindex", "-1");
         cardModal.setAttribute("aria-labelledby", "modalLabel" + geoJSONCards.features[index].properties.id);
@@ -258,7 +258,7 @@ const blackIcon = new L.Icon({
         cardModalCloseBtn.setAttribute("type", "button");
         cardModalCloseBtn.className = "btn-close";
         cardModalCloseBtn.setAttribute("data-bs-dismiss", "modal");
-        cardModalCloseBtn.setAttribute("aria-label", "close")
+        cardModalCloseBtn.setAttribute("aria-label", "Close")
 
 
 // >>>>> create map with point for each modal
