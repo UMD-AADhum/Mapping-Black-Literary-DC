@@ -180,6 +180,7 @@ const blackIcon = new L.Icon({
         cardModalBtn.className = "btn btn-primary"
         cardModalBtn.setAttribute("data-bs-toggle", "modal"); 
         cardModalBtn.setAttribute("data-bs-target", "#modal-" + geoJSONCards.features[index].properties.id);
+        cardModalBtn.innerText = "View"
 
 // >>>>> create & class modal elements for each card 
         // modal
@@ -206,6 +207,7 @@ const blackIcon = new L.Icon({
         let cardModalHeaderTxt = document.createElement("h1");
         cardModalHeaderTxt.className = "modal-title fs-5"
         cardModalHeaderTxt.setAttribute("id", "modalLabel" + geoJSONCards.features[index].properties.id)
+        cardModalHeaderTxt.innerText = "modal test header";
 
         // modal-body
         let cardModalBody = document.createElement("div");
