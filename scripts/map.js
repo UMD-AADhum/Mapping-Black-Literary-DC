@@ -112,7 +112,7 @@ const blackIcon = new L.Icon({
         card.setAttribute("id", geoJSONCards.features[index].properties.id);
 
 // >>>>> create card body
-        let cardBody = document.createElement("span");
+        let cardBody = document.createElement("div");
         cardBody.className = "card-body";
 
 // >>>>> create card title & store geoJSONCards data
@@ -237,22 +237,27 @@ const blackIcon = new L.Icon({
         cardBody.appendChild(cardAddress);
         cardBody.appendChild(cardCaption);
         cardBody.appendChild(cardCaptionSource);
-        cardBody.appendChild(imgSource); 
+        cardBody.appendChild(imgSource);
+        cardFooter.appendChild(cardModalBtn); 
         cardBody.appendChild(cardFooter)       
-        cardFooter.appendChild(learnMoreBtn);
+     //   cardFooter.appendChild(learnMoreBtn);
     //    cardBody.appendChild(cardExtUrl);
         card.appendChild(cardImg);
         card.appendChild(cardBody);
-    //  cardCol.appendChild(card);
+      cardCol.appendChild(card);
 
-        cardModalBtn.appendChild = card;
-        cardCol.appendChild(cardModalBtn);
+     //   cardModalBtn.appendChild = card;
+    //    cardCol.appendChild(cardModalBtn);
 
         cardModalHeader.innerText = cardModalHeaderTxt;
         cardModalHeader.appendChild = cardModalCloseBtn;
         cardModalContent.appendChild(cardModalHeader);
         cardModalContent.appendChild(cardModalBody);
         cardModalContent.appendChild(cardModalFooter);
+        cardModalDialog.appendChild(cardModalContent);
+        cardModal.appendChild(cardModalDialog);
+        cardCol.appendChild(cardModal);
+
 
 
 // >>>>> append card to DOM card row div
