@@ -65,3 +65,10 @@
 .btn-primary:hover {
     background-color: #2b53e7;
 }
+
+.modal-map-div {
+    /* configure the size of the map */
+    /*width: 75%;*/
+    height: 500px;
+    margin: 50px;
+}
