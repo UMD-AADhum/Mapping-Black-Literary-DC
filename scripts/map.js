@@ -273,7 +273,7 @@ const blackIcon = new L.Icon({
 //        cardBody.appendChild(cardCaption);
 //       cardBody.appendChild(cardCaptionSource);
 //        cardBody.appendChild(imgSource);
-        cardFooter.appendChild(cardModalCloseBtn); 
+        cardFooter.appendChild(cardModalBtn); 
         cardBody.appendChild(cardFooter)       
      //   cardFooter.appendChild(learnMoreBtn);
     //    cardBody.appendChild(cardExtUrl);
@@ -296,7 +296,7 @@ const blackIcon = new L.Icon({
 
 
 
-        cardModalFooter.appendChild = cardModalCloseBtn;
+        cardModalFooter.appendChild(cardModalCloseBtn);
         cardModalContent.appendChild(cardModalHeader);
         cardModalContent.appendChild(cardModalBody);
         cardModalContent.appendChild(cardModalFooter);
