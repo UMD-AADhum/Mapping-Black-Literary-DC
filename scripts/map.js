@@ -158,12 +158,13 @@ const blackIcon = new L.Icon({
         learnMoreBtn.setAttribute("href", geoJSONCards.features[index].properties.captionSourceURL);
         learnMoreBtn.setAttribute("target", "blank")
         learnMoreBtn.innerText = "Learn More"
+        */
 
 // >>>>> create card img & store geoJSONCards img tag
         let cardImg = document.createElement("img");
         cardImg.className = "card-img-top";
         cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSONCards.features[index].properties.imgUID + ".jpg");
-        cardImg.setAttribute("alt", geoJSONCards.features[index].properties.altText); */
+        cardImg.setAttribute("alt", geoJSONCards.features[index].properties.altText);
 
 // >>>>> create modal trigger button
         let cardModalBtn = document.createElement("btn");
