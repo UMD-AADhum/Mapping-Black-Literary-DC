@@ -119,25 +119,16 @@ const blackIcon = new L.Icon({
         let cardTitle = document.createElement("h5");
         cardTitle.className = "card-title"
         cardTitle.innerText = geoJSONCards.features[index].properties.venueName;
-        cardTitle.setAttribute("href", geoJSONCards.features[index].properties.extURL);
-        cardTitle.setAttribute("target", "blank")
+        // cardTitle.setAttribute("href", geoJSONCards.features[index].properties.extURL);
+        // cardTitle.setAttribute("target", "blank")
 
-
-/*         // >>>>> create card link & store geoJSONCards external links
-        let cardExtUrl = document.createElement("a");
-        cardExtUrl.className = "btn btn-primary";
-        cardExtUrl.setAttribute("href", geoJSONCards.features[index].properties.extURL);
-        cardExtUrl.setAttribute("target", "blank")
-        cardExtUrl.innerText = "Visit"
- */
-
-// >>>>> create card category & store geoJSONCards data
+/* // >>>>> create card category & store geoJSONCards data
         let cardCat = document.createElement("h6")
         cardCat.className = "card-subtitle";
-        cardCat.innerText = geoJSONCards.features[index].properties.venueType;
+        cardCat.innerText = geoJSONCards.features[index].properties.venueType; */
 
 // >>>>> create card text & store geoJSONCards data
-// >>>>>>> address
+/* // >>>>>>> address
         let cardAddress = document.createElement("p");
         cardAddress.className = "card-text"
         cardAddress.innerText = geoJSONCards.features[index].properties.address;
@@ -155,12 +146,12 @@ const blackIcon = new L.Icon({
 // >>>>>>> image source
         let imgSource = document.createElement("p");
         imgSource.className = "card-text"
-        imgSource.innerText = "Image Source: " + geoJSONCards.features[index].properties.imgSource;
+        imgSource.innerText = "Image Source: " + geoJSONCards.features[index].properties.imgSource; */
 
 // card footer
         let cardFooter = document.createElement("div");
         cardFooter.className = "card-footer-row"
-
+/* 
 // >>>>>>> learn more button
         let learnMoreBtn = document.createElement("a");
         learnMoreBtn.className = "btn card-btn";
@@ -172,7 +163,7 @@ const blackIcon = new L.Icon({
         let cardImg = document.createElement("img");
         cardImg.className = "card-img-top";
         cardImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSONCards.features[index].properties.imgUID + ".jpg");
-        cardImg.setAttribute("alt", geoJSONCards.features[index].properties.altText);
+        cardImg.setAttribute("alt", geoJSONCards.features[index].properties.altText); */
 
 // >>>>> create modal trigger button
         let cardModalBtn = document.createElement("btn");
@@ -203,11 +194,13 @@ const blackIcon = new L.Icon({
         let cardModalHeader = document.createElement("div");
         cardModalHeader.className = "modal-header";
 
-        // modal-header-h1 (modal header)
+        // modal-header-text (modal header)
         let cardModalHeaderTxt = document.createElement("h1");
         cardModalHeaderTxt.className = "modal-title fs-5"
         cardModalHeaderTxt.setAttribute("id", "modalLabel" + geoJSONCards.features[index].properties.id)
-        cardModalHeaderTxt.innerText = "modal test header";
+        cardModalHeaderTxt.innerText = geoJSONCards.features[index].properties.venueName;
+        // cardModalHeader.appendChild(cardModalHeaderTxt);
+
 
         // modal-body
         let cardModalBody = document.createElement("div");
@@ -215,6 +208,45 @@ const blackIcon = new L.Icon({
 
         let cardModalBodyTest = document.createElement("p");
         cardModalBodyTest.innerText = "just testing to see if the modal works."
+
+        // >>>>> create card category & store geoJSONCards data
+        let modalCat = document.createElement("h6")
+        modalCat.className = "modal-category";
+        modalCat.innerText = geoJSONCards.features[index].properties.venueType;
+
+        // >>>>> create card text & store geoJSONCards data
+        // >>>>>>> address
+        let modalAddress = document.createElement("p");
+        modalAddress.className = "modal-address"
+        modalAddress.innerText = geoJSONCards.features[index].properties.address;
+
+        // >>>>>>> caption
+        let modalCaption = document.createElement("p");
+        modalCaption.className = "modal-caption"
+        modalCaption.innerText = geoJSONCards.features[index].properties.caption;
+
+        // >>>>>>> caption source
+        let modalCaptionSource = document.createElement("p");
+        modalCaptionSource.className = "modal-caption-src"
+        modalCaptionSource.innerText = "Caption Source: " + geoJSONCards.features[index].properties.captionSource;
+
+        // >>>>> create card img & store geoJSONCards img tag
+        let modalImg = document.createElement("img");
+        modalImg.className = "img-fluid";
+        modalImg.setAttribute("src", "./elements/img/archive/thumbnails/" + geoJSONCards.features[index].properties.imgUID + ".jpg");
+        modalImg.setAttribute("alt", geoJSONCards.features[index].properties.altText);
+
+        // >>>>>>> image source
+        let modalImgSource = document.createElement("p");
+        modalImgSource.className = "modal-img-caption"
+        modalImgSource.innerText = "Image Source: " + geoJSONCards.features[index].properties.imgSource;
+
+        // >>>>>>> learn more button
+        let learnMoreBtn = document.createElement("a");
+        learnMoreBtn.className = "btn card-btn";
+        learnMoreBtn.setAttribute("href", geoJSONCards.features[index].properties.captionSourceURL);
+        learnMoreBtn.setAttribute("target", "blank")
+        learnMoreBtn.innerText = "Learn More"
 
         // modal-footer
         let cardModalFooter = document.createElement("div");
@@ -235,11 +267,11 @@ const blackIcon = new L.Icon({
 
 // >>>>> append card elements to card; 
         cardBody.appendChild(cardTitle);
-        cardBody.appendChild(cardCat);
-        cardBody.appendChild(cardAddress);
-        cardBody.appendChild(cardCaption);
-        cardBody.appendChild(cardCaptionSource);
-        cardBody.appendChild(imgSource);
+//        cardBody.appendChild(cardCat);
+//        cardBody.appendChild(cardAddress);
+//        cardBody.appendChild(cardCaption);
+//       cardBody.appendChild(cardCaptionSource);
+//        cardBody.appendChild(imgSource);
         cardFooter.appendChild(cardModalBtn); 
         cardBody.appendChild(cardFooter)       
      //   cardFooter.appendChild(learnMoreBtn);
@@ -251,8 +283,19 @@ const blackIcon = new L.Icon({
      //   cardModalBtn.appendChild = card;
     //    cardCol.appendChild(cardModalBtn);
 
-        cardModalHeader.innerHTML = cardModalHeaderTxt;
-        cardModalHeader.appendChild = cardModalCloseBtn;
+    cardModalHeader.appendChild(cardModalHeaderTxt);
+    cardModalBody.appendChild(modalImg);
+    cardModalBody.appendChild(modalCat);
+    cardModalBody.appendChild(modalAddress);
+    cardModalBody.appendChild(modalCaption);
+    cardModalBody.appendChild(modalCaptionSource);
+    cardModalBody.appendChild(modalImgSource);
+    cardModalBody.appendChild(learnMoreBtn);
+
+
+
+
+        cardModalFooter.appendChild = cardModalCloseBtn;
         cardModalContent.appendChild(cardModalHeader);
         cardModalContent.appendChild(cardModalBody);
         cardModalContent.appendChild(cardModalFooter);
