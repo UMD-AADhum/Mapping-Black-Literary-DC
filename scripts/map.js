@@ -184,7 +184,7 @@ const blackIcon = new L.Icon({
         cardModal.setAttribute("aria-hidden", "true");
 
         // modal-dialog
-        let cardModalDialog = document.createElement("modal-dialog");
+        let cardModalDialog = document.createElement("div");
         cardModalDialog.className = "modal-dialog";
 
         // modal-content
